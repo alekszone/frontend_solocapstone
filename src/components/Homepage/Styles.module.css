@@ -37,7 +37,9 @@
   border-bottom: grey solid 3px;
   padding: 2rem;
 }
-
+.imgCol {
+  height: 200px;
+}
 .text {
   width: 100%;
   box-shadow: 2px 2px 2px rgba(212, 212, 212, 0.938);
@@ -115,8 +117,8 @@
 }
 
 .img {
-  height: 125px;
-  width: 150px;
+  height: 90%;
+  width: 90%;
   border-radius: 5px;
   /* margin-right: auto; */
 }
@@ -137,26 +139,13 @@
   width: 600px !important;
   /* text-align: left; */
 }
-.icons {
-  font-size: 20px;
-  color: rgb(107, 98, 99);
-}
-.cards p {
-  color: rgb(63, 69, 95);
-}
-.cards h6 {
-  color: rgb(107, 98, 99);
-}
-.cards h5 {
-  color: rgb(107, 98, 99);
-  font-weight: none;
-}
+
 .btngrad {
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: auto;
-  color: rgb(63, 69, 95);
+  color: #ff512f;
   font-weight: bolder;
   font-size: 15px;
 
@@ -267,6 +256,24 @@
 .rows {
   margin-top: 10px !important;
 }
+.salary {
+  font-family: "Exo", sans-serif;
+  color: #48546d;
+}
+.type {
+  font-family: "Exo", sans-serif;
+  color: #48546d;
+}
+.jobPosition {
+  font-weight: bolder;
+  font-family: "Mukta", sans-serif;
+  color: #48546d;
+}
+.headTitle {
+  font-family: "Mukta", sans-serif;
+
+  color: #48546d;
+}
 
 @media only screen and (max-width: 769px) {
   .img {
@@ -275,13 +282,9 @@
   .cards p {
     font-size: 11px;
   }
-  /* .row1 {
-    margin-right: auto;
+  .imgCol {
+    height: 140px;
   }
-  .row2 {
-    margin-left: auto;
-    height: auto;
-  } */
 }
 @media only screen and (max-width: 995px) {
   .row1 {
@@ -293,13 +296,3 @@
     width: 90%;
   }
 }
-/* @media only screen and (max-width: 1024px) {
-  .row1 {
-    height: 100%;
-  }
-}
-@media only screen and (min-width: 770px) {
-  .row1 {
-    height: auto;
-  }
-} */

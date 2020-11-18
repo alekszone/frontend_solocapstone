@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Tab, Tabs, Button, Modal } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 import Styles from "./Styles.module.css";
 import { MdWork } from "react-icons/md";
 import { MdAttachMoney } from "react-icons/md";
@@ -249,11 +249,11 @@ class Inside extends Component {
                   {this.state.allPost &&
                     this.state.allPost.map((data, i) => (
                       <>
-                        <div>
-                          <div
-                            className={`${Styles.cards} e-card e-card-horizontal mt-2`}
-                            onClick={() => this.showCompanies(data)}
-                          >
+                        <Row
+                          className={`${Styles.cards} e-card e-card-horizontal mt-2`}
+                          onClick={() => this.showCompanies(data)}
+                        >
+                          <Col xs={5} sm={5}>
                             {data.image ? (
                               <img
                                 className={`${Styles.img} ml-1 mt-1 mb-1`}
@@ -265,38 +265,36 @@ class Inside extends Component {
                                 className="ml-1"
                                 src="https://www.flaticon.com/svg/static/icons/svg/52/52782.svg"
                                 alt="Sample"
-                                style={{ height: `145px`, width: `150px` }}
+                                className={`${Styles.img} ml-1 mt-1 mb-1`}
                               />
                             )}
-                            <div
-                              className="e-card-stacked "
-                              style={{ width: "300px", textAlign: "left" }}
-                            >
-                              <div className="e-card-header mt-2 ml-2">
-                                <div className="e-card-header-caption">
-                                  <div className="e-card-header-title">
-                                    <div style={{ display: "flex" }}>
-                                      <h6>{data.companyName}</h6>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="e-card-content ml-2">
-                                <div style={{ display: "flex" }}>
-                                  {" "}
-                                  <h5 className="ml-1">{data.jobPosition}</h5>
-                                </div>
-
-                                <div style={{ display: "flex" }}>
-                                  <p>{data.location}</p>
-                                </div>
-                                <div style={{ display: "flex" }}>
-                                  <p>{data.salary}</p>
-                                </div>
-                              </div>
+                          </Col>
+                          <Col xs={7} sm={7} className="mt-1">
+                            <div>
+                              <h5 className={`${Styles.headTitle}`}>
+                                {data.companyName}
+                              </h5>
                             </div>
-                          </div>
-                        </div>
+
+                            <div>
+                              {" "}
+                              <h5 className={`${Styles.jobPosition}`}>
+                                {data.jobPosition}
+                              </h5>
+                            </div>
+
+                            <div>
+                              <p className={`${Styles.type}`}>
+                                {data.location}
+                              </p>
+                            </div>
+                            <div>
+                              <p className={`${Styles.salary}`}>
+                                ${data.salary}
+                              </p>
+                            </div>
+                          </Col>
+                        </Row>
                       </>
                     ))}
                 </div>
@@ -319,31 +317,25 @@ class Inside extends Component {
                         style={{ display: "flex" }}
                         className={`${Styles.infoCards}`}
                       >
-                        <div
-                          className="e-card-stacked "
-                          style={{ width: "300px", textAlign: "left" }}
-                        >
-                          <div className="e-card-header mt-2 ml-2">
-                            <div className="e-card-header-caption">
-                              <div className="e-card-header-title"></div>
-                            </div>
+                        <div className="text-left mt-2">
+                          <div>
+                            <h5 className={`${Styles.jobPosition}`}>
+                              {this.state.filter.jobPosition}
+                            </h5>
                           </div>
-                          <div className="e-card-content ml-2">
-                            <div style={{ display: "flex" }}>
-                              {" "}
-                              <h5 className="ml-1">
-                                {this.state.filter.jobPosition}
-                              </h5>
-                            </div>
 
-                            <div style={{ display: "flex" }}>
-                              <p>{this.state.filter.location}</p>
-                            </div>
-                            <div style={{ display: "flex" }}>
-                              <p>{this.state.filter.salary}</p>
-                            </div>
+                          <div>
+                            <p className={`${Styles.type}`}>
+                              {this.state.filter.location}
+                            </p>
+                          </div>
+                          <div>
+                            <p className={`${Styles.salary}`}>
+                              ${this.state.filter.salary}
+                            </p>
                           </div>
                         </div>
+
                         <div
                           style={{
                             marginLeft: "auto",
@@ -407,66 +399,83 @@ class Inside extends Component {
                                       height: "auto",
                                     }}
                                   >
-                                    {this.state.companie.image ? (
-                                      <img
-                                        className={`${Styles.img}  mt-1 mb-1`}
-                                        src={this.state.companie.image}
-                                        alt="Sample"
-                                      />
-                                    ) : (
-                                      <img
-                                        src="https://www.flaticon.com/svg/static/icons/svg/52/52782.svg"
-                                        alt="Sample"
-                                        style={{
-                                          height: `145px`,
-                                          width: `150px`,
-                                        }}
-                                      />
-                                    )}
-                                    <div
-                                      className="e-card-stacked "
-                                      style={{
-                                        width: "300px",
-                                        // textAlign: "left",
-                                      }}
-                                    >
-                                      <div className="e-card-header mt-2 ml-2">
-                                        <div className="e-card-header-caption">
-                                          <div className="e-card-header-title">
-                                            <div style={{ display: "flex" }}>
-                                              <h6>
-                                                {
-                                                  this.state.companie
-                                                    .companyName
+                                    <Row>
+                                      <Col
+                                        xs={12}
+                                        md={12}
+                                        sm={12}
+                                        lg={12}
+                                        className={`${Styles.imgCol}`}
+                                      >
+                                        {this.state.companie.image ? (
+                                          <img
+                                            className={`${Styles.img}  mt-1 mb-1`}
+                                            src={this.state.companie.image}
+                                            alt="Sample"
+                                          />
+                                        ) : (
+                                          <img
+                                            src="https://www.flaticon.com/svg/static/icons/svg/52/52782.svg"
+                                            alt="Sample"
+                                            className={`${Styles.img}  mt-1 mb-1`}
+                                          />
+                                        )}
+                                      </Col>
+                                      <Col xs={12} md={12} sm={12} lg={12}>
+                                        <div
+                                          style={{
+                                            // width: "300px",
+                                            textAlign: "center",
+                                          }}
+                                        >
+                                          <div>
+                                            <h5
+                                              className={`${Styles.jobPosition}`}
+                                            >
+                                              {this.state.companie.companyName}
+                                            </h5>
+                                          </div>
+
+                                          <div>
+                                            <div>
+                                              <a
+                                                href={
+                                                  this.state.companie.website
                                                 }
+                                                target="_blank"
+                                              >
+                                                <h6>
+                                                  {this.state.companie.website}
+                                                </h6>
+                                              </a>
+                                            </div>
+
+                                            <div>
+                                              <h6
+                                                className={`${Styles.headTitle}`}
+                                              >
+                                                {this.state.companie.location}
+                                              </h6>
+                                            </div>
+                                            <div>
+                                              <h6
+                                                className={`${Styles.headTitle}`}
+                                              >
+                                                {this.state.companie.email}
+                                              </h6>
+                                            </div>
+                                            <div>
+                                              <h6
+                                                className={`${Styles.headTitle}`}
+                                              >
+                                                {this.state.companie.personel}
+                                                -Hired
                                               </h6>
                                             </div>
                                           </div>
                                         </div>
-                                      </div>
-                                      <div className="e-card-content ml-2">
-                                        <div style={{ display: "flex" }}>
-                                          {" "}
-                                          <h6 className="ml-1">
-                                            {this.state.companie.website}
-                                          </h6>
-                                        </div>
-
-                                        <div style={{ display: "flex" }}>
-                                          <h6>
-                                            {this.state.companie.location}
-                                          </h6>
-                                        </div>
-                                        <div style={{ display: "flex" }}>
-                                          <h6>{this.state.companie.email}</h6>
-                                        </div>
-                                        <div style={{ display: "flex" }}>
-                                          <h6>
-                                            {this.state.companie.personel}-Hired
-                                          </h6>
-                                        </div>
-                                      </div>
-                                    </div>
+                                      </Col>
+                                    </Row>
                                   </Col>
                                   <Col
                                     xs={12}

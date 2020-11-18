@@ -27,7 +27,6 @@ export default function Accept(props) {
         body: JSON.stringify({ subject, text }),
         creadentials: "include",
         headers: {
-          "Access-Control-Allow-Origin": "*",
           "Content-Type": "application/json",
         },
       }
