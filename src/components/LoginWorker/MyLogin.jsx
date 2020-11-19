@@ -43,9 +43,9 @@ function MyLogin(props) {
       }),
     });
     if (moreData.ok) {
-      // const token = Cookies.get("token");
-      // console.log(token,"what has token")
-      // localStorage.setItem(token, "token");
+      const token = Cookies.get("token");
+      console.log(token,"what has token")
+      localStorage.setItem(token, "token");
       props.UserProfile();
       props.logInWorker();
       props.history.push("/worker");
@@ -65,8 +65,8 @@ function MyLogin(props) {
       }),
     });
     if (result.ok) {
-      // const token = Cookies.get("token");
-      // localStorage.setItem(token);
+      const token = Cookies.get("token");
+      localStorage.setItem(token);
       setAlert(false);
       props.CompanyProfile();
       props.loginCompany();
