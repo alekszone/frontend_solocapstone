@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col, Button, Form, Modal } from "react-bootstrap";
-import { RiImageAddFill } from "react-icons/ri";
-import Styles from "./Style.module.css";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+import React, { useState, useEffect } from 'react';
+import { Row, Col, Button, Form, Modal } from 'react-bootstrap';
+import { RiImageAddFill } from 'react-icons/ri';
+import Styles from './Style.module.css';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 export default function AddPost(props) {
-  const [jobPosition, setjobPosition] = useState("");
-  const [salary, setsalary] = useState("");
-  const [jobDescription, setjobDescription] = useState("");
-  const [type, settype] = useState("");
-  const [imagePost, setImage] = useState("");
+  const [jobPosition, setjobPosition] = useState('');
+  const [salary, setsalary] = useState('');
+  const [jobDescription, setjobDescription] = useState('');
+  const [type, settype] = useState('');
+  const [imagePost, setImage] = useState('');
   const [requirments, setRequirments] = useState([]);
   const [benefites, setBenefites] = useState([]);
   const [showButton, setshowButton] = useState(true);
@@ -43,13 +43,13 @@ export default function AddPost(props) {
   };
 
   const AddNewPost = async () => {
-    const result = await fetch(url + "/post/newPost", {
-      method: "POST",
-      credentials: "include",
+    const result = await fetch(url + '/post/newPost', {
+      method: 'POST',
+
       body: JSON.stringify(newPost),
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     const data = await result.json();
@@ -58,25 +58,25 @@ export default function AddPost(props) {
 
       const uploadImage = imagePost;
       const image = new FormData();
-      image.append("image", uploadImage);
-      const uploadPhoto = await fetch(url + "/post/uploadImage/" + data._id, {
-        method: "POST",
+      image.append('image', uploadImage);
+      const uploadPhoto = await fetch(url + '/post/uploadImage/' + data._id, {
+        method: 'POST',
         body: image,
-        credentials: "include",
+
         headers: {
-          "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-         
-          "Access-Control-Allow-Origin": "*",
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+
+          'Access-Control-Allow-Origin': '*',
         },
       });
 
       if (uploadPhoto.ok) {
-        console.log("uploaded");
+        console.log('uploaded');
         props.fetchPost();
         handleClose();
-        console.log("uploadd photo is not working");
+        console.log('uploadd photo is not working');
       } else {
-        console.log("uploadd photo is not working");
+        console.log('uploadd photo is not working');
       }
       props.fetchPost();
       handleClose();
@@ -87,12 +87,12 @@ export default function AddPost(props) {
     <>
       <Row>
         <Col
-          className="text-center  mt-2 mb-2"
-          style={{ alignItems: "center" }}
+          className='text-center  mt-2 mb-2'
+          style={{ alignItems: 'center' }}
         >
           {showButton && (
             <Button
-              variant="light"
+              variant='light'
               className={`${Styles.btngrad}`}
               onClick={() => {
                 handleShow();
@@ -105,9 +105,9 @@ export default function AddPost(props) {
           <Modal
             show={show}
             onHide={handleClose}
-            backdrop="static"
+            backdrop='static'
             keyboard={false}
-            className="mt-0"
+            className='mt-0'
           >
             <Modal.Header closeButton>
               <Modal.Title>Add New Post</Modal.Title>
@@ -120,22 +120,22 @@ export default function AddPost(props) {
                   md={12}
                   lg={12}
                   className={`${Styles.textStyle}`}
-                  style={{ textAlign: "center" }}
+                  style={{ textAlign: 'center' }}
                 >
                   <div>
                     <h6>Add Job Position</h6>
 
                     <form>
                       <TextField
-                        id="filled-multiline-flexible"
-                        label="Position"
-                        className="mb-2"
-                        type="text"
-                        variant="outlined"
+                        id='filled-multiline-flexible'
+                        label='Position'
+                        className='mb-2'
+                        type='text'
+                        variant='outlined'
                         style={{
-                          width: "100%",
+                          width: '100%',
                         }}
-                        type="text"
+                        type='text'
                         value={jobPosition}
                         onChange={(e) => {
                           setjobPosition(e.currentTarget.value);
@@ -147,15 +147,15 @@ export default function AddPost(props) {
                     <h6>Add Job Salary </h6>
                     <form>
                       <TextField
-                        id="filled-multiline-flexible"
-                        label="Salary"
-                        className="mb-2"
-                        type="text"
-                        variant="outlined"
+                        id='filled-multiline-flexible'
+                        label='Salary'
+                        className='mb-2'
+                        type='text'
+                        variant='outlined'
                         style={{
-                          width: "100%",
+                          width: '100%',
                         }}
-                        type="text"
+                        type='text'
                         value={salary}
                         onChange={(e) => {
                           setsalary(e.currentTarget.value);
@@ -164,32 +164,32 @@ export default function AddPost(props) {
                     </form>
                   </div>
                   <div>
-                    {" "}
+                    {' '}
                     <h6> Job Type </h6>
                     {/* <Form.Group controlId="exampleForm.ControlSelect1"> */}
                     <FormControl
-                      variant="outlined"
+                      variant='outlined'
                       style={{
-                        width: "100%",
+                        width: '100%',
                       }}
-                      className="mb-2"
+                      className='mb-2'
                     >
-                      <InputLabel id="demo-simple-select-outlined-label">
+                      <InputLabel id='demo-simple-select-outlined-label'>
                         Job Type
                       </InputLabel>
                       <Select
-                        labelId="demo-simple-select-outlined-label"
-                        id="demo-simple-select-outlined"
-                        label="Job Type"
+                        labelId='demo-simple-select-outlined-label'
+                        id='demo-simple-select-outlined'
+                        label='Job Type'
                         onChange={(e) => {
                           settype(e.target.value);
                         }}
                       >
-                        <MenuItem value="">
+                        <MenuItem value=''>
                           <em>Type</em>
                         </MenuItem>
-                        <MenuItem value={"Full Time"}>Full Time</MenuItem>
-                        <MenuItem value={"Part Time"}>Part Time</MenuItem>
+                        <MenuItem value={'Full Time'}>Full Time</MenuItem>
+                        <MenuItem value={'Part Time'}>Part Time</MenuItem>
                       </Select>
                     </FormControl>
                   </div>
@@ -199,15 +199,15 @@ export default function AddPost(props) {
 
                       <form>
                         <TextField
-                          id="outlined-multiline-static"
-                          label="Job Description"
+                          id='outlined-multiline-static'
+                          label='Job Description'
                           multiline
-                          className="mb-2"
+                          className='mb-2'
                           rows={4}
                           style={{
-                            width: "100%",
+                            width: '100%',
                           }}
-                          variant="outlined"
+                          variant='outlined'
                           value={jobDescription}
                           onChange={(e) => {
                             setjobDescription(e.currentTarget.value);
@@ -219,15 +219,15 @@ export default function AddPost(props) {
                       <h6>Add Job Requirments </h6>
                       <form>
                         <TextField
-                          id="outlined-multiline-static"
-                          label="Requirments"
+                          id='outlined-multiline-static'
+                          label='Requirments'
                           multiline
-                          className="mb-2"
+                          className='mb-2'
                           rows={4}
                           style={{
-                            width: "100%",
+                            width: '100%',
                           }}
-                          variant="outlined"
+                          variant='outlined'
                           value={requirments}
                           onChange={(e) => {
                             setRequirments(e.currentTarget.value);
@@ -240,15 +240,15 @@ export default function AddPost(props) {
 
                       <form>
                         <TextField
-                          id="outlined-multiline-static"
-                          label="Benefites"
+                          id='outlined-multiline-static'
+                          label='Benefites'
                           multiline
-                          className="mb-2"
+                          className='mb-2'
                           rows={4}
                           style={{
-                            width: "100%",
+                            width: '100%',
                           }}
-                          variant="outlined"
+                          variant='outlined'
                           value={benefites}
                           onChange={(e) => {
                             setBenefites(e.currentTarget.value);
@@ -256,23 +256,23 @@ export default function AddPost(props) {
                         />
                       </form>
                     </div>
-                    <h6 className="mt-2 mb-2">Upload Image</h6>
+                    <h6 className='mt-2 mb-2'>Upload Image</h6>
                     <label
-                      htmlFor="file-input"
-                      aria-required="true"
+                      htmlFor='file-input'
+                      aria-required='true'
                       //   className={`${Style.uploadPhoto}`}
                     >
                       <RiImageAddFill
-                        style={{ width: "50px", height: "50px" }}
+                        style={{ width: '50px', height: '50px' }}
                       />
                     </label>
                     <input
-                      style={{ display: "none" }}
-                      key="image"
-                      id="file-input"
-                      type="file"
-                      accept="image/*"
-                      profile="file"
+                      style={{ display: 'none' }}
+                      key='image'
+                      id='file-input'
+                      type='file'
+                      accept='image/*'
+                      profile='file'
                       // value={this.state.image}
                       onChange={(e) => setImage(e.target.files[0])}
                     />
@@ -282,14 +282,14 @@ export default function AddPost(props) {
             </Modal.Body>
             <Modal.Footer>
               <Button
-                variant="light"
+                variant='light'
                 className={`${Styles.btngrad}`}
                 onClick={handleClose}
               >
                 Cancel
               </Button>
               <Button
-                variant="light"
+                variant='light'
                 className={`${Styles.btngrad}`}
                 onClick={() => AddNewPost()}
               >

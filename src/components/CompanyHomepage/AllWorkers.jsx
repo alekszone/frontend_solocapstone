@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col, Button } from "react-bootstrap";
-import AllPost from "./AllPost";
+import React, { useState, useEffect } from 'react';
+import { Row, Col, Button } from 'react-bootstrap';
+import AllPost from './AllPost';
 
-import Pagination from "./Pagination";
-import Carts from "./Carts";
-import WorkerProfile from "./WorkerProfile";
-import Styles from "./Styles.module.css";
+import Pagination from './Pagination';
+import Carts from './Carts';
+import WorkerProfile from './WorkerProfile';
+import Styles from './Styles.module.css';
 
 export default function AllWorkers() {
   const url = process.env.REACT_APP_URL;
   const [allJob, setAllJob] = useState([]);
-  const [profile, setProfile] = useState("");
+  const [profile, setProfile] = useState('');
   const [aplicant, setaplicant] = useState([]);
   const [buttons, setButtons] = useState(false);
-  const [Id, setId] = useState("");
+  const [Id, setId] = useState('');
 
   const showButton = () => {
     setButtons(true);
@@ -40,19 +40,19 @@ export default function AllWorkers() {
   }, []);
 
   const allPost = async () => {
-    const data = await fetch(url + "/post/", {
-      method: "GET",
-      credentials: "include",
+    const data = await fetch(url + '/post/', {
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     const allPost = await data.json();
     if (allPost) {
       setAllJob(allPost);
     } else {
-      console.log("there is no data ");
+      console.log('there is no data ');
     }
   };
 
@@ -63,26 +63,26 @@ export default function AllWorkers() {
     setId(id);
   };
   const allPosts = async () => {
-    const data = await fetch(url + "/post/singelPost/" + Id, {
-      method: "GET",
-      credentials: "include",
+    const data = await fetch(url + '/post/singelPost/' + Id, {
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     const allPost = await data.json();
     if (allPost) {
       setaplicant(allPost.allAplication);
     } else {
-      console.log("there is no data ");
+      console.log('there is no data ');
     }
   };
 
   return (
     <>
       <Row className={`${Styles.company}`}>
-        <Col xs={12} sm={12} md={5} lg={5} className="mt-3">
+        <Col xs={12} sm={12} md={5} lg={5} className='mt-3'>
           <AllPost
             getPosts={getPosts}
             allJob={allJob}
@@ -98,13 +98,13 @@ export default function AllWorkers() {
         >
           <Row className={`${Styles.userProfile}`}>
             <Col xs={12} sm={12} md={12} lg={12}>
-              <Row className="mt-1">
+              <Row className='mt-1'>
                 <Carts
                   currentAplicant={currentAplicant}
                   setProfile={setProfile}
                   showButton={showButton}
                 />
-                <Col xs={12} sm={12} md={12} lg={12} className="mt-1 ">
+                <Col xs={12} sm={12} md={12} lg={12} className='mt-1 '>
                   <Pagination
                     aplicantPerPage={aplicantPerPage}
                     totalAplicant={aplicant.length}

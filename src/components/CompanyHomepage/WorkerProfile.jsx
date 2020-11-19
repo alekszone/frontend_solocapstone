@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { Col, Row, Button, Modal, Tab, Tabs } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import WorkExperience from "./Workexperience";
-import Education from "./Education";
-import Accept from "./Accept";
-import Remove from "./Remove";
-import Styles from "./Styles.module.css";
+import React, { useState, useEffect } from 'react';
+import { Col, Row, Button, Modal, Tab, Tabs } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import WorkExperience from './Workexperience';
+import Education from './Education';
+import Accept from './Accept';
+import Remove from './Remove';
+import Styles from './Styles.module.css';
 export default function WorkerProfile(props) {
   const [showEducation, setshowEducation] = useState(false);
   const [showWork, setshowWork] = useState(false);
@@ -27,20 +27,20 @@ export default function WorkerProfile(props) {
   };
   const handleClose1 = () => setShow1(false);
   const handleShow1 = (data) => {
-    console.log(data, "caka data");
+    console.log(data, 'caka data');
     setData1(data);
     setShow1(true);
   };
 
   const closeAccept = () => setAccept(false);
   const showAccept = (data) => {
-    console.log(data, "caka data");
+    console.log(data, 'caka data');
     setdataAccept(data);
     setAccept(true);
   };
   const closeRemove = () => setRemove(false);
   const showRemove = (data) => {
-    console.log(data, "caka data");
+    console.log(data, 'caka data');
     setdataRemove(data);
     setRemove(true);
   };
@@ -53,12 +53,12 @@ export default function WorkerProfile(props) {
     fetchWorker();
   }, [props.profile]);
   const fetchWorker = async () => {
-    const result = await fetch(url + "/login/singleProfile/" + props.profile, {
-      method: "GET",
-      credentials: "include",
+    const result = await fetch(url + '/login/singleProfile/' + props.profile, {
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     const data = await result.json();
@@ -76,7 +76,7 @@ export default function WorkerProfile(props) {
         setshowWork(false);
       }
     } else {
-      console.log("no data");
+      console.log('no data');
     }
   };
   return (
@@ -86,20 +86,20 @@ export default function WorkerProfile(props) {
           return (
             <>
               <Row>
-                <Col xs={12} sm={12} md={4} lg={4} className="pl-0">
+                <Col xs={12} sm={12} md={4} lg={4} className='pl-0'>
                   <div className={`${Styles.cartblock1} mt-5 ml-0 mb-2 pb-2`}>
                     {data.image ? (
                       <img
                         src={data.image}
-                        className="img-responsive mt-3 mb-3"
-                        alt=""
-                        style={{ borderRadius: "50%" }}
+                        className='img-responsive mt-3 mb-3'
+                        alt=''
+                        style={{ borderRadius: '50%' }}
                       />
                     ) : (
                       <img
-                        src="https://w7.pngwing.com/pngs/613/636/png-transparent-computer-icons-user-profile-male-avatar-avatar-heroes-logo-black.png"
-                        className="img-responsive mt-2"
-                        alt=""
+                        src='https://w7.pngwing.com/pngs/613/636/png-transparent-computer-icons-user-profile-male-avatar-avatar-heroes-logo-black.png'
+                        className='img-responsive mt-2'
+                        alt=''
                       />
                     )}
                     <h3>
@@ -112,18 +112,18 @@ export default function WorkerProfile(props) {
                     <h6>{data.dateOfBirth && data.dateOfBirth.slice(0, 10)}</h6>
                     <h6>
                       <Link href={data.portfolioLink}>
-                        {data.portfolioLink}{" "}
+                        {data.portfolioLink}{' '}
                       </Link>
                     </h6>
                   </div>
 
                   <div
                     style={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "space-around",
+                      width: '100%',
+                      display: 'flex',
+                      justifyContent: 'space-around',
                     }}
-                    className="mb-2"
+                    className='mb-2'
                   >
                     <Button
                       // style={{ border: 0 ,}}
@@ -142,24 +142,24 @@ export default function WorkerProfile(props) {
                     </Button>
                   </div>
                 </Col>
-                <Col xs={12} sm={12} md={8} lg={8} className="text-left mt-5">
+                <Col xs={12} sm={12} md={8} lg={8} className='text-left mt-5'>
                   <Tabs
-                    className="mt-2"
-                    defaultActiveKey="Aboutme"
-                    id="uncontrolled-tab-example"
+                    className='mt-2'
+                    defaultActiveKey='Aboutme'
+                    id='uncontrolled-tab-example'
                     className={`${Styles.tabnav}`}
                   >
                     <Tab
-                      eventKey="Aboutme"
-                      title="About Me"
+                      eventKey='Aboutme'
+                      title='About Me'
                       className={` mt-2 text-left`}
                     >
                       <Row className={`${Styles.aboutme} ${Styles.data}`}>
                         <p
-                          className="m-1 p-1"
+                          className='m-1 p-1'
                           style={{
-                            textAlign: "justify ",
-                            textJustify: "inter-word",
+                            textAlign: 'justify ',
+                            textJustify: 'inter-word',
                           }}
                         >
                           {data.aboutMe}
@@ -167,9 +167,9 @@ export default function WorkerProfile(props) {
                       </Row>
                     </Tab>
                     <Tab
-                      eventKey="education"
-                      title="Education"
-                      className="mt-2"
+                      eventKey='education'
+                      title='Education'
+                      className='mt-2'
                     >
                       <Row
                         className={` ${Styles.aboutme} justify-content-space-around text-left `}
@@ -185,7 +185,7 @@ export default function WorkerProfile(props) {
                                 />
                               ) : (
                                 <img
-                                  src="https://koosrajramanah.com/wp-content/uploads/2016/08/education.png"
+                                  src='https://koosrajramanah.com/wp-content/uploads/2016/08/education.png'
                                   className={`${Styles.images} mt-3  ml-1`}
                                   style={{ borderRadius: 0 }}
                                 />
@@ -196,20 +196,20 @@ export default function WorkerProfile(props) {
                               sm={8}
                               md={8}
                               lg={8}
-                              style={{ height: "auto" }}
+                              style={{ height: 'auto' }}
                             >
                               <div
                                 style={{
-                                  display: "flex",
+                                  display: 'flex',
                                 }}
                               >
-                                <h5 className="mt-2">
+                                <h5 className='mt-2'>
                                   {data.education[0].schoolName}
                                 </h5>
-                                <p className="ml-5  mt-2">
+                                <p className='ml-5  mt-2'>
                                   <i>
                                     {data.education[0].startDate} -
-                                    {data.education[0].endDate}{" "}
+                                    {data.education[0].endDate}{' '}
                                   </i>
                                 </p>
                               </div>
@@ -223,17 +223,17 @@ export default function WorkerProfile(props) {
                               </div>
                               <div
                                 style={{
-                                  display: "flex",
-                                  justifyContent: "center",
+                                  display: 'flex',
+                                  justifyContent: 'center',
                                 }}
                               >
                                 {showEducation && (
                                   <Button
-                                    variant="light"
+                                    variant='light'
                                     // className={`${Styles.btngrad}`}
                                     style={{
-                                      color: " #48546d",
-                                      fontWeight: "bolder",
+                                      color: ' #48546d',
+                                      fontWeight: 'bolder',
                                     }}
                                     onClick={() => handleShow1(data.education)}
                                   >
@@ -247,8 +247,8 @@ export default function WorkerProfile(props) {
                       </Row>
                     </Tab>
                     <Tab
-                      eventKey="workExperience"
-                      title="Works "
+                      eventKey='workExperience'
+                      title='Works '
                       className={` mt-2`}
                     >
                       <Row
@@ -265,7 +265,7 @@ export default function WorkerProfile(props) {
                                 />
                               ) : (
                                 <img
-                                  src="https://koosrajramanah.com/wp-content/uploads/2016/08/education.png"
+                                  src='https://koosrajramanah.com/wp-content/uploads/2016/08/education.png'
                                   className={`${Styles.images} mt-2  ml-1`}
                                   style={{ borderRadius: 0 }}
                                 />
@@ -274,16 +274,16 @@ export default function WorkerProfile(props) {
                             <Col xs={8} sm={8} md={8} lg={8}>
                               <div
                                 style={{
-                                  display: "flex",
+                                  display: 'flex',
                                 }}
                               >
-                                <h5 className="mt-2">
+                                <h5 className='mt-2'>
                                   {data.workExperience[0].workExperience}
                                 </h5>
-                                <p className="ml-5  mt-2">
+                                <p className='ml-5  mt-2'>
                                   <i>
                                     {data.workExperience[0].started} -
-                                    {data.workExperience[0].finished}{" "}
+                                    {data.workExperience[0].finished}{' '}
                                   </i>
                                 </p>
                               </div>
@@ -295,19 +295,19 @@ export default function WorkerProfile(props) {
                               </div>
                               <div
                                 style={{
-                                  display: "flex",
-                                  justifyContent: "center",
+                                  display: 'flex',
+                                  justifyContent: 'center',
                                 }}
                               >
                                 {showWork && (
                                   <Button
-                                    variant="light"
+                                    variant='light'
                                     // className={`${Styles.btngrad}`}
                                     style={{
-                                      color: " #48546d",
-                                      fontWeight: "bolder",
+                                      color: ' #48546d',
+                                      fontWeight: 'bolder',
                                     }}
-                                    className="mt-2"
+                                    className='mt-2'
                                     onClick={() =>
                                       handleShow(data.workExperience)
                                     }
@@ -321,15 +321,15 @@ export default function WorkerProfile(props) {
                         )}
                       </Row>
                     </Tab>
-                    <Tab eventKey="skills" title="Skills">
+                    <Tab eventKey='skills' title='Skills'>
                       {data.skills &&
                         data.skills.map((info) => {
                           return (
                             <>
                               <Button
-                                variant="light"
+                                variant='light'
                                 className={`ml-1 mt-1 ${Styles.aboutme}`}
-                                style={{ height: "auto" }}
+                                style={{ height: 'auto' }}
                               >
                                 {info.skillName ? (
                                   <p>{info.skillName}</p>

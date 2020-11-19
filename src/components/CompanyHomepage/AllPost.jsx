@@ -14,7 +14,7 @@ function AllPost(props) {
   const company = async () => {
     const data = await fetch(url + "/login/profile", {
       method: "GET",
-      credentials: "include",
+      
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",

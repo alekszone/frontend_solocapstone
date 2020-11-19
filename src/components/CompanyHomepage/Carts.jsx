@@ -1,18 +1,18 @@
-import React from "react";
-import { Row, Col, Card, Button } from "react-bootstrap";
-import Styles from "./Styles.module.css";
-import { BsFillBriefcaseFill } from "react-icons/bs";
-import { FaRegFilePdf } from "react-icons/fa";
+import React from 'react';
+import { Row, Col, Card, Button } from 'react-bootstrap';
+import Styles from './Styles.module.css';
+import { BsFillBriefcaseFill } from 'react-icons/bs';
+import { FaRegFilePdf } from 'react-icons/fa';
 
 export default function Carts(props) {
   const url = process.env.REACT_APP_URL;
   const getPDF = async (data) => {
     fetch(url + `/login/${data._id}/pdf`, {
-      method: "GET",
-      credentials: "include",
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     })
       .then(function (response) {
@@ -21,9 +21,9 @@ export default function Carts(props) {
       .then(function (user) {
         var blob = new Blob([user]);
         var url = window.URL.createObjectURL(blob);
-        var anchor = document.createElement("a");
-        anchor.setAttribute("href", url);
-        anchor.setAttribute("download", `${data.name}CV.pdf`);
+        var anchor = document.createElement('a');
+        anchor.setAttribute('href', url);
+        anchor.setAttribute('download', `${data.name}CV.pdf`);
         anchor.click();
         window.URL.revokeObjectURL(url);
       });
@@ -46,8 +46,8 @@ export default function Carts(props) {
                   {data.image ? (
                     <img
                       src={data.image}
-                      className="img-responsive "
-                      alt=""
+                      className='img-responsive '
+                      alt=''
                       onClick={() => {
                         props.setProfile(data._id);
 
@@ -56,9 +56,9 @@ export default function Carts(props) {
                     />
                   ) : (
                     <img
-                      src="https://w7.pngwing.com/pngs/613/636/png-transparent-computer-icons-user-profile-male-avatar-avatar-heroes-logo-black.png"
-                      className="img-responsive "
-                      alt=""
+                      src='https://w7.pngwing.com/pngs/613/636/png-transparent-computer-icons-user-profile-male-avatar-avatar-heroes-logo-black.png'
+                      className='img-responsive '
+                      alt=''
                       onClick={() => {
                         props.setProfile(data._id);
 
@@ -95,14 +95,14 @@ export default function Carts(props) {
             sm={12}
             md={12}
             lg={12}
-            style={{ alignItems: "center", textAlign: "center" }}
+            style={{ alignItems: 'center', textAlign: 'center' }}
           >
             <div>
-              <h6 className="mt-2">Select Post To show Aplicants </h6>
+              <h6 className='mt-2'>Select Post To show Aplicants </h6>
               <img
-                className="mt-1"
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSQB7MbKExx-gXWGSlkmjXpGnbOgDUm8dTWPw&usqp=CAU"
-                style={{ width: "180px", height: "180px" }}
+                className='mt-1'
+                src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSQB7MbKExx-gXWGSlkmjXpGnbOgDUm8dTWPw&usqp=CAU'
+                style={{ width: '180px', height: '180px' }}
               />
             </div>
           </Col>

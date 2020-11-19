@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
-import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
-import Styles from "./Styles.module.css";
-import Pagination from "./Pagination";
-import { RiDeleteBin5Fill } from "react-icons/ri";
-import { connect } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { Row, Col } from 'react-bootstrap';
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import Styles from './Styles.module.css';
+import Pagination from './Pagination';
+import { RiDeleteBin5Fill } from 'react-icons/ri';
+import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => state;
 
 const mapDispatchToProps = (dispatch) => ({
   log: (data) =>
     dispatch({
-      type: "ADD_APLICATION",
+      type: 'ADD_APLICATION',
       payload: data,
     }),
 });
@@ -33,26 +33,26 @@ function AllAplication(props) {
   }, []);
   const fetchData = async () => {
     const aplication = await fetch(url + `/aplication/getAllAplication`, {
-      method: "GET",
-      credentials: "include",
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     const getAllAplication = await aplication.json();
     setAplication(getAllAplication);
     props.log(getAllAplication);
-    console.log(getAllAplication, "show post");
+    console.log(getAllAplication, 'show post');
   };
 
   const deleteAplication = async (id) => {
     const aplication = await fetch(url + `/aplication/getAplication/` + id, {
-      method: "DELETE",
-      credentials: "include",
+      method: 'DELETE',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     if (aplication.ok) {
@@ -61,48 +61,48 @@ function AllAplication(props) {
   };
 
   return (
-    <Row className={`${Styles.table} `} style={{ marginTop: "10px" }}>
+    <Row className={`${Styles.table} `} style={{ marginTop: '10px' }}>
       <Col xs={12} sm={12} md={12} lg={12}>
         <div
           style={{
-            width: "90%",
-            marginLeft: "auto",
-            marginRight: "auto",
-            backgroundColor: "white",
-            boxShadow: "2px 2px 2px 2px rgba(212, 212, 212, 0.938)",
+            width: '90%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            backgroundColor: 'white',
+            boxShadow: '2px 2px 2px 2px rgba(212, 212, 212, 0.938)',
           }}
         >
           <h3
             className={`${Styles.title}`}
             style={{
-              color: "rgb(63, 69, 95)",
+              color: 'rgb(63, 69, 95)',
             }}
           >
             This are All Your Job Aplication
           </h3>
           <Table
             style={{
-              width: "90%",
-              color: "rgb(63, 69, 95)",
-              marginLeft: "auto",
-              marginRight: "auto",
-              boxShadow: "2px 2px 2px rgba(212, 212, 212, 0.938)",
+              width: '90%',
+              color: 'rgb(63, 69, 95)',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              boxShadow: '2px 2px 2px rgba(212, 212, 212, 0.938)',
             }}
           >
             <Thead>
               <Tr>
                 <Th
                   style={{
-                    textAlign: "center",
-                    borderRight: "solid grey 2px",
+                    textAlign: 'center',
+                    borderRight: 'solid grey 2px',
                   }}
                 >
                   Nr
                 </Th>
                 <Th
                   style={{
-                    textAlign: "center",
-                    borderRight: "solid grey 2px",
+                    textAlign: 'center',
+                    borderRight: 'solid grey 2px',
                   }}
                 >
                   Company
@@ -110,19 +110,19 @@ function AllAplication(props) {
 
                 <Th
                   style={{
-                    textAlign: "center",
-                    borderRight: "solid grey 2px",
+                    textAlign: 'center',
+                    borderRight: 'solid grey 2px',
                   }}
                 >
                   Position
                 </Th>
                 <Th
-                  style={{ textAlign: "center", borderRight: "solid grey 2px" }}
+                  style={{ textAlign: 'center', borderRight: 'solid grey 2px' }}
                 >
-                  {" "}
+                  {' '}
                   Answer
                 </Th>
-                <Th style={{ textAlign: "center" }}> Remove </Th>
+                <Th style={{ textAlign: 'center' }}> Remove </Th>
               </Tr>
             </Thead>
 
@@ -130,25 +130,25 @@ function AllAplication(props) {
               currentAplicant.map((x, i) => {
                 return (
                   <Tbody className={`${Styles.rows}`}>
-                    {" "}
+                    {' '}
                     <Tr
                       style={{
-                        textAlign: "center",
-                        borderTop: "solid grey 2px",
+                        textAlign: 'center',
+                        borderTop: 'solid grey 2px',
                       }}
                     >
                       <Td
                         style={{
-                          borderRight: "solid grey 2px",
-                          borderTop: "solid grey 2px",
+                          borderRight: 'solid grey 2px',
+                          borderTop: 'solid grey 2px',
                         }}
                       >
                         {i + 1}
                       </Td>
                       <Td
                         style={{
-                          borderRight: "solid grey 2px",
-                          borderTop: "solid grey 2px",
+                          borderRight: 'solid grey 2px',
+                          borderTop: 'solid grey 2px',
                         }}
                       >
                         {x.postId[0] && x.postId[0].companyName}
@@ -156,36 +156,36 @@ function AllAplication(props) {
 
                       <Td
                         style={{
-                          borderRight: "solid grey 2px",
-                          borderTop: "solid grey 2px",
+                          borderRight: 'solid grey 2px',
+                          borderTop: 'solid grey 2px',
                         }}
                       >
                         {x.postId[0] && x.postId[0].jobPosition}
                       </Td>
 
-                      {x.answer && x.answer === "no answer" ? (
+                      {x.answer && x.answer === 'no answer' ? (
                         <Td
                           style={{
-                            borderTop: "solid grey 2px",
-                            borderRight: "solid grey 2px",
+                            borderTop: 'solid grey 2px',
+                            borderRight: 'solid grey 2px',
                           }}
                         >
                           JOB Is Still In Review
                         </Td>
-                      ) : x.answer === "accepted" ? (
+                      ) : x.answer === 'accepted' ? (
                         <Td
                           style={{
-                            borderTop: "solid grey 2px",
-                            borderRight: "solid grey 2px",
+                            borderTop: 'solid grey 2px',
+                            borderRight: 'solid grey 2px',
                           }}
                         >
-                          Accepted. Check Email{" "}
+                          Accepted. Check Email{' '}
                         </Td>
                       ) : (
                         <Td
                           style={{
-                            borderTop: "solid grey 2px",
-                            borderRight: "solid grey 2px",
+                            borderTop: 'solid grey 2px',
+                            borderRight: 'solid grey 2px',
                           }}
                         >
                           Denied.Check Email
@@ -193,21 +193,21 @@ function AllAplication(props) {
                       )}
                       <Td
                         style={{
-                          borderTop: "solid grey 2px",
+                          borderTop: 'solid grey 2px',
                         }}
                       >
                         <RiDeleteBin5Fill
                           onClick={() => deleteAplication(x._id)}
                         />
                       </Td>
-                    </Tr>{" "}
+                    </Tr>{' '}
                   </Tbody>
                 );
               })}
           </Table>
 
           <Pagination
-            className="mt-5"
+            className='mt-5'
             aplicantPerPage={aplicantPerPage}
             totalAplicant={aplication.length}
             paginate={paginate}

@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { Modal, Button, InputGroup, Alert } from "react-bootstrap";
-import Styles from "./Styles.module.css";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+import React, { useState } from 'react';
+import { Modal, Button, InputGroup, Alert } from 'react-bootstrap';
+import Styles from './Styles.module.css';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 export default function Accept(props) {
   const [show, setShow] = useState(false);
-  const [subject, setSubject] = useState("");
-  const [text, setText] = useState("");
+  const [subject, setSubject] = useState('');
+  const [text, setText] = useState('');
   const [alert, setAlert] = useState(false);
   const [alert2, setAlert2] = useState(false);
   const url = process.env.REACT_APP_URL;
@@ -20,24 +20,24 @@ export default function Accept(props) {
     setShow(!show);
   };
 
-  console.log(props.data._id, "this is data");
+  console.log(props.data._id, 'this is data');
   const sendEmail = async () => {
     const result = await fetch(
-      url + "/aplicationn/sendEmail/" + props.data._id,
+      url + '/aplicationn/sendEmail/' + props.data._id,
       {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify({ subject, text }),
-        creadentials: "include",
+        creadentials: 'include',
         headers: {
-          "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-          "Content-Type": "application/json",
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
         },
       }
     );
     if (result.ok) {
-      console.log("mesage is sent");
-      setText("");
-      setSubject("");
+      console.log('mesage is sent');
+      setText('');
+      setSubject('');
     } else {
       setAlert(true);
     }
@@ -45,23 +45,23 @@ export default function Accept(props) {
 
   const acceptAplication = async () => {
     const result = await fetch(
-      url + "/aplicationn/" + props.id + "/notAccept/" + props.data._id,
+      url + '/aplicationn/' + props.id + '/notAccept/' + props.data._id,
       {
-        method: "GET",
-        credentials: "include",
+        method: 'GET',
+
         headers: {
-          "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
         },
       }
     );
     if (result) {
-      console.log("aplikimi u pranua");
+      console.log('aplikimi u pranua');
       props.posts();
       props.handleClose();
       props.emptyPorfile();
-      setText("");
-      setSubject("");
+      setText('');
+      setSubject('');
       props.allPosts();
     } else {
       setAlert2(true);
@@ -72,17 +72,17 @@ export default function Accept(props) {
       <Modal
         show={props.show}
         onHide={props.handleClose}
-        backdrop="static"
+        backdrop='static'
         keyboard={false}
-        style={{ top: "40px" }}
+        style={{ top: '40px' }}
       >
         <Modal.Header closeButton>
           <Modal.Title>Remove Worker</Modal.Title>
         </Modal.Header>
-        <Modal.Body className="text-center">
+        <Modal.Body className='text-center'>
           <h5>You are removing this aplicant .Do you want to send an Email?</h5>
           <Button
-            variant="light"
+            variant='light'
             // style={{ border: 0 }}
             className={`  ${Styles.btngrad}`}
             onClick={showFields}
@@ -91,34 +91,34 @@ export default function Accept(props) {
           </Button>
           {show && (
             <>
-              <h6 className="mt-2">Recipient Email</h6>
+              <h6 className='mt-2'>Recipient Email</h6>
 
               <form>
                 <TextField
-                  id="filled-multiline-flexible"
-                  label="Email"
-                  className="mb-2"
-                  type="text"
-                  variant="outlined"
+                  id='filled-multiline-flexible'
+                  label='Email'
+                  className='mb-2'
+                  type='text'
+                  variant='outlined'
                   style={{
-                    width: "100%",
+                    width: '100%',
                   }}
-                  type="text"
+                  type='text'
                   value={props.data.email}
                 />
               </form>
               <h6>Subject</h6>
               <form>
                 <TextField
-                  id="filled-multiline-flexible"
-                  label="Subject"
-                  className="mb-2"
-                  type="text"
-                  variant="outlined"
+                  id='filled-multiline-flexible'
+                  label='Subject'
+                  className='mb-2'
+                  type='text'
+                  variant='outlined'
                   style={{
-                    width: "100%",
+                    width: '100%',
                   }}
-                  type="text"
+                  type='text'
                   value={subject}
                   onChange={(e) => setSubject(e.currentTarget.value)}
                 />
@@ -126,15 +126,15 @@ export default function Accept(props) {
 
               <form>
                 <TextField
-                  id="outlined-multiline-static"
-                  label="Message"
+                  id='outlined-multiline-static'
+                  label='Message'
                   multiline
-                  className="mb-2"
+                  className='mb-2'
                   rows={4}
                   style={{
-                    width: "100%",
+                    width: '100%',
                   }}
-                  variant="outlined"
+                  variant='outlined'
                   value={text}
                   onChange={(e) => setText(e.currentTarget.value)}
                 />
@@ -151,17 +151,17 @@ export default function Accept(props) {
               </Button>
 
               {alert && (
-                <Alert variant="danger">Please Check Your Inputs Better</Alert>
+                <Alert variant='danger'>Please Check Your Inputs Better</Alert>
               )}
             </>
           )}
           {alert2 && (
-            <Alert variant="danger">This user cannot be accepted</Alert>
+            <Alert variant='danger'>This user cannot be accepted</Alert>
           )}
         </Modal.Body>
         <Modal.Footer>
           <Button
-            variant="secondary"
+            variant='secondary'
             style={{ border: 0 }}
             className={` ${Styles.btngrad}`}
             onClick={() => {

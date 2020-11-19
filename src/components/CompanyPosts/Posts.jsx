@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col, Button } from "react-bootstrap";
-import Style from "./Style.module.css";
-import Pagination from "./Pagination";
-import { RiDeleteBinLine } from "react-icons/ri";
-import { AiOutlineEdit } from "react-icons/ai";
-import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import AddPost from "./AddPost";
-import EditPost from "./EditPost";
+import React, { useState, useEffect } from 'react';
+import { Row, Col, Button } from 'react-bootstrap';
+import Style from './Style.module.css';
+import Pagination from './Pagination';
+import { RiDeleteBinLine } from 'react-icons/ri';
+import { AiOutlineEdit } from 'react-icons/ai';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import AddPost from './AddPost';
+import EditPost from './EditPost';
 
 export default function Posts() {
   const [post, setPost] = useState([]);
@@ -34,12 +34,12 @@ export default function Posts() {
     fetchPost();
   }, []);
   const fetchPost = async () => {
-    const result = await fetch(url + "/post/", {
-      method: "GET",
-      credentials: "include",
+    const result = await fetch(url + '/post/', {
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     if (result.ok) {
@@ -50,12 +50,12 @@ export default function Posts() {
   };
 
   const deletePost = async (id) => {
-    const result = await fetch(url + "/post/deletePost/" + id, {
-      method: "DELETE",
-      credentials: "include",
+    const result = await fetch(url + '/post/deletePost/' + id, {
+      method: 'DELETE',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     if (result.ok) {
@@ -81,32 +81,32 @@ export default function Posts() {
     <>
       <Row className={`${Style.myPosts}`}>
         <Col xs={12} sm={12} md={12} lg={12}>
-          {" "}
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <div className="mt-2">
+          {' '}
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div className='mt-2'>
               <AddPost fetchPost={fetchPost} />
             </div>
             <div
-              className="mt-2"
+              className='mt-2'
               style={{
-                display: "flex",
-                justifyContent: "center",
+                display: 'flex',
+                justifyContent: 'center',
               }}
             >
               <form>
                 <TextField
-                  id="filled-multiline-flexible"
-                  label="Search by Job Position"
-                  type="text"
-                  variant="outlined"
+                  id='filled-multiline-flexible'
+                  label='Search by Job Position'
+                  type='text'
+                  variant='outlined'
                   style={{
-                    width: "100%",
-                    backgroundColor: "white",
+                    width: '100%',
+                    backgroundColor: 'white',
                   }}
-                  type="text"
+                  type='text'
                   onChange={(e) => filterPost(e.currentTarget.value)}
                 />
-              </form>{" "}
+              </form>{' '}
             </div>
           </div>
         </Col>
@@ -118,10 +118,10 @@ export default function Posts() {
                 <div className={`${Style.carts} mt-3`}>
                   <Row
                     style={{
-                      boxShadow: "3px 3px 3px  rgba(212, 212, 212, 0.938)",
+                      boxShadow: '3px 3px 3px  rgba(212, 212, 212, 0.938)',
 
-                      marginLeft: "auto",
-                      marginRight: "auto",
+                      marginLeft: 'auto',
+                      marginRight: 'auto',
                     }}
                   >
                     <Col
@@ -129,33 +129,33 @@ export default function Posts() {
                       sm={4}
                       md={4}
                       lg={4}
-                      style={{ height: "140px" }}
+                      style={{ height: '140px' }}
                     >
                       {data.image ? (
                         <img
                           src={data.image}
                           style={{
-                            width: "100%",
-                            height: "93%",
-                            objectFit: "cover",
-                            borderRadius: "10px",
+                            width: '100%',
+                            height: '93%',
+                            objectFit: 'cover',
+                            borderRadius: '10px',
                           }}
-                          className="mt-1"
+                          className='mt-1'
                         />
                       ) : (
                         <img
-                          className="mt-1"
-                          src="https://ianmartin.com/wp-content/uploads/2017/10/WhatE28099s20the20Best20Day20of20the20Week20to20Post20a20Job20Ad-1030x687.jpg"
+                          className='mt-1'
+                          src='https://ianmartin.com/wp-content/uploads/2017/10/WhatE28099s20the20Best20Day20of20the20Week20to20Post20a20Job20Ad-1030x687.jpg'
                           style={{
-                            width: "100%",
-                            height: "93%",
-                            objectFit: "cover",
-                            borderRadius: "10px",
+                            width: '100%',
+                            height: '93%',
+                            objectFit: 'cover',
+                            borderRadius: '10px',
                           }}
                         />
                       )}
                     </Col>
-                    <Col xs={6} sm={6} md={6} lg={6} className="mt-1">
+                    <Col xs={6} sm={6} md={6} lg={6} className='mt-1'>
                       <h5 className={`${Style.headTitle} mt-2 ml-2`}>
                         {data.companyName}
                       </h5>
@@ -168,31 +168,31 @@ export default function Posts() {
                     <Col xs={2} sm={2} md={2} lg={2}>
                       <div
                         style={{
-                          display: "flex",
-                          flexDirection: "column",
-                          justifyContent: "right",
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'right',
                         }}
                       >
                         <Button
-                          variant="light"
+                          variant='light'
                           style={{
-                            backgroundColor: "transparent",
-                            width: "70%",
+                            backgroundColor: 'transparent',
+                            width: '70%',
                           }}
                           className={`${Style.btngrad} mt-2`}
                           onClick={() => {
                             handleShow1(data._id);
                           }}
                         >
-                          {" "}
+                          {' '}
                           <AiOutlineEdit className={`${Style.icon} `} />
                         </Button>
                         <Button
                           onClick={() => deletePost(data._id)}
-                          variant="light"
+                          variant='light'
                           style={{
-                            backgroundColor: "transparent",
-                            width: "70%",
+                            backgroundColor: 'transparent',
+                            width: '70%',
                           }}
                           className={`${Style.btngrad} mt-2`}
                         >
@@ -205,7 +205,7 @@ export default function Posts() {
                   <div className={`${Style.about} ml-2 mr-2 mt-2 mb-5`}>
                     <div>
                       <h5 className={`${Style.headTitle} ml-2 mt-2`}>
-                        {" "}
+                        {' '}
                         Job Description
                       </h5>
                       {data.jobDescription ? (
@@ -228,7 +228,7 @@ export default function Posts() {
                         <p className={`mt-3 `}>No Requirments Detail </p>
                       )}
                     </div>
-                    <div className="mb-2">
+                    <div className='mb-2'>
                       <h5 className={`${Style.headTitle} ml-2 `}>
                         Job Benefites
                       </h5>
@@ -253,21 +253,21 @@ export default function Posts() {
               sm={12}
               md={12}
               lg={12}
-              style={{ alignItems: "center", textAlign: "center" }}
+              style={{ alignItems: 'center', textAlign: 'center' }}
             >
-              <div className="mt-5">
-                <h6 className="mt-5">You have no Post. Add New Post</h6>
+              <div className='mt-5'>
+                <h6 className='mt-5'>You have no Post. Add New Post</h6>
                 <img
-                  className="mt-0"
-                  src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814051_1280.png"
-                  style={{ width: "250px", height: "250px" }}
+                  className='mt-0'
+                  src='https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814051_1280.png'
+                  style={{ width: '250px', height: '250px' }}
                 />
               </div>
             </Col>
           </>
         )}
 
-        <Col xs={12} sm={12} md={12} lg={12} className="mt-1 ">
+        <Col xs={12} sm={12} md={12} lg={12} className='mt-1 '>
           <Pagination
             aplicantPerPage={aplicantPerPage}
             totalAplicant={post.length}

@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from 'react';
 
-import "./App.css";
-import Navbar from "./components/Header/Headers";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Login from "./pages/LoginWorker";
-import HomePage from "./pages/HomePage";
-import ProfileWorker from "./pages/Profile";
-import Company from "./pages/HomeCompany";
-import ProfileCompany from "./pages/ProfileCompany";
-import CompanyPosts from "./pages/CompanyPosts";
-import AllAplication from "./components/Homepage/AllAplication";
-import "bootstrap/dist/css/bootstrap.min.css";
+import './App.css';
+import Navbar from './components/Header/Headers';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './pages/LoginWorker';
+import HomePage from './pages/HomePage';
+import ProfileWorker from './pages/Profile';
+import Company from './pages/HomeCompany';
+import ProfileCompany from './pages/ProfileCompany';
+import CompanyPosts from './pages/CompanyPosts';
+import AllAplication from './components/Homepage/AllAplication';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [companyNavBar, setcompanyNavBar] = useState(false);
@@ -19,42 +19,42 @@ function App() {
   const [landingPageNavBar, setlandingPageNavBar] = useState(true);
   const url = process.env.REACT_APP_URL;
   const userProfile = async () => {
-    const result = await fetch(url + "/profile/profile", {
-      method: "GET",
-      credentials: "include",
+    const result = await fetch(url + '/profile/profile', {
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     if (result.ok) {
       setuserNavBar(true);
       setlandingPageNavBar(false);
-      console.log("it is coming here");
+      console.log('it is coming here');
     } else {
       setuserNavBar(false);
       setlandingPageNavBar(true);
-      console.log("it is not coming here");
+      console.log('it is not coming here');
     }
   };
 
   const companyProfile = async () => {
-    const result = await fetch(url + "/login/profile", {
-      method: "GET",
-      credentials: "include",
+    const result = await fetch(url + '/login/profile', {
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     if (result.ok) {
       setcompanyNavBar(true);
       setlandingPageNavBar(false);
-      console.log("it is coming here");
+      console.log('it is coming here');
     } else {
       setcompanyNavBar(false);
       setlandingPageNavBar(true);
-      console.log("it is not coming here");
+      console.log('it is not coming here');
     }
   };
 
@@ -73,7 +73,6 @@ function App() {
     companyProfile();
     userProfile();
   }, []);
- 
 
   return (
     <div>
@@ -87,7 +86,7 @@ function App() {
           logOut={logOut}
         />
         <Switch>
-          <Route path="/" exact>
+          <Route path='/' exact>
             <Login
               UserProfile={userProfile}
               CompanyProfile={companyProfile}
@@ -95,12 +94,12 @@ function App() {
               loginCompany={loginCompany}
             />
           </Route>
-          <Route path="/aplication" exact component={AllAplication} />
-          <Route path="/worker" exact component={HomePage} />
-          <Route path="/workerProfile" exact component={ProfileWorker} />
-          <Route path="/company" exact component={Company} />
-          <Route path="/companyProfile" exact component={ProfileCompany} />
-          <Route path="/companyPosts" exact component={CompanyPosts} />
+          <Route path='/aplication' exact component={AllAplication} />
+          <Route path='/worker' exact component={HomePage} />
+          <Route path='/workerProfile' exact component={ProfileWorker} />
+          <Route path='/company' exact component={Company} />
+          <Route path='/companyProfile' exact component={ProfileCompany} />
+          <Route path='/companyPosts' exact component={CompanyPosts} />
         </Switch>
       </Router>
     </div>

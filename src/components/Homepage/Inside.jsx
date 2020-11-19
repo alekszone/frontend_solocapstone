@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import { Row, Col, Tab, Tabs, Button, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import Styles from "./Styles.module.css";
-import { MdWork } from "react-icons/md";
-import { MdAttachMoney } from "react-icons/md";
-import { HiOfficeBuilding } from "react-icons/hi";
-import { CgWebsite } from "react-icons/cg";
-import { AiOutlineMail } from "react-icons/ai";
-import { GrUserWorker } from "react-icons/gr";
+import React, { Component } from 'react';
+import { Row, Col, Tab, Tabs, Button, Modal } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Styles from './Styles.module.css';
+import { MdWork } from 'react-icons/md';
+import { MdAttachMoney } from 'react-icons/md';
+import { HiOfficeBuilding } from 'react-icons/hi';
+import { CgWebsite } from 'react-icons/cg';
+import { AiOutlineMail } from 'react-icons/ai';
+import { GrUserWorker } from 'react-icons/gr';
 
-import { TiLocation } from "react-icons/ti";
-import { connect } from "react-redux";
+import { TiLocation } from 'react-icons/ti';
+import { connect } from 'react-redux';
 const mapStateToProps = (state) => state;
 const url = process.env.REACT_APP_URL;
 class Inside extends Component {
@@ -22,7 +22,7 @@ class Inside extends Component {
     showModal: false,
     projetc: 0,
     filter: [],
-    title: "",
+    title: '',
     aplication: [],
     allJobPost: [],
     showButton: true,
@@ -32,45 +32,45 @@ class Inside extends Component {
   };
 
   componentDidMount = async () => {
-    const response = await fetch(url + "/profile/allCompanies", {
-      method: "GET",
-  
+    const response = await fetch(url + '/profile/allCompanies', {
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     const fetchedUsers = await response.json();
-    console.log(fetchedUsers, "users");
+    console.log(fetchedUsers, 'users');
     this.setState({ comp: fetchedUsers });
     this.setState({ companie: fetchedUsers[0] });
 
     const result = await fetch(url + `/profile/allPostJobs`, {
-      method: "GET",
-      
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
-    console.log(this.state.title, "titttttle");
+    console.log(this.state.title, 'titttttle');
     const fetchedPost = await result.json();
     this.setState({ allPost: fetchedPost });
     this.setState({ allJobPost: fetchedPost });
     this.setState({ filter: fetchedPost[0] });
     console.log(this.state.project);
-console.log(localStorage.getItem("token"),"why si emptuy")
+    console.log(localStorage.getItem('token'), 'why si emptuy');
     this.fetchProfile();
     this.fetchData();
   };
 
   fetchProfile = async () => {
-    const result = await fetch(url + "/profile/profile", {
-      method: "GET",
-    
+    const result = await fetch(url + '/profile/profile', {
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     if (result.ok) {
@@ -86,8 +86,8 @@ console.log(localStorage.getItem("token"),"why si emptuy")
 
     const findCompani = this.state.comp.find((x) => x._id === userId);
     const findPost = this.state.allPost.find((x) => x._id === postId);
-    console.log(findPost, "this is the post");
-    console.log(findCompani, "thisis company");
+    console.log(findPost, 'this is the post');
+    console.log(findCompani, 'thisis company');
     this.setState({ filter: findPost });
     this.setState({ companie: findCompani });
     this.checkAply(e);
@@ -125,11 +125,11 @@ console.log(localStorage.getItem("token"),"why si emptuy")
   };
   fetchData = async () => {
     const aplication = await fetch(url + `/aplication/getAllAplication`, {
-      method: "GET",
-    
+      method: 'GET',
+
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-        "Content-Type": "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
       },
     });
     const getAllAplication = await aplication.json();
@@ -144,33 +144,33 @@ console.log(localStorage.getItem("token"),"why si emptuy")
       console.log(
         this.state.aplication &&
           this.state.aplication.find((x) => x.postId[0]._id === e._id),
-        "what has inside   "
+        'what has inside   '
       );
-      console.log(e._id, "what has inside   ");
+      console.log(e._id, 'what has inside   ');
       this.setState({ hideButton: true });
       this.setState({ showButton: false });
-      console.log(" u bo , u kry");
+      console.log(' u bo , u kry');
     } else {
       this.setState({ hideButton: false });
       this.setState({ showButton: true });
-      console.log(" nuk bohe ,nuk kry");
+      console.log(' nuk bohe ,nuk kry');
     }
   };
   aplyForJob = async () => {
     const aply = await fetch(
-      url + "/aplication/aply/" + this.state.filter._id,
+      url + '/aplication/aply/' + this.state.filter._id,
       {
-        method: "POST",
-        credentials: "include",
+        method: 'POST',
+
         headers: {
-          "Authorization": `Bearer ${localStorage.getItem("token")}` ,
-          "Content-Type": "application/json",
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
         },
       }
     );
     if (aply.ok) {
-      alert("Your Aplication  Was Ok");
-      console.log("u kry me sukses");
+      alert('Your Aplication  Was Ok');
+      console.log('u kry me sukses');
       this.fetchData();
     } else {
     }
@@ -188,22 +188,22 @@ console.log(localStorage.getItem("token"),"why si emptuy")
             className={`${Styles.company} mt-3 `}
           >
             <Row className={`  ${Styles.row1}`}>
-              <Col xs={12} sm={12} md={12} lg={12} className="mt-2">
+              <Col xs={12} sm={12} md={12} lg={12} className='mt-2'>
                 <div
                   style={{
-                    backgroundColor: "white",
-                    zIndex: "10",
-                    position: "-webkit-sticky",
-                    position: "sticky",
-                    top: "0",
-                    height: "150px",
+                    backgroundColor: 'white',
+                    zIndex: '10',
+                    position: '-webkit-sticky',
+                    position: 'sticky',
+                    top: '0',
+                    height: '150px',
                   }}
                 >
                   <div
                     className={`${Styles.cartblock1} `}
                     style={{
-                      display: "flex",
-                      justifyContent: "space-around",
+                      display: 'flex',
+                      justifyContent: 'space-around',
                     }}
                   >
                     {this.state.myProfile && this.state.myProfile.image ? (
@@ -211,26 +211,26 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                         src={this.state.myProfile.image}
                         className={` mt-1 mb-2`}
                         style={{
-                          borderRadius: "none !important",
+                          borderRadius: 'none !important',
                         }}
                       />
                     ) : (
                       <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9-Tom5eAUi7AaarN_g-WIkVxvRNhdHa8BrQ&usqp=CAU"
+                        src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9-Tom5eAUi7AaarN_g-WIkVxvRNhdHa8BrQ&usqp=CAU'
                         className={` mt-1 mb-2`}
                         style={{
-                          borderRadius: "none !important",
+                          borderRadius: 'none !important',
                         }}
                       />
                     )}
                     <div
-                      className="mt-3"
+                      className='mt-3'
                       style={{
-                        height: "auto",
+                        height: 'auto',
                       }}
                     >
                       <h5 className={`${Styles.jobPosition}`}>
-                        {this.state.myProfile && this.state.myProfile.name}{" "}
+                        {this.state.myProfile && this.state.myProfile.name}{' '}
                         {this.state.myProfile && this.state.myProfile.surname}
                       </h5>
                       <h6 className={`${Styles.salary}`}>
@@ -243,9 +243,9 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                   </div>
 
                   <input
-                    type="text"
+                    type='text'
                     className={`${Styles.text}`}
-                    placeholder="Search by job position"
+                    placeholder='Search by job position'
                     onChange={(e) => this.filterPost(e.currentTarget.value)}
                   />
                 </div>
@@ -263,18 +263,18 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                               <img
                                 className={`${Styles.img} ml-1 mt-1 mb-1`}
                                 src={data.image}
-                                alt="Sample"
+                                alt='Sample'
                               />
                             ) : (
                               <img
-                                className="ml-1"
-                                src="https://www.flaticon.com/svg/static/icons/svg/52/52782.svg"
-                                alt="Sample"
+                                className='ml-1'
+                                src='https://www.flaticon.com/svg/static/icons/svg/52/52782.svg'
+                                alt='Sample'
                                 className={`${Styles.img} ml-1 mt-1 mb-1`}
                               />
                             )}
                           </Col>
-                          <Col xs={7} sm={7} className="mt-1">
+                          <Col xs={7} sm={7} className='mt-1'>
                             <div>
                               <h5 className={`${Styles.headTitle}`}>
                                 {data.companyName}
@@ -282,7 +282,7 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                             </div>
 
                             <div>
-                              {" "}
+                              {' '}
                               <h5 className={`${Styles.jobPosition}`}>
                                 {data.jobPosition}
                               </h5>
@@ -319,10 +319,10 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                   {this.state.filter && (
                     <div key={this.state.filter._id}>
                       <div
-                        style={{ display: "flex" }}
+                        style={{ display: 'flex' }}
                         className={`${Styles.infoCards}`}
                       >
-                        <div className="text-left mt-2">
+                        <div className='text-left mt-2'>
                           <div>
                             <h5 className={`${Styles.jobPosition}`}>
                               {this.state.filter.jobPosition}
@@ -343,15 +343,15 @@ console.log(localStorage.getItem("token"),"why si emptuy")
 
                         <div
                           style={{
-                            marginLeft: "auto",
-                            marginTop: "35px",
-                            marginRight: "15px",
+                            marginLeft: 'auto',
+                            marginTop: '35px',
+                            marginRight: '15px',
                           }}
                         >
                           {this.state.showButton && (
                             <Button
-                              type="button"
-                              variant="light"
+                              type='button'
+                              variant='light'
                               onClick={() => {
                                 this.showModal();
                               }}
@@ -362,8 +362,8 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                           )}
                           {this.state.hideButton && (
                             <Button
-                              type="button"
-                              variant="light"
+                              type='button'
+                              variant='light'
                               className={`${Styles.btngrad}`}
                             >
                               You have applyed
@@ -374,21 +374,21 @@ console.log(localStorage.getItem("token"),"why si emptuy")
 
                       <div className={`${Styles.desc}`}>
                         <Tabs
-                          defaultActiveKey="company"
-                          id="uncontrolled-tab-example"
-                          style={{ display: "flex", justifyContent: "center" }}
+                          defaultActiveKey='company'
+                          id='uncontrolled-tab-example'
+                          style={{ display: 'flex', justifyContent: 'center' }}
                         >
                           <Tab
-                            eventKey="company"
-                            title="Company"
-                            className="m-0 p-0"
+                            eventKey='company'
+                            title='Company'
+                            className='m-0 p-0'
                           >
                             {this.state.companie && (
                               <>
                                 <Row
                                   style={{
-                                    display: "flex",
-                                    justifyContent: "center",
+                                    display: 'flex',
+                                    justifyContent: 'center',
                                     margin: 0,
                                     padding: 0,
                                   }}
@@ -401,7 +401,7 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                                     lg={5}
                                     className={` e-card e-card-horizontal mt-4`}
                                     style={{
-                                      height: "auto",
+                                      height: 'auto',
                                     }}
                                   >
                                     <Row>
@@ -416,12 +416,12 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                                           <img
                                             className={`${Styles.img}  mt-1 mb-1`}
                                             src={this.state.companie.image}
-                                            alt="Sample"
+                                            alt='Sample'
                                           />
                                         ) : (
                                           <img
-                                            src="https://www.flaticon.com/svg/static/icons/svg/52/52782.svg"
-                                            alt="Sample"
+                                            src='https://www.flaticon.com/svg/static/icons/svg/52/52782.svg'
+                                            alt='Sample'
                                             className={`${Styles.img}  mt-1 mb-1`}
                                           />
                                         )}
@@ -430,7 +430,7 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                                         <div
                                           style={{
                                             // width: "300px",
-                                            textAlign: "left",
+                                            textAlign: 'left',
                                           }}
                                         >
                                           <div>
@@ -447,9 +447,9 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                                                 href={
                                                   this.state.companie.website
                                                 }
-                                                target="_blank"
+                                                target='_blank'
                                               >
-                                                <h6 className="ml-3">
+                                                <h6 className='ml-3'>
                                                   {this.state.companie.website}
                                                 </h6>
                                               </a>
@@ -489,7 +489,7 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                                     lg={7}
                                     className={`${Styles.about} mt-4`}
                                   >
-                                    {" "}
+                                    {' '}
                                     <p className={`${Styles.paragraphs}`}>
                                       {this.state.companie.aboutMe}
                                     </p>
@@ -499,8 +499,8 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                             )}
                           </Tab>
                           <Tab
-                            eventKey="jobDescription"
-                            title="Job Description"
+                            eventKey='jobDescription'
+                            title='Job Description'
                           >
                             <div className={`${Styles.about} mt-4`}>
                               {this.state.filter.jobDescription ? (
@@ -514,7 +514,7 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                               )}
                             </div>
                           </Tab>
-                          <Tab eventKey="requirments" title="Job Requirments">
+                          <Tab eventKey='requirments' title='Job Requirments'>
                             <div className={`${Styles.about} mt-4`}>
                               {this.state.filter.requirments ? (
                                 <p className={`${Styles.paragraphs}`}>
@@ -527,9 +527,9 @@ console.log(localStorage.getItem("token"),"why si emptuy")
                               )}
                             </div>
                           </Tab>
-                          <Tab eventKey="benefites" title="Job Benefites">
+                          <Tab eventKey='benefites' title='Job Benefites'>
                             <div className={`${Styles.about} mt-4`}>
-                              {" "}
+                              {' '}
                               {this.state.filter.benefites ? (
                                 <p className={`${Styles.paragraphs}`}>
                                   {this.state.filter.benefites}
@@ -563,18 +563,18 @@ console.log(localStorage.getItem("token"),"why si emptuy")
           </Modal.Body>
           <Modal.Body>
             To Have More Chances To Win The Job Please Check Your Profile If You
-            Need To Add Something{" "}
+            Need To Add Something{' '}
           </Modal.Body>
           <Modal.Footer>
             <Button
-              variant="light"
+              variant='light'
               className={`${Styles.btngrad}`}
               onClick={this.closeModal}
             >
               Close
             </Button>
             <Button
-              variant="light"
+              variant='light'
               className={`${Styles.btngrad}`}
               onClick={() => {
                 this.aplyForJob();
