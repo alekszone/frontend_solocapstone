@@ -37,7 +37,7 @@ class Inside extends Component {
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
-        // "Authorization": "Bearer " + localStorage.getItem("token"),
+        // "Authorization":  localStorage.getItem("token"),
       },
     });
     const fetchedUsers = await response.json();
@@ -50,7 +50,7 @@ class Inside extends Component {
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
-        // "Authorization": "Bearer " + localStorage.getItem("token"),
+        // "Authorization":  localStorage.getItem("token"),
       },
     });
     console.log(this.state.title, "titttttle");

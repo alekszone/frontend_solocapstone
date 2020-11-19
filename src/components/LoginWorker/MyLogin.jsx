@@ -37,15 +37,20 @@ function MyLogin(props) {
     const moreData = await fetch(url + "/profile/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
-      credential: "include",
+      credentials: "include",
       headers: new Headers({
         "Content-Type": "application/json",
       }),
     });
-    if (moreData.ok) {
-      const token = Cookies.get("token");
-      console.log(token,"what has token")
-      localStorage.setItem(token, "token");
+   
+   
+   
+    if (moreData) {
+     const data = await moreData.json()
+      
+     console.log(data)
+     console.log(data,"what has inside")
+     localStorage.setItem(data, "token")
       props.UserProfile();
       props.logInWorker();
       props.history.push("/worker");
@@ -59,14 +64,18 @@ function MyLogin(props) {
     const result = await fetch(url + "/login/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
-      credential: "include",
+      credentials: "include",
+
       headers: new Headers({
         "Content-Type": "application/json",
       }),
     });
-    if (result.ok) {
-      const token = Cookies.get("token");
-      localStorage.setItem(token);
+    if (result) {
+     const data = await result.json()
+
+     console.log(data)
+      console.log(data,"what has inside")
+      localStorage.setItem(data, "token")
       setAlert(false);
       props.CompanyProfile();
       props.loginCompany();
