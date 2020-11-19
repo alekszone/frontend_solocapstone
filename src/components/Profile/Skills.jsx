@@ -28,6 +28,7 @@ export default function Skills() {
       method: "GET",
       credentilas: "include",
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
@@ -43,6 +44,7 @@ export default function Skills() {
       credentials: "include",
       body: JSON.stringify({ skillName: postSkill }),
       headers: new Headers({
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       }),
     });
@@ -59,6 +61,7 @@ export default function Skills() {
       method: "DELETE",
       credentials: "include",
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });

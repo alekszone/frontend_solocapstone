@@ -23,6 +23,7 @@ function App() {
       method: "GET",
       credentials: "include",
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
@@ -42,6 +43,7 @@ function App() {
       method: "GET",
       credentials: "include",
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
@@ -68,11 +70,10 @@ function App() {
   };
 
   useEffect(() => {
-    companyProfile();
-  }, []);
-  useEffect(() => {
+    // companyProfile();
     userProfile();
   }, []);
+ 
 
   return (
     <div>

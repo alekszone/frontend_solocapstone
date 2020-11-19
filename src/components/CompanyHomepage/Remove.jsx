@@ -29,6 +29,7 @@ export default function Accept(props) {
         body: JSON.stringify({ subject, text }),
         creadentials: "include",
         headers: {
+          "Authorization": `Bearer ${localStorage.getItem("token")}` ,
           "Content-Type": "application/json",
         },
       }
@@ -49,7 +50,8 @@ export default function Accept(props) {
         method: "GET",
         credentials: "include",
         headers: {
-          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("token")}` ,
+        "Content-Type": "application/json",
         },
       }
     );

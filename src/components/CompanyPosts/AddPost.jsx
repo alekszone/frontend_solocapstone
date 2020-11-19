@@ -48,6 +48,7 @@ export default function AddPost(props) {
       credentials: "include",
       body: JSON.stringify(newPost),
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
@@ -63,6 +64,8 @@ export default function AddPost(props) {
         body: image,
         credentials: "include",
         headers: {
+          "Authorization": `Bearer ${localStorage.getItem("token")}` ,
+         
           "Access-Control-Allow-Origin": "*",
         },
       });

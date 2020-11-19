@@ -73,6 +73,7 @@ export default class Education extends Component {
       method: "GET",
       credentials: "include",
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
@@ -87,6 +88,7 @@ export default class Education extends Component {
       credentials: "include",
       body: JSON.stringify(this.state.postEducation),
       headers: new Headers({
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       }),
     });
@@ -101,6 +103,8 @@ export default class Education extends Component {
         credentials: "include",
         body: image,
         headers: {
+          "Authorization": `Bearer ${localStorage.getItem("token")}` ,
+       
           "Access-Control-Allow-Origin": "*",
         },
       });
@@ -138,7 +142,8 @@ export default class Education extends Component {
         credentials: "include",
         body: JSON.stringify({ ...this.state.postEducation }),
         headers: {
-          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("token")}` ,
+        "Content-Type": "application/json",
         },
       }
     );
@@ -155,6 +160,8 @@ export default class Education extends Component {
           credentials: "include",
           body: image,
           headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}` ,
+           
             "Access-Control-Allow-Origin": "*",
           },
         }
@@ -186,6 +193,7 @@ export default class Education extends Component {
       method: "DELETE",
       credentials: "include",
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });

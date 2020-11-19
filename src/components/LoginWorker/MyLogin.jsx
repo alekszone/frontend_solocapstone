@@ -47,10 +47,8 @@ function MyLogin(props) {
    
     if (moreData) {
      const data = await moreData.json()
-      
-     console.log(data)
-     console.log(data,"what has inside")
-     localStorage.setItem(data, "token")
+    
+     localStorage.setItem( "token",data.token)
       props.UserProfile();
       props.logInWorker();
       props.history.push("/worker");
@@ -64,18 +62,18 @@ function MyLogin(props) {
     const result = await fetch(url + "/login/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
-      credentials: "include",
+    
 
       headers: new Headers({
         "Content-Type": "application/json",
       }),
     });
     if (result) {
+
      const data = await result.json()
 
-     console.log(data)
-      console.log(data,"what has inside")
-      localStorage.setItem(data, "token")
+    
+      localStorage.setItem( "token",data.token)
       setAlert(false);
       props.CompanyProfile();
       props.loginCompany();

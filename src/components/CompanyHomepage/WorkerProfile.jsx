@@ -57,6 +57,7 @@ export default function WorkerProfile(props) {
       method: "GET",
       credentials: "include",
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });

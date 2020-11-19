@@ -32,6 +32,7 @@ export default function Profile() {
       method: "GET",
       credentials: "include",
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
@@ -52,6 +53,7 @@ export default function Profile() {
       credentials: "include",
       body: JSON.stringify({ companyName, location, personel, website, email }),
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
@@ -85,6 +87,8 @@ export default function Profile() {
       body: image,
       credentials: "include",
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
+       
         "Access-Control-Allow-Origin": "*",
       },
     });

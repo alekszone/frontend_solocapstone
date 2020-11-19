@@ -39,6 +39,7 @@ export default function About(props) {
       method: "GET",
       credentials: "include",
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
@@ -70,6 +71,7 @@ export default function About(props) {
       credentials: "include",
       body: JSON.stringify({ aboutMe: getAbout }),
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });

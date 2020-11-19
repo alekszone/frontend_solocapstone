@@ -14,10 +14,13 @@ function Headers(props) {
       credentials: "include",
       body: JSON.stringify(),
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
+        
       },
     });
     if (result.ok) {
+      localStorage.removeItem("token")
       props.UserProfile();
       props.history.push("/");
       props.logOut();
@@ -33,10 +36,12 @@ function Headers(props) {
       body: JSON.stringify(),
 
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
     if (result.ok) {
+   localStorage.removeItem("token")
       props.CompanyProfile();
       props.history.push("/");
       props.logOut();

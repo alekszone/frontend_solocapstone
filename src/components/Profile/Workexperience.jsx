@@ -6,12 +6,7 @@ import { RiImageAddFill } from "react-icons/ri";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { AiOutlineEdit } from "react-icons/ai";
 import Grid from "@material-ui/core/Grid";
-// import DateFnsUtils from "@date-io/date-fns";
-// import {
-//   MuiPickersUtilsProvider,
-//   KeyboardTimePicker,
-//   KeyboardDatePicker,
-// } from "@material-ui/pickers";
+
 
 import TextField from "@material-ui/core/TextField";
 
@@ -74,6 +69,7 @@ export default class Workexperience extends Component {
       method: "GET",
       credentials: "include",
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
@@ -88,6 +84,7 @@ export default class Workexperience extends Component {
       credentials: "include",
       body: JSON.stringify({ ...this.state.postExperience }),
       headers: new Headers({
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       }),
     });
@@ -104,6 +101,8 @@ export default class Workexperience extends Component {
           credentials: "include",
           body: image,
           headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}` ,
+            
             "Access-Control-Allow-Origin": "*",
           },
         }
@@ -148,7 +147,8 @@ export default class Workexperience extends Component {
         credentials: "include",
         body: JSON.stringify({ ...this.state.postExperience }),
         headers: {
-          "Content-Type": "application/json",
+          "Authorization": `Bearer ${localStorage.getItem("token")}` ,
+        "Content-Type": "application/json",
         },
       }
     );
@@ -164,6 +164,8 @@ export default class Workexperience extends Component {
           credentials: "include",
           body: image,
           headers: {
+            "Authorization": `Bearer ${localStorage.getItem("token")}` ,
+           
             "Access-Control-Allow-Origin": "*",
           },
         }
@@ -192,7 +194,8 @@ export default class Workexperience extends Component {
     const getExperience = await fetch(url + `/workExperience/delete/` + id, {
       method: "DELETE",
       credentials: "include",
-      headers: { "Content-Type": "application/json" },
+      headers: {  "Authorization": `Bearer ${localStorage.getItem("token")}` ,
+      "Content-Type": "application/json", },
     });
 
     if (getExperience.ok) {

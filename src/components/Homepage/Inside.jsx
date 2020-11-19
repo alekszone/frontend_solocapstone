@@ -34,10 +34,10 @@ class Inside extends Component {
   componentDidMount = async () => {
     const response = await fetch(url + "/profile/allCompanies", {
       method: "GET",
-      credentials: "include",
+  
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
-        // "Authorization":  localStorage.getItem("token"),
       },
     });
     const fetchedUsers = await response.json();
@@ -47,10 +47,10 @@ class Inside extends Component {
 
     const result = await fetch(url + `/profile/allPostJobs`, {
       method: "GET",
-      credentials: "include",
+      
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
-        // "Authorization":  localStorage.getItem("token"),
       },
     });
     console.log(this.state.title, "titttttle");
@@ -67,8 +67,9 @@ console.log(localStorage.getItem("token"),"why si emptuy")
   fetchProfile = async () => {
     const result = await fetch(url + "/profile/profile", {
       method: "GET",
-      credentials: "include",
+    
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
@@ -125,8 +126,9 @@ console.log(localStorage.getItem("token"),"why si emptuy")
   fetchData = async () => {
     const aplication = await fetch(url + `/aplication/getAllAplication`, {
       method: "GET",
-      credentials: "include",
+    
       headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}` ,
         "Content-Type": "application/json",
       },
     });
@@ -161,6 +163,7 @@ console.log(localStorage.getItem("token"),"why si emptuy")
         method: "POST",
         credentials: "include",
         headers: {
+          "Authorization": `Bearer ${localStorage.getItem("token")}` ,
           "Content-Type": "application/json",
         },
       }
