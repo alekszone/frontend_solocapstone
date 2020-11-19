@@ -70,7 +70,7 @@ function App() {
   };
 
   useEffect(() => {
-    // companyProfile();
+    companyProfile();
     userProfile();
   }, []);
  
