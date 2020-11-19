@@ -37,6 +37,7 @@ class Inside extends Component {
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
+        // "Authorization": "Bearer " + localStorage.getItem("token"),
       },
     });
     const fetchedUsers = await response.json();
@@ -49,6 +50,7 @@ class Inside extends Component {
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
+        // "Authorization": "Bearer " + localStorage.getItem("token"),
       },
     });
     console.log(this.state.title, "titttttle");
@@ -57,7 +59,7 @@ class Inside extends Component {
     this.setState({ allJobPost: fetchedPost });
     this.setState({ filter: fetchedPost[0] });
     console.log(this.state.project);
-
+console.log(localStorage.getItem("token"),"why si emptuy")
     this.fetchProfile();
     this.fetchData();
   };
@@ -174,7 +176,7 @@ class Inside extends Component {
   render() {
     return (
       <>
-        <Row className={`text-center mt-2 ${Styles.search}`}>
+        <Row className={`text-center  ${Styles.search}`}>
           <Col
             xs={12}
             sm={12}
@@ -224,14 +226,14 @@ class Inside extends Component {
                         height: "auto",
                       }}
                     >
-                      <h5>
+                      <h5 className={`${Styles.jobPosition}`}>
                         {this.state.myProfile && this.state.myProfile.name}{" "}
                         {this.state.myProfile && this.state.myProfile.surname}
                       </h5>
-                      <h6>
+                      <h6 className={`${Styles.salary}`}>
                         {this.state.myProfile && this.state.myProfile.position}
                       </h6>
-                      <h6>
+                      <h6 className={`${Styles.salary}`}>
                         {this.state.myProfile && this.state.myProfile.email}
                       </h6>
                     </div>
@@ -425,12 +427,12 @@ class Inside extends Component {
                                         <div
                                           style={{
                                             // width: "300px",
-                                            textAlign: "center",
+                                            textAlign: "left",
                                           }}
                                         >
                                           <div>
                                             <h5
-                                              className={`${Styles.jobPosition}`}
+                                              className={`${Styles.jobPosition} ml-3`}
                                             >
                                               {this.state.companie.companyName}
                                             </h5>
@@ -444,7 +446,7 @@ class Inside extends Component {
                                                 }
                                                 target="_blank"
                                               >
-                                                <h6>
+                                                <h6 className="ml-3">
                                                   {this.state.companie.website}
                                                 </h6>
                                               </a>
@@ -452,21 +454,21 @@ class Inside extends Component {
 
                                             <div>
                                               <h6
-                                                className={`${Styles.headTitle}`}
+                                                className={`${Styles.headTitle} ml-3`}
                                               >
                                                 {this.state.companie.location}
                                               </h6>
                                             </div>
                                             <div>
                                               <h6
-                                                className={`${Styles.headTitle}`}
+                                                className={`${Styles.headTitle} ml-3`}
                                               >
                                                 {this.state.companie.email}
                                               </h6>
                                             </div>
                                             <div>
                                               <h6
-                                                className={`${Styles.headTitle}`}
+                                                className={`${Styles.headTitle} ml-3`}
                                               >
                                                 {this.state.companie.personel}
                                                 -Hired
@@ -485,7 +487,9 @@ class Inside extends Component {
                                     className={`${Styles.about} mt-4`}
                                   >
                                     {" "}
-                                    <p>{this.state.companie.aboutMe}</p>
+                                    <p className={`${Styles.paragraphs}`}>
+                                      {this.state.companie.aboutMe}
+                                    </p>
                                   </Col>
                                 </Row>
                               </>
@@ -497,18 +501,26 @@ class Inside extends Component {
                           >
                             <div className={`${Styles.about} mt-4`}>
                               {this.state.filter.jobDescription ? (
-                                <p>{this.state.filter.jobDescription}</p>
+                                <p className={`${Styles.paragraphs}`}>
+                                  {this.state.filter.jobDescription}
+                                </p>
                               ) : (
-                                <p>No Job Description</p>
+                                <p className={`${Styles.paragraphs}`}>
+                                  No Job Description
+                                </p>
                               )}
                             </div>
                           </Tab>
                           <Tab eventKey="requirments" title="Job Requirments">
                             <div className={`${Styles.about} mt-4`}>
                               {this.state.filter.requirments ? (
-                                <p>{this.state.filter.requirments}</p>
+                                <p className={`${Styles.paragraphs}`}>
+                                  {this.state.filter.requirments}
+                                </p>
                               ) : (
-                                <p>No requirments</p>
+                                <p className={`${Styles.paragraphs}`}>
+                                  No requirments
+                                </p>
                               )}
                             </div>
                           </Tab>
@@ -516,9 +528,13 @@ class Inside extends Component {
                             <div className={`${Styles.about} mt-4`}>
                               {" "}
                               {this.state.filter.benefites ? (
-                                <p>{this.state.filter.benefites}</p>
+                                <p className={`${Styles.paragraphs}`}>
+                                  {this.state.filter.benefites}
+                                </p>
                               ) : (
-                                <p>No Benefites</p>
+                                <p className={`${Styles.paragraphs}`}>
+                                  No Benefites
+                                </p>
                               )}
                             </div>
                           </Tab>

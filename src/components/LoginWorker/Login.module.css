@@ -196,18 +196,20 @@
 }
 .textJustify {
   text-align: justify !important;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 .educationPhoto {
   width: 100px !important;
   height: 100px !important;
   object-fit: cover;
 }
-.clear {
+/* .clear {
   margin-left: 0px !important;
   margin-right: 0px !important;
   padding-left: 0px !important;
   padding-right: 0px !important;
-}
+} */
 .bg {
   background-color: #0f1f26 !important;
   color: #e8e9eb;
@@ -272,7 +274,7 @@
   font-family: "Raleway", sans-serif;
 }
 .profileImage {
-  width: 70%;
+  width: 97%;
   height: auto;
   background-color: rgb(255, 255, 255);
   object-fit: cover;

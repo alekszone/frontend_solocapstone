@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Styles from "./Login.module.css";
 import Logo from "./Logo.png";
-
+import Cookies from "js-cookie";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
@@ -43,6 +43,9 @@ function MyLogin(props) {
       }),
     });
     if (moreData.ok) {
+      // const token = Cookies.get("token");
+      // console.log(token,"what has token")
+      // localStorage.setItem(token, "token");
       props.UserProfile();
       props.logInWorker();
       props.history.push("/worker");
@@ -62,6 +65,8 @@ function MyLogin(props) {
       }),
     });
     if (result.ok) {
+      // const token = Cookies.get("token");
+      // localStorage.setItem(token);
       setAlert(false);
       props.CompanyProfile();
       props.loginCompany();
@@ -73,15 +78,14 @@ function MyLogin(props) {
 
   return (
     <>
-      {console.log(loginWorker)}
-      {console.log(loginCompany)}
       <Row className={`${Styles.rows}`}>
         {loginWorker && (
           <>
             <Col xs={12} sm={12} md={5} lg={5} className="mt-5">
-              <div className={`${Styles.title}`}>
+              <div className={`${Styles.title} mt-5`}>
                 <img src={Logo} style={{ width: "70%" }} />
                 <h4>Find your future job in TECH JOBS</h4>
+                <Button onClick={props.sendTo}>Back</Button>
               </div>
             </Col>
             <Col xs={12} sm={12} md={7} lg={7} className="mt-5">
@@ -158,9 +162,10 @@ function MyLogin(props) {
         {loginCompany && (
           <>
             <Col xs={12} sm={12} md={5} lg={5} className="mt-5">
-              <div className={`${Styles.title}`}>
+              <div className={`${Styles.title} mt-5`}>
                 <img src={Logo} style={{ width: "70%" }} />
                 <h4>Find your future job in TECH JOBS</h4>
+                <Button onClick={props.sendTo}>Back</Button>
               </div>
             </Col>
             <Col xs={12} sm={12} md={7} lg={7} className="mt-5">

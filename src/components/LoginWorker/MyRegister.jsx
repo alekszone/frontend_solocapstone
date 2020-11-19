@@ -71,11 +71,11 @@ function MyRegister(props) {
     });
     const data = await register.json();
     if (data) {
+      console.log(data, "ca ka data");
       const image = new FormData();
       image.append("image", Image);
 
-      const uploadPhoto = await (url + "/profile/workerImage" + data._id,
-      {
+      const uploadPhoto = await fetch(url + "/profile/workerImage" + data._id, {
         method: "POST",
         body: image,
         credentials: "include",
@@ -107,13 +107,14 @@ function MyRegister(props) {
     });
     const data = await register.json();
     if (data) {
+      console.log(data, "xa ka data");
       const image = new FormData();
       image.append("image", Image);
 
-      const uploadPhoto = await (url + "/login/companyImage" + data._id,
-      {
+      const uploadPhoto = await fetch(url + "/login/companyImage" + data._id, {
         method: "POST",
         body: image,
+        credentials: "include",
         headers: {
           "Access-Control-Allow-Origin": "*",
         },
@@ -140,9 +141,10 @@ function MyRegister(props) {
               <div className={`${Styles.title}`}>
                 <img src={Logo} style={{ width: "70%" }} />
                 <h4>Find your future job in TECH JOBS</h4>
+                <Button onClick={() => props.login()}>Back</Button>
               </div>
             </Col>
-            <Col xs={12} sm={12} md={7} lg={7}>
+            <Col xs={12} sm={12} md={7} lg={7} className="mt-5">
               <div
                 style={{
                   height: "100%",
@@ -294,7 +296,7 @@ function MyRegister(props) {
                       onChange={(e) => setAboutMe(e.currentTarget.value)}
                     />
                   </div>
-                  <div className="mt-2 mb-4">
+                  {/* <div className="mt-2 mb-4">
                     <InputGroup className={`${Styles.uploads}`}>
                       <InputGroup.Prepend>
                         <div className={`${Styles.imageupload}`}>
@@ -311,7 +313,7 @@ function MyRegister(props) {
                         </div>
                       </InputGroup.Prepend>
                     </InputGroup>
-                  </div>
+                  </div> */}
                   <div className="mt-2 mb-4">
                     {alert && (
                       <Alert variant="danger" className={`${Styles.input}`}>
@@ -319,9 +321,7 @@ function MyRegister(props) {
                       </Alert>
                     )}
                   </div>
-                  <div
-                    style={{ display: "flex", justifyContent: "space-around" }}
-                  >
+                  <div style={{ display: "flex", justifyContent: "center" }}>
                     <Button
                       variant="light"
                       className={`${Styles.btngrad} mb-2`}
@@ -333,13 +333,6 @@ function MyRegister(props) {
                     </Button>
                     <br></br>
                     <br></br>
-                    <Button
-                      variant="light"
-                      className={`${Styles.btngrad} mb-2`}
-                      onClick={() => props.login()}
-                    >
-                      Back
-                    </Button>
                   </div>
                 </form>
               </div>
@@ -353,9 +346,10 @@ function MyRegister(props) {
               <div className={`${Styles.title}`}>
                 <img src={Logo} style={{ width: "70%" }} />
                 <h4>Find your future job in TECH JOBS</h4>
+                <Button onClick={() => props.login()}>Back</Button>
               </div>
             </Col>
-            <Col xs={12} sm={12} md={7} lg={7} className="mt-3">
+            <Col xs={12} sm={12} md={7} lg={7} className="mt-5">
               <div
                 style={{
                   height: "100%",
@@ -404,7 +398,7 @@ function MyRegister(props) {
                   >
                     <TextField
                       id="filled-multiline-flexible"
-                      label="Position"
+                      label="Website"
                       variant="outlined"
                       style={{
                         width: "45%",
@@ -472,7 +466,7 @@ function MyRegister(props) {
                       onChange={(e) => setAboutMe(e.currentTarget.value)}
                     />
                   </div>
-                  <div className="mt-2 mb-4">
+                  {/* <div className="mt-2 mb-4">
                     <InputGroup className={`${Styles.uploads}`}>
                       <InputGroup.Prepend>
                         <div className={`${Styles.imageupload}`}>
@@ -483,13 +477,18 @@ function MyRegister(props) {
                           <input
                             id="file-input"
                             type="file"
-                            value={Image}
+                            key="image"
+                            id="file-input"
+                            type="file"
+                            accept="image/*"
+                            profile="file"
+                            // value={Image}
                             onChange={(e) => setImage(e.target.files[0])}
                           />
                         </div>
                       </InputGroup.Prepend>
                     </InputGroup>
-                  </div>
+                  </div> */}
                   <div className="mt-2 mb-4">
                     {alert && (
                       <Alert variant="danger" className={`${Styles.input}`}>
@@ -497,9 +496,7 @@ function MyRegister(props) {
                       </Alert>
                     )}
                   </div>
-                  <div
-                    style={{ display: "flex", justifyContent: "space-around" }}
-                  >
+                  <div style={{ display: "flex", justifyContent: "center" }}>
                     <Button
                       variant="light"
                       className={`${Styles.btngrad} mb-2`}
@@ -511,13 +508,6 @@ function MyRegister(props) {
                     </Button>
                     <br></br>
                     <br></br>
-                    <Button
-                      variant="light"
-                      className={`${Styles.btngrad} mb-2`}
-                      onClick={() => props.login()}
-                    >
-                      Back
-                    </Button>
                   </div>
                 </form>
               </div>

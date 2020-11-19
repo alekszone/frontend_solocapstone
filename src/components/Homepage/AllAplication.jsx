@@ -124,8 +124,8 @@ function AllAplication(props) {
               </Tr>
             </Thead>
 
-            {aplication &&
-              aplication.map((x, i) => {
+            {currentAplicant &&
+              currentAplicant.map((x, i) => {
                 return (
                   <Tbody className={`${Styles.rows}`}>
                     {" "}

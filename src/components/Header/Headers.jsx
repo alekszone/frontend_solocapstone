@@ -50,7 +50,7 @@ function Headers(props) {
   }, [props.userNavBar, props.companyNavBar]);
 
   return (
-    <Navbar variant="dark" className={`${Styles.bar} `} expand="lg">
+    <Navbar bg="light" className={`${Styles.bar} `} expand="lg">
       <Navbar.Brand>
         <img src={Logo} style={{ width: "80px", height: "40px" }} />
       </Navbar.Brand>
@@ -63,11 +63,11 @@ function Headers(props) {
                 to="/worker"
                 style={{
                   textDecoration: "none",
-                  color: "white",
+                  color: "#ff512f",
                   fontWeight: "bold",
                   cursor: "pointer",
                 }}
-                className="ml-2"
+                className={`${Styles.link} ml-4`}
               >
                 Home
               </Link>
@@ -77,11 +77,11 @@ function Headers(props) {
                 to="/aplication"
                 style={{
                   textDecoration: "none",
-                  color: "white",
+                  color: "#ff512f",
                   fontWeight: "bold",
                   cursor: "pointer",
                 }}
-                className="ml-2"
+                className={`${Styles.link} ml-4`}
               >
                 Aplication
               </Link>
@@ -91,11 +91,11 @@ function Headers(props) {
                 to="/workerProfile"
                 style={{
                   textDecoration: "none",
-                  color: "white",
+                  color: "#ff512f",
                   fontWeight: "bold",
                   cursor: "pointer",
                 }}
-                className="ml-2"
+                className={`${Styles.link} ml-4`}
               >
                 Profile
               </Link>
@@ -103,11 +103,11 @@ function Headers(props) {
             <Nav
               style={{
                 textDecoration: "none",
-                color: "white",
+                color: "#ff512f",
                 fontWeight: "bold",
                 cursor: "pointer",
               }}
-              className="ml-2"
+              className={`${Styles.link} ml-4`}
               onClick={() => userLogout()}
             >
               Logout
@@ -121,11 +121,11 @@ function Headers(props) {
                 to="/company"
                 style={{
                   textDecoration: "none",
-                  color: "white",
+                  color: "#ff512f",
                   fontWeight: "bold",
                   cursor: "pointer",
                 }}
-                className="ml-2"
+                className={`${Styles.link} ml-4`}
               >
                 Home
               </Link>
@@ -135,11 +135,11 @@ function Headers(props) {
                 to="/companyPosts"
                 style={{
                   textDecoration: "none",
-                  color: "white",
+                  color: "#ff512f",
                   fontWeight: "bold",
                   cursor: "pointer",
                 }}
-                className="ml-2"
+                className={`${Styles.link} ml-4`}
               >
                 Posts
               </Link>
@@ -149,11 +149,11 @@ function Headers(props) {
                 to="/companyProfile"
                 style={{
                   textDecoration: "none",
-                  color: "white",
+                  color: "#ff512f",
                   fontWeight: "bold",
                   cursor: "pointer",
                 }}
-                className="ml-2"
+                className={`${Styles.link} ml-4`}
               >
                 Profile
               </Link>
@@ -161,11 +161,11 @@ function Headers(props) {
             <Nav
               style={{
                 textDecoration: "none",
-                color: "white",
+                color: "#ff512f",
                 fontWeight: "bold",
                 cursor: "pointer",
               }}
-              className="ml-2"
+              className={`${Styles.link} ml-4`}
               onClick={() => companyLogout()}
             >
               Logout

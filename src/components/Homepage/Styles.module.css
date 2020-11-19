@@ -208,7 +208,12 @@
 .about::-webkit-scrollbar {
   display: none;
 }
-
+.paragraphs {
+  font-family: "Raleway", sans-serif;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: #48546d;
+}
 .cartblock1 {
   float: left;
   width: 100%;

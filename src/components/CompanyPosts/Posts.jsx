@@ -122,7 +122,13 @@ export default function Posts() {
                       marginRight: "auto",
                     }}
                   >
-                    <Col xs={4} sm={4} md={4} lg={4}>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      style={{ height: "140px" }}
+                    >
                       {data.image ? (
                         <img
                           src={data.image}
@@ -248,7 +254,7 @@ export default function Posts() {
               style={{ alignItems: "center", textAlign: "center" }}
             >
               <div className="mt-5">
-                <h6>You have no Post. Add New Post</h6>
+                <h6 className="mt-5">You have no Post. Add New Post</h6>
                 <img
                   className="mt-0"
                   src="https://cdn.pixabay.com/photo/2018/11/13/21/43/instagram-3814051_1280.png"

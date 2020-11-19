@@ -13,7 +13,7 @@ import TextField from "@material-ui/core/TextField";
 import Styles from "./Login.module.css";
 import { connect } from "react-redux";
 import Company from "./company.jpg";
-import OurCompany from "./AboutUs.jpg";
+import OurCompany from "./compani.jpg";
 import User from "./user.png";
 
 const mapStateToProps = (state) => state;
@@ -73,15 +73,16 @@ class Buttons extends Component {
             md={12}
             lg={12}
             style={{
-              backgroundColor: "white",
+              //
               width: "100%",
             }}
           >
             <div
               className="mt-4 mb-4"
               style={{
-                backgroundColor: "rgb(238, 238, 238)",
+                // backgroundColor: "rgb(238, 238, 238)",
                 width: "90%",
+                backgroundColor: "white",
                 marginLeft: "auto",
                 marginRight: "auto",
                 borderRadius: "20px",
@@ -202,7 +203,7 @@ class Buttons extends Component {
             style={{
               width: "100%",
             }}
-            className={`  ${Styles.clear}`}
+            // className={`  ${Styles.clear}`}
           >
             <div
               className="mt-4 mb-4"
@@ -224,7 +225,7 @@ class Buttons extends Component {
                   style={{ display: "flex", justifyContent: "center" }}
                 >
                   <Image
-                    className={` mt-3 mb-2 ml-1 mr-3 ${Styles.profileImage}`}
+                    className={` mt-2 mb-2 ${Styles.profileImage}`}
                     variant="top"
                     src={OurCompany}
                   />
@@ -248,7 +249,7 @@ class Buttons extends Component {
                       About Us{" "}
                     </h4>
                     <Card.Text
-                      className={`mr-2 ml-2 mb-2 ${Styles.subTitle} ${Styles.textJustify}`}
+                      className={`mr-2 ml-2 mb-2 text-left ${Styles.subTitle} ${Styles.textJustify}`}
                     >
                       Are you interested in the field of technology or are a
                       computer science wizard but you don’t have any formal
@@ -274,15 +275,15 @@ class Buttons extends Component {
             md={12}
             lg={12}
             style={{
-              backgroundColor: "white",
               width: "100%",
             }}
           >
             <Row
               className="mt-4 mb-4"
               style={{
-                backgroundColor: "rgb(238, 238, 238)",
+                // backgroundColor: "rgb(238, 238, 238)",
                 width: "90%",
+                backgroundColor: "white",
                 marginLeft: "auto",
                 marginRight: "auto",
                 borderRadius: "20px",

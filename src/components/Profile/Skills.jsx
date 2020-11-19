@@ -92,7 +92,7 @@ export default function Skills() {
           sm={12}
           md={12}
           lg={12}
-          className={`${Styles.carts} mt-1`}
+          className={`${Styles.carts} mt-3`}
           style={{ display: "flex" }}
         >
           {skills &&

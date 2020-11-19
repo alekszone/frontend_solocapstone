@@ -49,6 +49,7 @@ export default function LoginWorker(props) {
           UserProfile={props.UserProfile}
           loginCompany={props.loginCompany}
           logInWorker={props.logInWorker}
+          sendTo={sendTo}
           register={Register}
         />
       )}

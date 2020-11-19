@@ -23,7 +23,7 @@ export default function Accept(props) {
   console.log(props.data._id, "this is data");
   const sendEmail = async () => {
     const result = await fetch(
-      url + "aplicationn/sendEmail/" + props.data._id,
+      url + "/aplicationn/sendEmail/" + props.data._id,
       {
         method: "POST",
         body: JSON.stringify({ subject, text }),
@@ -44,7 +44,7 @@ export default function Accept(props) {
 
   const acceptAplication = async () => {
     const result = await fetch(
-      url + "aplicationn/" + props.id + "/notAccept/" + props.data._id,
+      url + "/aplicationn/" + props.id + "/notAccept/" + props.data._id,
       {
         method: "GET",
         credentials: "include",

@@ -224,7 +224,7 @@ export default class Education extends Component {
                   return (
                     <>
                       <Col xs={12} sm={12} md={6} lg={6}>
-                        <div className={`${Styles.carts} mt-1`}>
+                        <div className={`${Styles.carts} mt-3`}>
                           <Row
                             style={{
                               display: "flex",
@@ -235,13 +235,19 @@ export default class Education extends Component {
                               marginRight: "auto",
                             }}
                           >
-                            <Col xs={4} sm={4} md={4} lg={4}>
+                            <Col
+                              xs={4}
+                              sm={4}
+                              md={4}
+                              lg={4}
+                              style={{ height: "120px" }}
+                            >
                               {data.image ? (
                                 <img
                                   src={data.image}
                                   style={{
-                                    width: "100%",
-                                    height: "93%",
+                                    width: "90%",
+                                    height: "90%",
                                     objectFit: "cover",
                                     borderRadius: "10px",
                                   }}
@@ -251,8 +257,8 @@ export default class Education extends Component {
                                 <img
                                   src="https://ianmartin.com/wp-content/uploads/2017/10/WhatE28099s20the20Best20Day20of20the20Week20to20Post20a20Job20Ad-1030x687.jpg"
                                   style={{
-                                    width: "100%",
-                                    height: "93%",
+                                    width: "90%",
+                                    height: "90%",
                                     objectFit: "cover",
                                     borderRadius: "10px",
                                   }}

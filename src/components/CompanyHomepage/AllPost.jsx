@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
+import { withRouter, Link } from "react-router-dom";
 import Styles from "./Styles.module.css";
-export default function AllPost(props) {
+function AllPost(props) {
   const url = process.env.REACT_APP_URL;
   const [companyProfile, setcompanyProfile] = useState([]);
   useEffect(() => {
@@ -25,6 +26,9 @@ export default function AllPost(props) {
     } else {
       console.log("there is no data ");
     }
+  };
+  const sendTo = () => {
+    props.history.push("/companyPosts");
   };
 
   return (
@@ -140,7 +144,7 @@ export default function AllPost(props) {
               lg={12}
               style={{ alignItems: "center", textAlign: "center" }}
             >
-              <div className="mt-2">
+              <div className="mt-2" onClick={() => sendTo()}>
                 <h6>You have no Post.Add A Post. </h6>
                 <img
                   className="mt-0"
@@ -155,3 +159,5 @@ export default function AllPost(props) {
     </div>
   );
 }
+
+export default withRouter(AllPost);

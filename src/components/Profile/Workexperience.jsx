@@ -5,6 +5,13 @@ import { RiImageAddFill } from "react-icons/ri";
 
 import { RiDeleteBinLine } from "react-icons/ri";
 import { AiOutlineEdit } from "react-icons/ai";
+import Grid from "@material-ui/core/Grid";
+// import DateFnsUtils from "@date-io/date-fns";
+// import {
+//   MuiPickersUtilsProvider,
+//   KeyboardTimePicker,
+//   KeyboardDatePicker,
+// } from "@material-ui/pickers";
 
 import TextField from "@material-ui/core/TextField";
 
@@ -234,14 +241,20 @@ export default class Workexperience extends Component {
                               marginRight: "auto",
                             }}
                           >
-                            <Col xs={4} sm={4} md={4} lg={4}>
+                            <Col
+                              xs={4}
+                              sm={4}
+                              md={4}
+                              lg={4}
+                              style={{ height: "120px" }}
+                            >
                               {data.image ? (
                                 <img
                                   src={data.image}
                                   style={{
-                                    width: "100%",
-                                    height: "93%",
-                                    objectFit: "cover",
+                                    width: "90%",
+                                    height: "90%",
+                                    // objectFit: "cover",
                                     borderRadius: "10px",
                                   }}
                                   className="mt-1  ml-1"
@@ -250,9 +263,9 @@ export default class Workexperience extends Component {
                                 <img
                                   src="https://ianmartin.com/wp-content/uploads/2017/10/WhatE28099s20the20Best20Day20of20the20Week20to20Post20a20Job20Ad-1030x687.jpg"
                                   style={{
-                                    width: "100%",
-                                    height: "93%",
-                                    objectFit: "cover",
+                                    width: "90%",
+                                    height: "90%",
+                                    // objectFit: "cover",
                                     borderRadius: "10px",
                                   }}
                                   className="mt-1 ml-1"
@@ -270,43 +283,26 @@ export default class Workexperience extends Component {
                                 {data.started}-{data.finished}
                               </h6>
                             </Col>
-                            <Col xs={2} sm={2} md={2} lg={2}>
-                              <div
-                                style={{
-                                  display: "flex",
-                                  flexDirection: "column",
-                                  justifyContent: "right",
-                                }}
-                              >
-                                <Button
-                                  variant="light"
-                                  style={{
-                                    backgroundColor: "transparent",
-                                    width: "70%",
-                                  }}
-                                  className={`${Styles.btngrad} mt-2`}
-                                  onClick={() =>
-                                    this.deleteExperience(data._id)
-                                  }
-                                >
-                                  <RiDeleteBinLine
-                                    className={`${Styles.icon} `}
-                                  />
-                                </Button>
-                                <Button
-                                  variant="light"
-                                  style={{
-                                    backgroundColor: "transparent",
-                                    width: "70%",
-                                  }}
-                                  onClick={() => this.editShow(data)}
-                                  className={`${Styles.btngrad} mt-2`}
-                                >
-                                  <AiOutlineEdit
-                                    className={`${Styles.icon} `}
-                                  />
-                                </Button>
-                              </div>
+                            <Col
+                              xs={2}
+                              sm={2}
+                              md={2}
+                              lg={2}
+                              style={{
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "right",
+                              }}
+                            >
+                              <RiDeleteBinLine
+                                className={`${Styles.icon} mt-3`}
+                                onClick={() => this.deleteExperience(data._id)}
+                              />
+
+                              <AiOutlineEdit
+                                className={`${Styles.icon} mt-3`}
+                                onClick={() => this.editShow(data)}
+                              />
                             </Col>
                           </Row>
 
