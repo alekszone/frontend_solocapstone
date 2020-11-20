@@ -6,7 +6,7 @@
 .carts {
   box-shadow: 3px 3px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .about {
   /* outline: solid 2px red; */
@@ -93,7 +93,7 @@
 .icon {
   width: 25px;
   height: 25px;
-
+color: orangered;
   font-weight: bolder;
 }
 .textStyle div > h5 {

@@ -87,13 +87,13 @@ export default function WorkerProfile(props) {
             <>
               <Row>
                 <Col xs={12} sm={12} md={4} lg={4} className='pl-0'>
-                  <div className={`${Styles.cartblock1} mt-5 ml-0 mb-2 pb-2`}>
+                  <div className={`${Styles.cartblock1} mt-2 ml-0 mb-2 pb-2`}>
                     {data.image ? (
                       <img
                         src={data.image}
-                        className='img-responsive mt-3 mb-3'
+                        className='img-responsive mt-2 mb-2'
                         alt=''
-                        style={{ borderRadius: '50%' }}
+                      
                       />
                     ) : (
                       <img
@@ -142,7 +142,7 @@ export default function WorkerProfile(props) {
                     </Button>
                   </div>
                 </Col>
-                <Col xs={12} sm={12} md={8} lg={8} className='text-left mt-5'>
+                <Col xs={12} sm={12} md={8} lg={8} className='text-left mt-2'>
                   <Tabs
                     className='mt-2'
                     defaultActiveKey='Aboutme'
@@ -203,21 +203,21 @@ export default function WorkerProfile(props) {
                                   display: 'flex',
                                 }}
                               >
-                                <h5 className='mt-2'>
+                                <h5 className='mt-1'>
                                   {data.education[0].schoolName}
                                 </h5>
-                                <p className='ml-5  mt-2'>
+                                <p className='ml-5  mt-1'>
                                   <i>
                                     {data.education[0].startDate} -
                                     {data.education[0].endDate}{' '}
                                   </i>
                                 </p>
                               </div>
-                              <div className={`${Styles.dataUser1} mt-2`}>
+                              <div className={`${Styles.dataUser1} mt-1`}>
                                 <h5>About</h5>
                                 <p>{data.education[0].about}</p>
                               </div>
-                              <div className={`${Styles.dataUser1} mt-2`}>
+                              <div className={`${Styles.dataUser1} mt-1`}>
                                 <h5>Skill Learned</h5>
                                 <p>{data.education[0].skillsLearned}</p>
                               </div>
@@ -277,10 +277,10 @@ export default function WorkerProfile(props) {
                                   display: 'flex',
                                 }}
                               >
-                                <h5 className='mt-2'>
+                                <h5 className='mt-1'>
                                   {data.workExperience[0].workExperience}
                                 </h5>
-                                <p className='ml-5  mt-2'>
+                                <p className='ml-5  mt-1'>
                                   <i>
                                     {data.workExperience[0].started} -
                                     {data.workExperience[0].finished}{' '}
@@ -307,7 +307,7 @@ export default function WorkerProfile(props) {
                                       color: ' #48546d',
                                       fontWeight: 'bolder',
                                     }}
-                                    className='mt-2'
+                                    className='mt-4'
                                     onClick={() =>
                                       handleShow(data.workExperience)
                                     }

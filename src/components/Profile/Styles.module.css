@@ -6,6 +6,7 @@
 .profile {
   height: 250px !important;
   width: 80%;
+  border-radius: 2px;
 }
 
 .basicInfo {
@@ -92,6 +93,7 @@
 .header {
   display: flex;
   width: 80%;
+  border-radius: 5px;
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 20px !important;
@@ -124,6 +126,7 @@
   margin-bottom: 0 !important;
   margin-top: 15%;
   height: 140px;
+  border-radius: 5px;
   box-shadow: 3px 3px 3px rgba(226, 226, 226, 0.938);
 }
 .nameProfile {
@@ -135,6 +138,7 @@
   box-shadow: 3px 3px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
   height: 288px;
+  border-radius: 5px;
   color: rgb(63, 69, 95);
 }
 .dataInfo div {
@@ -220,6 +224,7 @@
   box-shadow: 3px 3px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
   height: auto;
+  border-radius: 5px;
   color: rgb(63, 69, 95);
 }
 .dataAbout div {
@@ -281,7 +286,7 @@
 .carts {
   box-shadow: 3px 3px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .aboutCarts {
   /* outline: solid 2px red; */

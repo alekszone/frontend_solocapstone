@@ -15,7 +15,7 @@ export default function Posts() {
   const [show1, setShow1] = useState(false);
   const [infos, setinfos] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
-  const [aplicantPerPage] = useState(3);
+  const [aplicantPerPage] = useState(4);
   const url = process.env.REACT_APP_URL;
 
   const indexOfLastPost = currentPage * aplicantPerPage;
@@ -34,9 +34,8 @@ export default function Posts() {
     fetchPost();
   }, []);
   const fetchPost = async () => {
-    const result = await fetch(url + '/post/', {
+    const result = await fetch(url + '/post/allPosts', {
       method: 'GET',
-
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
@@ -59,6 +58,8 @@ export default function Posts() {
       },
     });
     if (result.ok) {
+      fetchPost();
+    }else{
       fetchPost();
     }
   };
@@ -129,18 +130,18 @@ export default function Posts() {
                       sm={4}
                       md={4}
                       lg={4}
-                      style={{ height: '140px' }}
+                      style={{ height: '125px' }}
                     >
                       {data.image ? (
                         <img
                           src={data.image}
                           style={{
-                            width: '100%',
-                            height: '93%',
+                            width: '90%',
+                            height: '90%',
                             objectFit: 'cover',
-                            borderRadius: '10px',
+                            borderRadius: '5px',
                           }}
-                          className='mt-1'
+                          className='mt-2'
                         />
                       ) : (
                         <img
@@ -173,31 +174,15 @@ export default function Posts() {
                           justifyContent: 'right',
                         }}
                       >
-                        <Button
-                          variant='light'
-                          style={{
-                            backgroundColor: 'transparent',
-                            width: '70%',
-                          }}
-                          className={`${Style.btngrad} mt-2`}
-                          onClick={() => {
-                            handleShow1(data._id);
-                          }}
-                        >
+                      
                           {' '}
-                          <AiOutlineEdit className={`${Style.icon} `} />
-                        </Button>
-                        <Button
-                          onClick={() => deletePost(data._id)}
-                          variant='light'
-                          style={{
-                            backgroundColor: 'transparent',
-                            width: '70%',
-                          }}
-                          className={`${Style.btngrad} mt-2`}
-                        >
-                          <RiDeleteBinLine className={`${Style.icon} `} />
-                        </Button>
+                          <AiOutlineEdit className={`${Style.icon} mt-3`} onClick={() => {
+                            handleShow1(data._id);
+                          }} />
+                     
+                      
+                          <RiDeleteBinLine className={`${Style.icon} mt-4 `} onClick={() => deletePost(data._id)} />
+                       
                       </div>
                     </Col>
                     {/* </div> */}

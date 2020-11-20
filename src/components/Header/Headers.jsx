@@ -54,9 +54,9 @@ function Headers(props) {
   }, [props.userNavBar, props.companyNavBar]);
 
   return (
-    <Navbar bg='light' className={`${Styles.bar} `} expand='lg'>
-      <Navbar.Brand>
-        <img src={Logo} style={{ width: '80px', height: '40px' }} />
+    <Navbar  className={`${Styles.bar} `} expand='lg'>
+      <Navbar.Brand className="ml-3"  style={{ backgroundColor:"white" }} >
+        <img src={Logo} style={{ width: '80px', height: '30px',backgroundColor:"white" }} />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
@@ -67,7 +67,7 @@ function Headers(props) {
                 to='/worker'
                 style={{
                   textDecoration: 'none',
-                  color: '#ff512f',
+                  color: 'white',
                   fontWeight: 'bold',
                   cursor: 'pointer',
                 }}
@@ -81,7 +81,7 @@ function Headers(props) {
                 to='/aplication'
                 style={{
                   textDecoration: 'none',
-                  color: '#ff512f',
+                  color: 'white',
                   fontWeight: 'bold',
                   cursor: 'pointer',
                 }}
@@ -95,7 +95,7 @@ function Headers(props) {
                 to='/workerProfile'
                 style={{
                   textDecoration: 'none',
-                  color: '#ff512f',
+                  color: 'white',
                   fontWeight: 'bold',
                   cursor: 'pointer',
                 }}
@@ -107,7 +107,7 @@ function Headers(props) {
             <Nav
               style={{
                 textDecoration: 'none',
-                color: '#ff512f',
+                color: 'white',
                 fontWeight: 'bold',
                 cursor: 'pointer',
               }}
@@ -125,7 +125,7 @@ function Headers(props) {
                 to='/company'
                 style={{
                   textDecoration: 'none',
-                  color: '#ff512f',
+                  color: 'white',
                   fontWeight: 'bold',
                   cursor: 'pointer',
                 }}
@@ -139,7 +139,7 @@ function Headers(props) {
                 to='/companyPosts'
                 style={{
                   textDecoration: 'none',
-                  color: '#ff512f',
+                  color: 'white',
                   fontWeight: 'bold',
                   cursor: 'pointer',
                 }}
@@ -153,7 +153,7 @@ function Headers(props) {
                 to='/companyProfile'
                 style={{
                   textDecoration: 'none',
-                  color: '#ff512f',
+                  color: 'white',
                   fontWeight: 'bold',
                   cursor: 'pointer',
                 }}
@@ -165,7 +165,7 @@ function Headers(props) {
             <Nav
               style={{
                 textDecoration: 'none',
-                color: '#ff512f',
+                color: 'white',
                 fontWeight: 'bold',
                 cursor: 'pointer',
               }}

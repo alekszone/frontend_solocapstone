@@ -87,11 +87,11 @@ export default function About(props) {
       {about && (
         <>
           <div>
-            <h5 className={`${Style.titleAbout} mt-4`}>About Company</h5>
+            <h5 className={`${Style.titleAbout} mt-3`}>About Company</h5>
             {icon && (
               <AiOutlineEdit
                 onClick={hideText}
-                className='mt-1'
+                className='mt-2'
                 style={{
                   marginLeft: 'auto',
                   fontSize: '25px',

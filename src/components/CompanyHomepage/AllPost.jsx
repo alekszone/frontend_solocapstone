@@ -70,17 +70,13 @@ function AllPost(props) {
                 <img
                   src={companyProfile[0].image}
                   className={` mt-3`}
-                  style={{
-                    borderRadius: "none !important",
-                  }}
+                 
                 />
               ) : (
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9-Tom5eAUi7AaarN_g-WIkVxvRNhdHa8BrQ&usqp=CAU"
                   className={` mt-3`}
-                  style={{
-                    borderRadius: "none !important",
-                  }}
+                 
                 />
               )}
             </Col>

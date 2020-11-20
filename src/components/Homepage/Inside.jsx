@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import { Row, Col, Tab, Tabs, Button, Modal } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import Styles from './Styles.module.css';
-import { MdWork } from 'react-icons/md';
-import { MdAttachMoney } from 'react-icons/md';
-import { HiOfficeBuilding } from 'react-icons/hi';
-import { CgWebsite } from 'react-icons/cg';
-import { AiOutlineMail } from 'react-icons/ai';
-import { GrUserWorker } from 'react-icons/gr';
 
-import { TiLocation } from 'react-icons/ti';
+import Styles from './Styles.module.css';
+
 import { connect } from 'react-redux';
 const mapStateToProps = (state) => state;
 const url = process.env.REACT_APP_URL;
@@ -41,9 +34,10 @@ class Inside extends Component {
       },
     });
     const fetchedUsers = await response.json();
-    console.log(fetchedUsers, 'users');
+
     this.setState({ comp: fetchedUsers });
     this.setState({ companie: fetchedUsers[0] });
+
 
     const result = await fetch(url + `/profile/allPostJobs`, {
       method: 'GET',
@@ -58,8 +52,7 @@ class Inside extends Component {
     this.setState({ allPost: fetchedPost });
     this.setState({ allJobPost: fetchedPost });
     this.setState({ filter: fetchedPost[0] });
-    console.log(this.state.project);
-    console.log(localStorage.getItem('token'), 'why si emptuy');
+    
     this.fetchProfile();
     this.fetchData();
   };
@@ -67,7 +60,6 @@ class Inside extends Component {
   fetchProfile = async () => {
     const result = await fetch(url + '/profile/profile', {
       method: 'GET',
-
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
@@ -357,7 +349,7 @@ class Inside extends Component {
                               }}
                               className={`${Styles.btngrad}`}
                             >
-                              Apply for Job
+                              Apply 
                             </Button>
                           )}
                           {this.state.hideButton && (
@@ -366,7 +358,7 @@ class Inside extends Component {
                               variant='light'
                               className={`${Styles.btngrad}`}
                             >
-                              You have applyed
+                             Applyed
                             </Button>
                           )}
                         </div>
@@ -559,7 +551,7 @@ class Inside extends Component {
             <Modal.Title>Job Applying</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            Are You Really Ready To Apply For {this.state.filter.jobPosition}?
+            Are You Really Ready To Apply For {this.state.filter && this.state.filter.jobPosition && this.state.filter.jobPosition}?
           </Modal.Body>
           <Modal.Body>
             To Have More Chances To Win The Job Please Check Your Profile If You

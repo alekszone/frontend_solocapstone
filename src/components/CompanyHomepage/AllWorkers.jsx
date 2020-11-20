@@ -40,7 +40,7 @@ export default function AllWorkers() {
   }, []);
 
   const allPost = async () => {
-    const data = await fetch(url + '/post/', {
+    const data = await fetch(url + '/post/allPosts', {
       method: 'GET',
 
       headers: {

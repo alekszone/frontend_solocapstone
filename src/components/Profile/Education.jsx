@@ -248,29 +248,29 @@ export default class Education extends Component {
                               sm={4}
                               md={4}
                               lg={4}
-                              style={{ height: '120px' }}
+                              style={{ height: '125px' }}
                             >
                               {data.image ? (
                                 <img
                                   src={data.image}
                                   style={{
                                     width: '90%',
-                                    height: '90%',
-                                    objectFit: 'cover',
-                                    borderRadius: '10px',
+                                    height: '85%',
+                                    // objectFit: "cover",
+                                    borderRadius: '5px',
                                   }}
-                                  className='mt-1  ml-1'
+                                  className='mt-2'  
                                 />
                               ) : (
                                 <img
                                   src='https://ianmartin.com/wp-content/uploads/2017/10/WhatE28099s20the20Best20Day20of20the20Week20to20Post20a20Job20Ad-1030x687.jpg'
                                   style={{
                                     width: '90%',
-                                    height: '90%',
-                                    objectFit: 'cover',
-                                    borderRadius: '10px',
+                                    height: '85%',
+                                    // objectFit: "cover",
+                                    borderRadius: '5px',
                                   }}
-                                  className='mt-1  ml-1'
+                                  className='mt-2' 
                                 />
                               )}
                             </Col>

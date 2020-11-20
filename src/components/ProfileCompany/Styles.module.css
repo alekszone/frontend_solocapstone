@@ -17,6 +17,7 @@
   box-shadow: 5px 5px 5px 5px rgba(206, 206, 206, 0.938);
   background-image: url("https://res.cloudinary.com/dle6fzc1o/image/upload/v1605622564/backgroundimage/Untitled_design_2_okmnmp.png");
   background-size: cover;
+  border-radius: 5px;
 }
 .div {
   width: 80%;
@@ -38,6 +39,7 @@
   margin-bottom: 0 !important;
   margin-top: 15%;
   height: 140px;
+  border-radius: 5px;
   box-shadow: 3px 3px 3px rgba(226, 226, 226, 0.938);
 }
 .nameProfile {
@@ -48,7 +50,8 @@
 .dataInfo {
   box-shadow: 3px 3px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
-  height: 288px;
+  border-radius: 5px;
+  height: 276px;
   color: rgb(63, 69, 95);
 }
 .dataInfo div {
@@ -136,6 +139,7 @@
   box-shadow: 3px 3px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
   height: auto;
+  border-radius: 5px;
   color: rgb(63, 69, 95);
 }
 .dataAbout div {

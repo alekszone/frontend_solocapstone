@@ -12,6 +12,7 @@
 
 .company {
   height: 600px !important;
+  border-radius: 5px;
 
   /* margin-left: 10px; */
   /* max-width: 500px; */
@@ -90,11 +91,12 @@
 .table {
   margin: 0 !important;
   padding: 0 !important;
+  align-items: center;
 }
 
 .title {
   text-align: center;
-  margin-top: 50px;
+
 }
 
 .nav {
@@ -186,6 +188,7 @@
   height: 630px;
   margin-left: 10px;
   margin-right: auto;
+  border-radius: 5px;
   box-shadow: 5px 5px 5px rgba(212, 212, 212, 0.938);
 }
 
@@ -228,7 +231,7 @@
 .cartblock1 img {
   width: 100px;
   height: 100px;
-  border-radius: 10px;
+  border-radius: 5px;
   padding-top: 0 !important;
   cursor: pointer;
 }
@@ -278,6 +281,12 @@
   font-family: "Mukta", sans-serif;
 
   color: #48546d;
+}
+.paginate{
+
+ 
+ margin-top: 30px;
+
 }
 
 @media only screen and (max-width: 769px) {

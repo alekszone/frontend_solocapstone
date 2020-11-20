@@ -183,11 +183,11 @@ export default function Profile() {
                         <>
                           <div className={`${Style.dataInfo} mt-1`}>
                             <div>
-                              <h5 className='mt-4'>Personal Info</h5>
+                              <h5 className='mt-3'>Personal Info</h5>
                               {hideIcon && (
                                 <AiOutlineEdit
                                   onClick={hideData}
-                                  className='mt-1'
+                                  className='mt-2'
                                   style={{
                                     marginLeft: 'auto',
                                     fontSize: '25px',
@@ -230,7 +230,7 @@ export default function Profile() {
                                 <h6>No Website</h6>
                               )}
                             </div>
-                            <div className='mb-2'>
+                            <div className='mb-1'>
                               <GrUserWorker />
 
                               {data.personel ? (

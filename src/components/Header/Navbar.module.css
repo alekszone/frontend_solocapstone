@@ -1,6 +1,6 @@
 .title {
   text-align: center;
-  outline: 2px red solid;
+  
 }
 .img {
   width: 120px;
@@ -19,10 +19,10 @@
   margin-right: auto;
 }
 .bar {
-  /* background-color: black !important; */
+  background-color: rgb(91, 150, 197) !important;
   /* margin: 0 !important;
   padding: 0 !important; */
 }
-.link:hover {
+/* .link:hover {
   border: 2px solid #ff512f;
-}
+} */

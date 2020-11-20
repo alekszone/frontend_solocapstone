@@ -144,7 +144,8 @@ function MyLogin(props) {
                   You are new .... ?{' '}
                   <Button
                     variant='light'
-                    className={`${Styles.btngrad} mb-2`}
+                   style={{color:" rgb(63, 69, 95)",fontWeight:"bolder", backgroundColor:"transparent"}}
+                   className="mb-2"
                     onClick={() => props.register()}
                   >
                     Register
@@ -224,7 +225,8 @@ function MyLogin(props) {
                   You are new .... ?{' '}
                   <Button
                     variant='light'
-                    className={`${Styles.btngrad} mb-2`}
+                    style={{color:" rgb(63, 69, 95)",fontWeight:"bolder", backgroundColor:"transparent"}}
+                    className="mb-2"
                     onClick={() => props.register()}
                   >
                     Register

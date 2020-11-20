@@ -85,7 +85,7 @@ class Buttons extends Component {
                 backgroundColor: "white",
                 marginLeft: "auto",
                 marginRight: "auto",
-                borderRadius: "20px",
+                borderRadius: "5px",
                 boxShadow: "5px 5px 5px rgba(180, 179, 179, 0.938)",
               }}
             >
@@ -104,7 +104,7 @@ class Buttons extends Component {
                       fontWeight: "bolder",
                     }}
                   >
-                    Login{" "}
+                    Login As{" "}
                   </h4>
                 </Col>
 
@@ -133,7 +133,7 @@ class Buttons extends Component {
 
                       alignItems: "center",
                       backgroundColor: "rgb(10,120,178)",
-                      borderRadius: "10%",
+                      borderRadius: "5px",
                       color: "white",
                       boxShadow: "5px 5px 5px rgba(180, 179, 179, 0.938)",
                     }}
@@ -174,7 +174,7 @@ class Buttons extends Component {
                       // justifyContent: "center",
                       alignItems: "center",
                       backgroundColor: "rgb(10,120,178)",
-                      borderRadius: "10%",
+                      borderRadius: "5px",
                       color: " white",
                       boxShadow: "5px 5px 5px rgba(180, 179, 179, 0.938)",
                     }}
@@ -202,6 +202,7 @@ class Buttons extends Component {
             lg={12}
             style={{
               width: "100%",
+              height:"auto"
             }}
             // className={`  ${Styles.clear}`}
           >
@@ -212,7 +213,7 @@ class Buttons extends Component {
                 width: "90%",
                 marginLeft: "auto",
                 marginRight: "auto",
-                borderRadius: "20px",
+                borderRadius: "5px",
                 boxShadow: "5px 5px 5px rgba(180, 179, 179, 0.938)",
               }}
             >
@@ -222,12 +223,12 @@ class Buttons extends Component {
                   sm={12}
                   md={6}
                   lg={6}
-                  style={{ display: "flex", justifyContent: "center" }}
+                  style={{ display: "flex", justifyContent: "center", height:"30%" }}
                 >
                   <Image
                     className={` mt-2 mb-2 ${Styles.profileImage}`}
                     variant="top"
-                    src={OurCompany}
+                    src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2019/11/jobs-1574510609.jpg"
                   />
                 </Col>
                 <Col
@@ -239,30 +240,20 @@ class Buttons extends Component {
                 >
                   <div>
                     <h4
-                      className="mt-2"
+                      className="mt-5"
                       style={{
                         color: " rgb(236, 108, 34)",
                         fontWeight: "bolder",
                         textAlign: "center",
                       }}
                     >
-                      About Us{" "}
+                      About{" "}
                     </h4>
                     <Card.Text
-                      className={`mr-2 ml-2 mb-2 text-left ${Styles.subTitle} ${Styles.textJustify}`}
+                      className={`mr-2 ml-2 mb-2 mt-5 text-left ${Styles.subTitle} ${Styles.textJustify}`}
                     >
-                      Are you interested in the field of technology or are a
-                      computer science wizard but you don’t have any formal
-                      experience or degree to show for it? No problem! The field
-                      of technology values your skillset over everything else.
-                      If you have the needed skills to perform well in a
-                      particular technological sector then it will be easy for
-                      you to secure a job even if you don’t have a degree or any
-                      experience to back yourself up. A lot of people who end up
-                      working tech jobs or have a tech-based business of their
-                      own typically don’t have a degree. Even if they do have a
-                      degree it may not be in computer science or a tech-related
-                      field at all.
+                      Find your future job in TECH JOBS
+                    Apply to jobs anytime, anywhere and get notified instantly when your application is reviewed.
                     </Card.Text>
                   </div>
                 </Col>
@@ -286,7 +277,7 @@ class Buttons extends Component {
                 backgroundColor: "white",
                 marginLeft: "auto",
                 marginRight: "auto",
-                borderRadius: "20px",
+                borderRadius: "5px",
                 boxShadow: "5px 5px 5px rgba(180, 179, 179, 0.938)",
               }}
             >

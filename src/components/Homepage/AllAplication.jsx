@@ -20,7 +20,7 @@ function AllAplication(props) {
   const [aplication, setAplication] = useState([]);
   const url = process.env.REACT_APP_URL;
   const [currentPage, setCurrentPage] = useState(1);
-  const [aplicantPerPage] = useState(30);
+  const [aplicantPerPage] = useState(20);
 
   const indexOfLastPost = currentPage * aplicantPerPage;
   const indexOfFirstPost = indexOfLastPost - aplicantPerPage;
@@ -67,9 +67,15 @@ function AllAplication(props) {
           style={{
             width: '90%',
             marginLeft: 'auto',
+            marginTop:"2%",
+            minHeight:"500px",
             marginRight: 'auto',
             backgroundColor: 'white',
             boxShadow: '2px 2px 2px 2px rgba(212, 212, 212, 0.938)',
+            borderRadius:"5px"
+            // display:"flex",
+            // flexDirection:"column",
+            // justifyContent:"center"
           }}
         >
           <h3
@@ -81,10 +87,12 @@ function AllAplication(props) {
             This are All Your Job Aplication
           </h3>
           <Table
+          className="mt-3"
             style={{
               width: '90%',
               color: 'rgb(63, 69, 95)',
               marginLeft: 'auto',
+          
               marginRight: 'auto',
               boxShadow: '2px 2px 2px rgba(212, 212, 212, 0.938)',
             }}
@@ -141,6 +149,7 @@ function AllAplication(props) {
                         style={{
                           borderRight: 'solid grey 2px',
                           borderTop: 'solid grey 2px',
+                          fontSize:"20px"
                         }}
                       >
                         {i + 1}
@@ -168,6 +177,7 @@ function AllAplication(props) {
                           style={{
                             borderTop: 'solid grey 2px',
                             borderRight: 'solid grey 2px',
+                            backgroundColor:"yellow"
                           }}
                         >
                           JOB Is Still In Review
@@ -177,15 +187,18 @@ function AllAplication(props) {
                           style={{
                             borderTop: 'solid grey 2px',
                             borderRight: 'solid grey 2px',
+                            backgroundColor:"green"
                           }}
+                          
                         >
-                          Accepted. Check Email{' '}
+                          Accepted.Check Email{' '}
                         </Td>
                       ) : (
                         <Td
                           style={{
                             borderTop: 'solid grey 2px',
                             borderRight: 'solid grey 2px',
+                            backgroundColor:"red"
                           }}
                         >
                           Denied.Check Email
@@ -205,14 +218,16 @@ function AllAplication(props) {
                 );
               })}
           </Table>
-
+  </div>
+      </Col > 
+      <Col xs={12} sm={12} md={12} lg={12}>
+      <div  className={`${Styles.paginate}`}>
           <Pagination
-            className='mt-5'
+          
             aplicantPerPage={aplicantPerPage}
             totalAplicant={aplication.length}
             paginate={paginate}
-          />
-        </div>
+          /></div>
       </Col>
     </Row>
   );

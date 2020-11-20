@@ -146,6 +146,7 @@
 .company {
   padding: 0 !important;
   margin: 0 !important;
+  z-index: -1000;
 }
 .about {
   font-size: 20px;
@@ -247,10 +248,11 @@
   height: 40px;
   border-bottom: 1px grey;
   color: rgb(63, 69, 95);
+
 }
 
 .custab:hover {
-  /* box-shadow: 7px 7px 7px rgb(148, 148, 148); */
+  box-shadow: 3px 3px 3px rgb(148, 148, 148);
   transition: 0.5s;
   cursor: pointer;
 }
@@ -267,9 +269,9 @@
   margin: 0 0 28px;
 }
 .cartblock1 img {
-  width: 80px;
-  height: 80px;
-  /* border-radius: 100%; */
+  width: 90%;
+  height:85%;
+  border-radius: 5px;
   padding-top: 0 !important;
   cursor: pointer;
 }
@@ -435,9 +437,9 @@
   margin-right: 0;
   background: #fff;
   color: rgb(63, 69, 95);
-
-  height: 280px;
-  box-shadow: 3px 3px 3px rgba(206, 206, 206, 0.938);
+z-index: inherit;
+  height: auto;
+  
 }
 .aboutme div > h5 {
   color: #48546d;
@@ -449,10 +451,10 @@
 .dataUser {
   text-decoration: none;
   overflow: hidden;
-
+text-align: justify !important;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 .dataUser1 {
