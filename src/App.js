@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
-
 import './App.css';
 import Navbar from './components/Header/Headers';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Login from './pages/LoginWorker';
 import HomePage from './pages/HomePage';
 import ProfileWorker from './pages/Profile';
@@ -11,7 +10,7 @@ import Company from './pages/HomeCompany';
 import ProfileCompany from './pages/ProfileCompany';
 import CompanyPosts from './pages/CompanyPosts';
 import AllAplication from './components/Homepage/AllAplication';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [companyNavBar, setcompanyNavBar] = useState(false);
