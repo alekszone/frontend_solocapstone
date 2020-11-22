@@ -56,7 +56,7 @@ function Headers(props) {
   return (
     <Navbar  className={`${Styles.bar} `} expand='lg'>
       <Navbar.Brand className="ml-3"  style={{ backgroundColor:"white" }} >
-        <img src={Logo} style={{ width: '80px', height: '30px',backgroundColor:"white" }} />
+        <img src={Logo} style={{ width: '80px', height: '20px',backgroundColor:"white" }} />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
