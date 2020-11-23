@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter, } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Form, Col, Button, InputGroup, Row, Alert } from 'react-bootstrap';
+import {  Col, Button,  Row, Alert } from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Styles from './Login.module.css';
 import Logo from './Logo.png';
-import Cookies from 'js-cookie';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {

@@ -1,19 +1,16 @@
 import React, { Component } from "react";
-import { Row, Col, Button, Card, Container, Image } from "react-bootstrap";
+import { Row, Col, Button, Card,  Image } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 import Logo from "./Logo.png";
 import { BsSearch } from "react-icons/bs";
 import { RiChatCheckLine } from "react-icons/ri";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import { VscBriefcase } from "react-icons/vsc";
-import { AiOutlineMail } from "react-icons/ai";
-
-import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Styles from "./Login.module.css";
 import { connect } from "react-redux";
 import Company from "./company.jpg";
-import OurCompany from "./compani.jpg";
+
 import User from "./user.png";
 
 const mapStateToProps = (state) => state;
@@ -250,18 +247,12 @@ class Buttons extends Component {
                       About{" "}
                     </h3>
                     <Card.Text
-                      className={`mr-2 ml-2 mb-2 mt-3 text-left ${Styles.subTitle} ${Styles.textJustify}`}
+                      className={`mr-2 ml-2 mb-2 mt-4 text-left ${Styles.subTitle} ${Styles.textJustify}`}
                       style={{color:"white"}}
                     >
                     
-Here you are going to find the newest jobs by the Technology Companies<br/> or if you are a Company,
-                  you will find the best workers.  
-
-
-
-
-                      Find your future job in TECH <br/>
-                    Apply to jobs anytime, anywhere and get notified instantly when your application is reviewed.
+Here you are going to find the newest jobs by the Technology Companies or find the best workes.<br/>
+           Apply to jobs anytime, anywhere and get notified instantly when your application is reviewed.
                     </Card.Text>
                   </div>
                 </Col>

@@ -2,19 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import Styles from './Login.module.css';
 import {
-  Form,
+  
   Col,
   Button,
-  InputGroup,
+
   Row,
-  Container,
-  FormControl,
-  Alert,
+   Alert,
 } from 'react-bootstrap';
 import Logo from './Logo.png';
-import { BiImageAdd } from 'react-icons/bi';
-import Upload from './uplad.png';
-import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 const mapStateToProps = (state) => state;
 function MyRegister(props) {
@@ -296,24 +291,7 @@ function MyRegister(props) {
                       onChange={(e) => setAboutMe(e.currentTarget.value)}
                     />
                   </div>
-                  {/* <div className="mt-2 mb-4">
-                    <InputGroup className={`${Styles.uploads}`}>
-                      <InputGroup.Prepend>
-                        <div className={`${Styles.imageupload}`}>
-                          <h6> Upload Your Profile Image</h6>
-                          <label for="file-input" aria-required="true">
-                            <img src={Upload} />
-                          </label>
-                          <input
-                            id="file-input"
-                            type="file"
-                            value={Image}
-                            onChange={(e) => setImage(e.target.files[0])}
-                          />
-                        </div>
-                      </InputGroup.Prepend>
-                    </InputGroup>
-                  </div> */}
+                
                   <div className='mt-2 mb-4'>
                     {alert && (
                       <Alert variant='danger' className={`${Styles.input}`}>
@@ -466,29 +444,7 @@ function MyRegister(props) {
                       onChange={(e) => setAboutMe(e.currentTarget.value)}
                     />
                   </div>
-                  {/* <div className="mt-2 mb-4">
-                    <InputGroup className={`${Styles.uploads}`}>
-                      <InputGroup.Prepend>
-                        <div className={`${Styles.imageupload}`}>
-                          <h6> Upload Your Profile Image</h6>
-                          <label for="file-input" aria-required="true">
-                            <img src={Upload} />
-                          </label>
-                          <input
-                            id="file-input"
-                            type="file"
-                            key="image"
-                            id="file-input"
-                            type="file"
-                            accept="image/*"
-                            profile="file"
-                            // value={Image}
-                            onChange={(e) => setImage(e.target.files[0])}
-                          />
-                        </div>
-                      </InputGroup.Prepend>
-                    </InputGroup>
-                  </div> */}
+                
                   <div className='mt-2 mb-4'>
                     {alert && (
                       <Alert variant='danger' className={`${Styles.input}`}>
