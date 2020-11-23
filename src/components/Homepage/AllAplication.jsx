@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col,Button } from 'react-bootstrap';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import Styles from './Styles.module.css';
 import Pagination from './Pagination';
@@ -67,19 +67,20 @@ function AllAplication(props) {
           style={{
             width: '90%',
             marginLeft: 'auto',
-            marginTop:"2%",
-            minHeight:"500px",
+           
+            minHeight:"450px",
             marginRight: 'auto',
             backgroundColor: 'white',
-            boxShadow: '2px 2px 2px 2px rgba(212, 212, 212, 0.938)',
+            boxShadow: '0px 2px 2px rgba(212, 212, 212, 0.938)',
             borderRadius:"5px"
             // display:"flex",
             // flexDirection:"column",
             // justifyContent:"center"
           }}
+          className="mt-3"
         >
           <h3
-            className={`${Styles.title}`}
+            className={`${Styles.title} pt-4`}
             style={{
               color: 'rgb(63, 69, 95)',
             }}
@@ -87,14 +88,14 @@ function AllAplication(props) {
             This are All Your Job Aplication
           </h3>
           <Table
-          className="mt-3"
+          className="mt-4"
             style={{
               width: '90%',
               color: 'rgb(63, 69, 95)',
               marginLeft: 'auto',
           
               marginRight: 'auto',
-              boxShadow: '2px 2px 2px rgba(212, 212, 212, 0.938)',
+              boxShadow: '0px 2px 2px rgba(212, 212, 212, 0.938)',
             }}
           >
             <Thead>
@@ -177,21 +178,21 @@ function AllAplication(props) {
                           style={{
                             borderTop: 'solid grey 2px',
                             borderRight: 'solid grey 2px',
-                            backgroundColor:"yellow"
+                            
                           }}
                         >
-                          JOB Is Still In Review
+                         <Button style={{backgroundColor:"#ffc107",border:"none",fontWeight:"bolder"}}> In Review</Button>
                         </Td>
                       ) : x.answer === 'accepted' ? (
                         <Td
                           style={{
                             borderTop: 'solid grey 2px',
                             borderRight: 'solid grey 2px',
-                            backgroundColor:"green"
+                          
                           }}
                           
                         >
-                          Accepted.Check Email{' '}
+                         <Button style={{ backgroundColor:"green",border:"none",fontWeight:"bolder"}}> Accepted{' '}</Button>
                         </Td>
                       ) : (
                         <Td
@@ -201,7 +202,7 @@ function AllAplication(props) {
                             backgroundColor:"red"
                           }}
                         >
-                          Denied.Check Email
+                       <Button style={{  backgroundColor:"red",border:"none",fontWeight:"bolder"}}>  Denied</Button> 
                         </Td>
                       )}
                       <Td

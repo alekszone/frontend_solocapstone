@@ -26,10 +26,10 @@
 }
 
 .logo{
-  width: 50px !important;
+  /* width: 50px !important; */
    height: 30px !important;
-   background-color:white;
-
+   /* background-color:white; */
+color:white !important;
 
 }
 

@@ -83,15 +83,13 @@ export default function Posts() {
       <Row className={`${Style.myPosts}`}>
         <Col xs={12} sm={12} md={12} lg={12}>
           {' '}
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div className='mt-2'>
-              <AddPost fetchPost={fetchPost} />
-            </div>
+          <div style={{ display: 'flex',justifyContent:"space-between"  }}>
+          
             <div
-              className='mt-2'
+              className='mt-2 ml-5'
               style={{
-                display: 'flex',
-                justifyContent: 'center',
+                width:"40%",
+          
               }}
             >
               <form>
@@ -109,21 +107,25 @@ export default function Posts() {
                 />
               </form>{' '}
             </div>
+            <div className='mt-2'>
+              <AddPost fetchPost={fetchPost} />
+            </div>
           </div>
         </Col>
 
         {currentAplicant &&
           currentAplicant.map((data) => {
             return (
-              <Col xs={12} sm={12} md={6} lg={6}>
-                <div className={`${Style.carts} mt-3`}>
+              <Col xs={12} sm={12} md={6} lg={6} >
+                <div className={`${Style.carts} mt-3 pb-3`}>
                   <Row
                     style={{
-                      boxShadow: '3px 3px 3px  rgba(212, 212, 212, 0.938)',
+                      boxShadow: '0px 3px 3px  rgba(212, 212, 212, 0.938)',
 
                       marginLeft: 'auto',
                       marginRight: 'auto',
                     }}
+                   
                   >
                     <Col
                       xs={4}
@@ -148,15 +150,15 @@ export default function Posts() {
                           className='mt-1'
                           src='https://ianmartin.com/wp-content/uploads/2017/10/WhatE28099s20the20Best20Day20of20the20Week20to20Post20a20Job20Ad-1030x687.jpg'
                           style={{
-                            width: '100%',
-                            height: '93%',
+                            width: '90%',
+                            height: '90%',
                             objectFit: 'cover',
                             borderRadius: '10px',
                           }}
                         />
                       )}
                     </Col>
-                    <Col xs={6} sm={6} md={6} lg={6} className='mt-1'>
+                    <Col xs={6} sm={6} md={6} lg={6} className='mt-1 mb-2'>
                       <h5 className={`${Style.headTitle} mt-2 ml-2`}>
                         {data.companyName}
                       </h5>
@@ -187,7 +189,7 @@ export default function Posts() {
                     </Col>
                     {/* </div> */}
                   </Row>
-                  <div className={`${Style.about} ml-2 mr-2 mt-2 mb-5`}>
+                  <div className={`${Style.about} ml-2 mr-2 mt-2 pb-5`}>
                     <div>
                       <h5 className={`${Style.headTitle} ml-2 mt-2`}>
                         {' '}

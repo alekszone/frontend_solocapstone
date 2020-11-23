@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import Styles from './Styles.module.css';
-import { BsFillBriefcaseFill } from 'react-icons/bs';
+
 import { FaRegFilePdf } from 'react-icons/fa';
 
 export default function Carts(props) {
@@ -40,13 +40,13 @@ export default function Carts(props) {
                 sm={4}
                 md={4}
                 lg={4}
-                className={`${Styles.users} mt-2`}
+                className={`${Styles.users} ${Styles.cartblock} mt-2`}
               >
-                <div className={`${Styles.cartblock} `}>
+               
                   {data.image ? (
                     <img
                       src={data.image}
-                      className='img-responsive '
+                      className='img-responsive mt-1 '
                       alt=''
                       onClick={() => {
                         props.setProfile(data._id);
@@ -57,7 +57,7 @@ export default function Carts(props) {
                   ) : (
                     <img
                       src='https://w7.pngwing.com/pngs/613/636/png-transparent-computer-icons-user-profile-male-avatar-avatar-heroes-logo-black.png'
-                      className='img-responsive '
+                      className='img-responsive mt-1 '
                       alt=''
                       onClick={() => {
                         props.setProfile(data._id);
@@ -83,7 +83,7 @@ export default function Carts(props) {
                     }}
                     className={`${Styles.pdf}`}
                   />
-                </div>
+                
               </Col>
             </>
           );

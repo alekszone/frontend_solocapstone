@@ -43,7 +43,7 @@ function MyLogin(props) {
       },
     });
 
-    if (moreData) {
+    if (moreData.ok) {
       const data = await moreData.json();
 
       localStorage.setItem('token', data.token);
@@ -65,7 +65,7 @@ function MyLogin(props) {
         'Content-Type': 'application/json',
       }),
     });
-    if (result) {
+    if (result.ok) {
       const data = await result.json();
 
       localStorage.setItem('token', data.token);
@@ -150,15 +150,16 @@ function MyLogin(props) {
                   >
                     Register
                   </Button>
-                </form>{' '}
-              </div>
-              <div>
+                </form> 
+                 <div>
                 {alert && (
                   <Alert variant='danger' className={`${Styles.input}`}>
                     Check again Your Login credentials
                   </Alert>
                 )}
+              </div>{' '}
               </div>
+            
             </Col>
           </>
         )}
@@ -231,15 +232,15 @@ function MyLogin(props) {
                   >
                     Register
                   </Button>
-                </form>{' '}
-              </div>
-              <div>
+                </form><div>
                 {alert && (
                   <Alert variant='danger' className={`${Styles.input}`}>
                     Check again Your Login credentials
                   </Alert>
                 )}
+              </div>{' '}
               </div>
+              
             </Col>
           </>
         )}

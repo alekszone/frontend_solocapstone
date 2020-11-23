@@ -47,15 +47,15 @@ export default function About(props) {
     if (result.ok) {
       const data = await result.json();
       setGetAbout(data[0].aboutMe);
-      setInfo(data[0].aboutMe.slice(0, 600) + '...');
-      if (data[0].aboutMe.length > 600) {
+      setInfo(data[0].aboutMe + '...');
+      if (data[0].aboutMe.length > 580) {
         setButton(true);
       }
     }
   };
   const data = () => {
     if (skip == true) {
-      setInfo(getAbout.slice(0, 600));
+      setInfo(getAbout.slice(0, 580));
       setskip(false);
       sethideButton(true);
       setshowButton(false);
@@ -99,24 +99,34 @@ export default function About(props) {
                 }}
               />
             )}
-          </div>
-          <div>
-            <p className={`${Style.aboutMe}`}>{info}</p>
-          </div>
-          <div style={{ marginRight: 'auto' }}>
-            {button && (
+          </div>    
+          {button && (
               <>
                 {hideButton && (
+                  <>
+          <div>
+            <p className={`${Style.aboutMe} mt-1`}>{info}</p>
+          </div>
+      
+      <div className="mt-2">  
                   <Button
                     style={{ marginLeft: 'auto' }}
-                    className={`${Style.btngrad} mr-3 mb-2`}
+                    className={`${Style.btngrad} mr-3 mb-1`}
                     variant='light'
                     onClick={() => data()}
                   >
                     Show More
                   </Button>
-                )}
+                  </div>
+             </>   )}
                 {showButton && (
+                  <>
+ <div>
+ <p className={`${Style.aboutMe2}`}>{info}</p>
+</div>
+
+
+               <div>
                   <Button
                     style={{ marginLeft: 'auto' }}
                     className={`${Style.btngrad}  mr-3 mb-1`}
@@ -125,10 +135,13 @@ export default function About(props) {
                   >
                     Hide{' '}
                   </Button>
-                )}
+                  </div>
+                </>
+                 )} 
+                
               </>
             )}
-          </div>
+     
         </>
       )}
       {hide && (
@@ -142,7 +155,7 @@ export default function About(props) {
                 id='outlined-multiline-static'
                 label='About Me'
                 multiline
-                rows={6}
+                rows={5}
                 style={{
                   width: '95%',
                 }}
@@ -156,14 +169,14 @@ export default function About(props) {
             <Button
               style={{ marginLeft: 'auto' }}
               variant='light'
-              className={`${Style.btngrad} mr-2  mb-1`}
+              className={`${Style.btngrad} mr-2  mb-2`}
               onClick={() => editProfile()}
             >
               Save
             </Button>
             <Button
               variant='light'
-              className={`${Style.btngrad} mb-1`}
+              className={`${Style.btngrad} mb-2`}
               onClick={showText}
             >
               Cancel

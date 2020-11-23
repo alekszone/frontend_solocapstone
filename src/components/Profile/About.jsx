@@ -46,15 +46,15 @@ export default function About(props) {
     if (result.ok) {
       const data = await result.json();
       setGetAbout(data.aboutMe);
-      setInfo(data.aboutMe.slice(0, 650) + '...');
-      if (data.aboutMe.length > 650) {
+      setInfo(data.aboutMe, '...');
+      if (data.aboutMe.length > 580) {
         setButton(true);
       }
     }
   };
   const data = () => {
     if (skip == true) {
-      setInfo(getAbout.slice(0, 650));
+      setInfo(getAbout.slice(0, 580));
       setskip(false);
       sethideButton(true);
       setshowButton(false);
@@ -98,36 +98,46 @@ export default function About(props) {
                 }}
               />
             )}
-          </div>
+          </div>  
+           {button && 
+              <> 
+               {hideButton && (
+                 <>
           <div>
             <p className={`${Style.aboutMe}`}>{info}</p>
           </div>
-          <div style={{ marginRight: 'auto' }}>
-            {button && (
-              <>
-                {hideButton && (
+          {/* // <div style={{ marginRight: 'auto' }}> */}
+         
+              <div className="mt-2">
                   <Button
-                    style={{ marginLeft: 'auto' }}
-                    className={`${Style.btngrad} mr-3 mb-1`}
+                    style={{ marginLeft: 'auto', marginBottom:"3px"}}
+                    className={`${Style.btngrad} mr-3`}
                     variant='light'
                     onClick={() => data()}
                   >
                     Show More
-                  </Button>
-                )}
+                  </Button></div>
+             </>   )}
                 {showButton && (
+                  <>
+                   <div>
+                   <p className={`${Style.aboutMe2}`}>{info}</p>
+                 </div>
+                 <div className="mt-2">
                   <Button
-                    style={{ marginLeft: 'auto' }}
-                    className={`${Style.btngrad}  mr-3 mb-1`}
+                    style={{ marginLeft: 'auto',marginBottom:"3px" }}
+                    className={`${Style.btngrad} mr-3`}
                     variant='light'
                     onClick={() => data()}
                   >
                     Hide{' '}
-                  </Button>
-                )}
-              </>
-            )}
-          </div>
+                </Button></div>
+            </>      )}
+            {/* </div>    */}
+             </>
+          
+        }
+          
         </>
       )}
       {hide && (
@@ -135,7 +145,7 @@ export default function About(props) {
           <div>
             <h5 className={`${Style.titleAbout} mt-2`}>Edit About</h5>
           </div>{' '}
-          <div>
+       
             <form style={{ width: '100%' }}>
               <TextField
                 id='outlined-multiline-static'
@@ -150,19 +160,19 @@ export default function About(props) {
                 onChange={(e) => setGetAbout(e.currentTarget.value)}
               />{' '}
             </form>
-          </div>
+        
           <div>
             <Button
               style={{ marginLeft: 'auto' }}
               variant='light'
-              className={`${Style.btngrad} mr-2 mb-1`}
+              className={`${Style.btngrad} mr-2 mb-3`}
               onClick={() => editProfile()}
             >
               Save
             </Button>
             <Button
               variant='light'
-              className={`${Style.btngrad} mb-1`}
+              className={`${Style.btngrad} mb-3`}
               onClick={showText}
             >
               Cancel

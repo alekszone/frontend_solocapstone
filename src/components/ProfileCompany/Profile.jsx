@@ -331,14 +331,14 @@ export default function Profile() {
                             <div>
                               <Button
                                 style={{ marginLeft: 'auto' }}
-                                variant='light'
+                              
                                 className={`${Style.btngrad} mr-2`}
                                 onClick={() => editProfile()}
                               >
                                 Save
                               </Button>
                               <Button
-                                variant='light'
+                            
                                 className={`${Style.btngrad}`}
                                 onClick={showEdit}
                               >

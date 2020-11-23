@@ -74,31 +74,26 @@
   text-transform: uppercase;
   transition: 0.5s;
   background-size: auto;
-
-  font-weight: bolder;
+  color: rgb(63, 69, 95) !important;
+  font-weight: bolder !important;
   font-size: 15px;
-  background-image: linear-gradient(
-    to right,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
+background-color: white !important;
   border: none;
-  color: white;
+
 }
 
 .btngrad:hover {
   background-position: right center; /* change the direction of the change here */
 
   text-decoration: none;
-  font-weight: bolder;
-  color: rgb(63, 69, 95);
+  font-weight: bolder !important;
+  color: white !important;
   cursor: pointer;
   background-image: linear-gradient(
     to right,
-    #fdfdfd 0%,
-    #f5f5f5 51%,
-    #ebebeb 100%
+    #ff512f 0%,
+    #f09819 51%,
+    #ff512f 100%
   );
 }
 .btngrad:focus {
@@ -106,8 +101,8 @@
   /* color: #fff;
     text-decoration: none; */
   border: none !important;
-  color: white;
-  font-weight: bolder;
+  color: white !important;
+  font-weight: bolder !important;
   background-image: linear-gradient(
     to right,
     #ff512f 0%,
@@ -134,39 +129,11 @@
   color: white;
 }
 
-/* .btngrad1:hover {
-  background-position: right center; /* change the direction of the change here */
 
-  /* text-decoration: none;
-  font-weight: bolder;
-  color: rgb(63, 69, 95);
-  cursor: pointer;
-  background-image: linear-gradient(
-    to right,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
-} */
-/* .btngrad1:focus {
-  /* background-position: right center; /* change the direction of the change here */
-  /* color: #fff;
-    text-decoration: none; */
-  /* border: none !important;
-  color: white;
-  font-weight: bolder;
-  background-image: linear-gradient(
-    to right,
-    #ff512f 0%,
-    #f09819 51%,
-    #ff512f 100%
-  );
-  box-shadow: none;
-} */ 
 .rows {
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
   margin-top: 1%;
 }
 
@@ -188,7 +155,7 @@
 .bgImage {
   background-image: url("./bgImage.png");
   background-repeat: no-repeat;
-  height: 300px;
+  height: 250px;
   object-fit: cover;
 }
 .bgBlack {
@@ -198,18 +165,14 @@
   text-align: justify !important;
   padding-right: 10px;
   padding-left: 10px;
+  color:white !important;
 }
 .educationPhoto {
   width: 100px !important;
   height: 100px !important;
   object-fit: cover;
 }
-/* .clear {
-  margin-left: 0px !important;
-  margin-right: 0px !important;
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-} */
+
 .bg {
   background-color: #0f1f26 !important;
   color: #e8e9eb;
@@ -269,7 +232,7 @@
   font-family: "Raleway", sans-serif;
 }
 .subTitle {
-  color: #48546d !important;
+  color:white !important;
   font-size: 23px;
   font-family: "Raleway", sans-serif;
 }
@@ -278,12 +241,12 @@
   height: 80%;
   background-color: rgb(255, 255, 255);
   object-fit: cover;
-  box-shadow: 2px 2px 2px rgba(212, 212, 212, 0.938);
+  box-shadow: 0px 2px 2px rgba(212, 212, 212, 0.938);
   border-radius: 5px;
 }
 
 .icons {
-  width: 80px;
+  width: 60px;
   height: auto;
   color: rgb(10, 120, 178);
   align-items: center;

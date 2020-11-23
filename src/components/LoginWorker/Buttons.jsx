@@ -86,46 +86,51 @@ class Buttons extends Component {
                 marginLeft: "auto",
                 marginRight: "auto",
                 borderRadius: "5px",
-                boxShadow: "5px 5px 5px rgba(180, 179, 179, 0.938)",
+                boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
               }}
             >
-              <Row>
+              <Row >
                 <Col
                   xs={12}
                   sm={12}
                   md={12}
                   lg={12}
-                  style={{ display: "flex", justifyContent: "center" }}
+                  style={{ display: "flex",flexDirection:"column", justifyContent: "center" }}
                 >
                   <h4
-                    className="mt-2"
+                    className="mt-3"
                     style={{
                       color: " rgb(236, 108, 34)",
                       fontWeight: "bolder",
+                    textAlign:"center"
                     }}
                   >
-                    Login As{" "}
-                  </h4>
-                </Col>
+                  Welcome To Tech Jobs!              
+                 
+ 
+                  </h4 >
+
+</Col>
 
                 <Col
                   xs={12}
                   sm={12}
-                  md={6}
-                  lg={6}
-                  className="mb-5"
+                  md={12}
+                  lg={12}
+                
                   style={{
                     display: "flex",
                     justifyContent: "center",
                   }}
                 >
                   <div
-                    className="mt-2"
+                    className="mt-4 mb-5 mr-5"
                     onClick={(e) => {
                       this.props.sendTo();
                       this.addToReducer();
                     }}
                     style={{
+                      
                       width: "180px",
                       height: "220px",
                       display: "flex",
@@ -135,7 +140,7 @@ class Buttons extends Component {
                       backgroundColor: "rgb(10,120,178)",
                       borderRadius: "5px",
                       color: "white",
-                      boxShadow: "5px 5px 5px rgba(180, 179, 179, 0.938)",
+                      boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
                     }}
                   >
                     <img
@@ -149,19 +154,11 @@ class Buttons extends Component {
                     />
 
                     <h6 className="mt-3">Worker</h6>
+                    <Button className={`${Styles.btngrad} mt-2`}>Log In</Button>
                   </div>
-                </Col>
-                <Col
-                  className={` my-auto `}
-                  xs={12}
-                  sm={12}
-                  md={6}
-                  lg={6}
-                  className="mb-5"
-                  style={{ display: "flex", justifyContent: "center" }}
-                >
+
                   <div
-                    className="mt-2"
+                    className="mt-4 mb-5"
                     onClick={(e) => {
                       this.props.sendTo();
                       this.addToReduce();
@@ -176,7 +173,7 @@ class Buttons extends Component {
                       backgroundColor: "rgb(10,120,178)",
                       borderRadius: "5px",
                       color: " white",
-                      boxShadow: "5px 5px 5px rgba(180, 179, 179, 0.938)",
+                      boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
                     }}
                   >
                     <img
@@ -190,9 +187,12 @@ class Buttons extends Component {
                     />
 
                     <h6 className="mt-3">Company</h6>
+                    <Button className={`${Styles.btngrad} mt-2`}>Log In</Button>
                   </div>
+
+
                 </Col>
-              </Row>
+                             </Row>
             </div>
           </Col>
           <Col
@@ -209,12 +209,12 @@ class Buttons extends Component {
             <div
               className="mt-4 mb-4"
               style={{
-                backgroundColor: "white",
+                backgroundColor: "rgb(10,120,178)",
                 width: "90%",
                 marginLeft: "auto",
                 marginRight: "auto",
                 borderRadius: "5px",
-                boxShadow: "5px 5px 5px rgba(180, 179, 179, 0.938)",
+                boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
               }}
             >
               <Row>
@@ -239,8 +239,8 @@ class Buttons extends Component {
                   style={{ display: "flex", justifyContent: "center" }}
                 >
                   <div>
-                    <h4
-                      className="mt-5"
+                    <h3
+                      className="mt-3"
                       style={{
                         color: " rgb(236, 108, 34)",
                         fontWeight: "bolder",
@@ -248,11 +248,19 @@ class Buttons extends Component {
                       }}
                     >
                       About{" "}
-                    </h4>
+                    </h3>
                     <Card.Text
-                      className={`mr-2 ml-2 mb-2 mt-5 text-left ${Styles.subTitle} ${Styles.textJustify}`}
+                      className={`mr-2 ml-2 mb-2 mt-3 text-left ${Styles.subTitle} ${Styles.textJustify}`}
+                      style={{color:"white"}}
                     >
-                      Find your future job in TECH JOBS
+                    
+Here you are going to find the newest jobs by the Technology Companies<br/> or if you are a Company,
+                  you will find the best workers.  
+
+
+
+
+                      Find your future job in TECH <br/>
                     Apply to jobs anytime, anywhere and get notified instantly when your application is reviewed.
                     </Card.Text>
                   </div>
@@ -278,7 +286,7 @@ class Buttons extends Component {
                 marginLeft: "auto",
                 marginRight: "auto",
                 borderRadius: "5px",
-                boxShadow: "5px 5px 5px rgba(180, 179, 179, 0.938)",
+                boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
               }}
             >
               <Col
@@ -289,7 +297,7 @@ class Buttons extends Component {
                 style={{ display: "flex", justifyContent: "center" }}
               >
                 <h4
-                  className="mt-2"
+                  className="mt-3"
                   style={{ color: " rgb(236, 108, 34)", fontWeight: "bolder" }}
                 >
                   How Tech Jobs Work
@@ -301,7 +309,7 @@ class Buttons extends Component {
                 sm={6}
                 md={3}
                 lg={3}
-                className="mt-5 mb-5"
+                className="mt-3 mb-3"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -326,7 +334,7 @@ class Buttons extends Component {
                 sm={6}
                 md={3}
                 lg={3}
-                className="mt-5 mb-5"
+                className="mt-3 mb-3"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -351,7 +359,7 @@ class Buttons extends Component {
                 sm={6}
                 md={3}
                 lg={3}
-                className="mt-5 mb-5"
+                className="mt-3 mb-3"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -377,7 +385,7 @@ class Buttons extends Component {
                 sm={6}
                 md={3}
                 lg={3}
-                className="mt-5 mb-5"
+                className="mt-3 mb-3"
                 style={{ display: "flex", justifyContent: "center" }}
               >
                 <div
@@ -474,7 +482,7 @@ class Buttons extends Component {
                     </div>
                     <Button
                       variant="light"
-                      className={`${Styles.btngrad1} mb-2`}
+                      className={`${Styles.btngrad} mb-2`}
                       style={{ width: "100px" }}
                     >
                       Send

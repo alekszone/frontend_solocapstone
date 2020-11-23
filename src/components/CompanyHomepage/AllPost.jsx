@@ -39,9 +39,9 @@ function AllPost(props) {
         transition: "0.5s",
         backgroundColor: "rgb(255, 255, 255)",
       }}
-      className={`${Styles.next} ${Styles.dropDown}  `}
+      className={` ${Styles.dropDown}  `}
     >
-      <Col
+      {/* <Col
         xs={12}
         sm={12}
         md={12}
@@ -55,32 +55,32 @@ function AllPost(props) {
           height: "150px",
         }}
         className="mt-2"
-      >
+      > */}
         <div
-          className={`${Styles.cartblock1} mt-2`}
+          className={`${Styles.cartblock1}`}
           style={{
-            // display: "flex",
-            // justifyContent: "space-around",
-            height: "80%",
+            display: "flex",
+            justifyContent: "space-around",
+          
           }}
         >
           <Row>
-            <Col xs={4} sm={4} md={4} lg={4}>
+            <Col xs={5} sm={5} md={5} lg={5}>
               {companyProfile[0] && companyProfile[0].image ? (
                 <img
                   src={companyProfile[0].image}
-                  className={` mt-3`}
+                  className={` mt-2`}
                  
                 />
               ) : (
                 <img
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9-Tom5eAUi7AaarN_g-WIkVxvRNhdHa8BrQ&usqp=CAU"
-                  className={` mt-3`}
+                  className={` mt-2`}
                  
                 />
               )}
             </Col>
-            <Col xs={8} sm={8} md={8} lg={8}>
+            <Col xs={7} sm={7} md={7} lg={7}>
               <div className="mt-4">
                 <h5 className={` text-left`}>
                   {companyProfile[0] && companyProfile[0].companyName}
@@ -95,7 +95,7 @@ function AllPost(props) {
             </Col>
           </Row>
         </div>
-      </Col>
+      {/* </Col> */}
 
       <Col xs={12} sm={12} md={12} lg={12}>
         <Table className={`${Styles.custab}  pl-2 pr-2`}>

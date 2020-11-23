@@ -148,7 +148,7 @@ export default function Profile() {
                         className={`${Style.icon}`}
                         style={{
                           marginLeft: 'auto',
-                          fontSize: '25px',
+                          fontSize: '35px',
                           color: 'orangered',
                           backgroundColor: 'white',
                         }}

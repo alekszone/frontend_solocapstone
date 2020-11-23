@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col, Tab, Tabs, Button, Modal } from 'react-bootstrap';
 
 import Styles from './Styles.module.css';
+import TextField from '@material-ui/core/TextField';
 
 import { connect } from 'react-redux';
 const mapStateToProps = (state) => state;
@@ -180,18 +181,7 @@ class Inside extends Component {
             className={`${Styles.company} mt-3 `}
           >
             <Row className={`  ${Styles.row1}`}>
-              <Col xs={12} sm={12} md={12} lg={12} className='mt-2'>
-                <div
-                  style={{
-                    backgroundColor: 'white',
-                    zIndex: '10',
-                    position: '-webkit-sticky',
-                    position: 'sticky',
-                    top: '0',
-                    height: '150px',
-                  }}
-                >
-                  <div
+            <div
                     className={`${Styles.cartblock1} `}
                     style={{
                       display: 'flex',
@@ -201,7 +191,7 @@ class Inside extends Component {
                     {this.state.myProfile && this.state.myProfile.image ? (
                       <img
                         src={this.state.myProfile.image}
-                        className={` mt-1 mb-2`}
+                        className={` mt-2 mb-2`}
                         style={{
                           borderRadius: 'none !important',
                         }}
@@ -209,17 +199,17 @@ class Inside extends Component {
                     ) : (
                       <img
                         src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS9-Tom5eAUi7AaarN_g-WIkVxvRNhdHa8BrQ&usqp=CAU'
-                        className={` mt-1 mb-2`}
+                        className={` mt-2 mb-2`}
                         style={{
                           borderRadius: 'none !important',
                         }}
                       />
                     )}
                     <div
-                      className='mt-3'
-                      style={{
-                        height: 'auto',
-                      }}
+                      className='mt-4'
+                      // style={{
+                      //   height: 'auto',
+                      // }}
                     >
                       <h5 className={`${Styles.jobPosition}`}>
                         {this.state.myProfile && this.state.myProfile.name}{' '}
@@ -233,16 +223,46 @@ class Inside extends Component {
                       </h6>
                     </div>
                   </div>
+              <Col xs={12} sm={12} md={12} lg={12} >
 
+                <div
+                  style={{
+                    backgroundColor: 'white',
+                    zIndex: '10',
+                    position: '-webkit-sticky',
+                    position: 'sticky',
+                    top: '0',
+               
+                  }}
+                  className="mt-1"
+                >
+                                <form>
+                <TextField
+                  id='filled-multiline-flexible'
+                  label='Search by Job Position'
+                  type='text'
+
+                  variant='outlined'
+                  style={{
+                    width: '100%',
+                    backgroundColor: 'white',
+                   
+                  }}
+                  type='text'
+                  onChange={(e) => this.filterPost(e.currentTarget.value)}
+                />
+              </form>{' '}
+       
+{/* 
                   <input
                     type='text'
                     className={`${Styles.text}`}
                     placeholder='Search by job position'
                     onChange={(e) => this.filterPost(e.currentTarget.value)}
-                  />
+                  /> */}
                 </div>
 
-                <div className={`mt-5 ${Styles.about}`}>
+                <div className={` ${Styles.about}`}>
                   {this.state.allPost &&
                     this.state.allPost.map((data, i) => (
                       <>
@@ -260,7 +280,7 @@ class Inside extends Component {
                             ) : (
                               <img
                                 className='ml-1'
-                                src='https://www.flaticon.com/svg/static/icons/svg/52/52782.svg'
+                                src='https://www.justice.gov.il/ArticlesPhotos/blue-folders-magni.jpg'
                                 alt='Sample'
                                 className={`${Styles.img} ml-1 mt-1 mb-1`}
                               />
@@ -306,15 +326,11 @@ class Inside extends Component {
             className={`${Styles.company} mt-3`}
           >
             <Row className={`${Styles.row2}`}>
-              <Col xs={12} sm={12} md={12} lg={12}>
-                <div>
-                  {this.state.filter && (
-                    <div key={this.state.filter._id}>
-                      <div
-                        style={{ display: 'flex' }}
+            <div
+                        style={{ display: 'flex',justifyContent:"space-between",width:"100%" }}
                         className={`${Styles.infoCards}`}
                       >
-                        <div className='text-left mt-2'>
+                        <div className='text-left mt-2 ml-3'>
                           <div>
                             <h5 className={`${Styles.jobPosition}`}>
                               {this.state.filter.jobPosition}
@@ -358,16 +374,22 @@ class Inside extends Component {
                               variant='light'
                               className={`${Styles.btngrad}`}
                             >
-                             Applyed
+                             Applied
                             </Button>
                           )}
                         </div>
                       </div>
+              <Col xs={12} sm={12} md={12} lg={12}>
+                <div>
+                  {this.state.filter && (
+                    <div key={this.state.filter._id}>
+                      
 
                       <div className={`${Styles.desc}`}>
                         <Tabs
                           defaultActiveKey='company'
                           id='uncontrolled-tab-example'
+                          className="mt-2"
                           style={{ display: 'flex', justifyContent: 'center' }}
                         >
                           <Tab

@@ -3,16 +3,18 @@
   height: auto;
 }
 .search {
-  margin-left: 0px;
-  margin-right: 0px;
+  margin: 0 !important;
+  padding:0  !important;
 
-  display: flex !important;
-  justify-content: space-around !important;
+  /* display: flex !important;
+  justify-content: space-around !important; */
 }
 
 .company {
   height: 600px !important;
   border-radius: 5px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 
   /* margin-left: 10px; */
   /* max-width: 500px; */
@@ -84,6 +86,7 @@
   justify-content: space-between;
 }
 
+
 .modal {
   margin-top: 100px;
 }
@@ -134,7 +137,8 @@
   box-shadow: 5px 5px 5px rgba(212, 212, 212, 0.938);
 }
 .infoCards {
-  box-shadow: 2px 2px 2px rgba(212, 212, 212, 0.938);
+  box-shadow: 0px 2px 2px rgba(212, 212, 212, 0.938);
+  background-color: rgb(197, 222, 238);
 }
 
 .cardsDiv {
@@ -144,11 +148,11 @@
 
 .btngrad {
   text-align: center;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   transition: 0.5s;
   background-size: auto;
-  color: #ff512f;
-  font-weight: bolder;
+  color: rgb(63, 69, 95) !important;
+  font-weight: bolder !important;
   font-size: 15px;
 
   border: none;
@@ -156,7 +160,7 @@
 
 .btngrad:hover {
   background-position: right center; /* change the direction of the change here */
-  color: white;
+  color: white !important;
   text-decoration: none;
   font-weight: bolder;
   background-image: linear-gradient(
@@ -172,7 +176,7 @@
   /* color: #fff;
     text-decoration: none; */
   border: none !important;
-  color: white;
+  color: white !important;
   font-weight: bolder;
   background-image: linear-gradient(
     to right,
@@ -186,24 +190,25 @@
   background-color: #fff;
   width: 93%;
   height: 630px;
-  margin-left: 10px;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px rgba(212, 212, 212, 0.938);
+  box-shadow: 0px 5px 5px rgba(212, 212, 212, 0.938);
 }
 
 .row1 {
   background-color: #fff;
   width: 90%;
-  margin-left: auto;
-  margin-right: 10px;
-  box-shadow: 5px 5px 5px rgba(212, 212, 212, 0.938);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-shadow: 0px 5px 5px rgba(212, 212, 212, 0.938);
   height: 630px;
   border-radius: 3px;
+  
 }
 .about {
   /* outline: solid 2px red; */
-  height: 400px;
+  height: 385px;
   overflow-y: auto;
   overflow-x: hidden;
   text-align: justify !important;
@@ -218,19 +223,21 @@
   color: #48546d;
 }
 .cartblock1 {
-  float: left;
+  /* float: left; */
   width: 100%;
-
-  background: #fff;
+color:black !important;
+  background:#dd9081 ;
   /* padding: 30px 20px; */
+  height: 139px;
   text-align: center;
+  
 
-  box-shadow: 2px 2px 2px rgba(212, 212, 212, 0.938);
-  margin: 0 0 28px;
+  box-shadow: 0px 0px 2px rgba(212, 212, 212, 0.938);
+  /* margin: 0 0 28px; */
 }
 .cartblock1 img {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 5px;
   padding-top: 0 !important;
   cursor: pointer;
@@ -302,10 +309,10 @@
 }
 @media only screen and (max-width: 995px) {
   .row1 {
-    margin-right: auto !important;
+    /* margin-right: auto !important; */
   }
   .row2 {
-    margin-left: auto !important;
+    /* margin-left: auto !important; */
     height: auto;
     width: 90%;
   }

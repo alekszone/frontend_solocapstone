@@ -97,7 +97,7 @@
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 20px !important;
-  box-shadow: 5px 5px 5px 5px rgba(206, 206, 206, 0.938);
+  box-shadow:  0px 5px 5px rgba(206, 206, 206, 0.938);
   background-image: url("https://res.cloudinary.com/dle6fzc1o/image/upload/v1605622564/backgroundimage/Untitled_design_2_okmnmp.png");
   background-size: cover;
 }
@@ -124,10 +124,11 @@
 .imgProfile {
   width: 150px;
   margin-bottom: 0 !important;
+  object-fit: cover;
   margin-top: 15%;
-  height: 140px;
+  /* height: 140px; */
   border-radius: 5px;
-  box-shadow: 3px 3px 3px rgba(226, 226, 226, 0.938);
+  box-shadow: 0px 3px 3px rgba(226, 226, 226, 0.938);
 }
 .nameProfile {
   width: 150px;
@@ -135,7 +136,7 @@
   margin-top: 75%;
 }
 .dataInfo {
-  box-shadow: 3px 3px 3px 3px rgba(212, 212, 212, 0.938);
+  box-shadow: 0px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
   height: 288px;
   border-radius: 5px;
@@ -174,8 +175,8 @@
   transition: 0.5s;
   background-size: auto;
 
-  color: #ff512f;
-  font-weight: bolder;
+  color: rgb(63, 69, 95) !important;
+  font-weight: bolder !important;
   font-size: 15px;
 
   border: none;
@@ -183,7 +184,7 @@
 
 .btngrad:hover {
   background-position: right center; /* change the direction of the change here */
-  color: white;
+  color: white !important;
   text-decoration: none;
   font-weight: bolder;
   background-image: linear-gradient(
@@ -199,7 +200,7 @@
   /* color: #fff;
     text-decoration: none; */
   border: none !important;
-  color: white;
+  color: white !important;
   font-weight: bolder;
   background-image: linear-gradient(
     to right,
@@ -217,11 +218,25 @@
 
   text-align: justify;
   font-family: "Raleway", sans-serif;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+}
+.aboutMe2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+
+  text-align: justify;
+  font-family: "Raleway", sans-serif;
   /* -webkit-line-clamp: 6;
   -webkit-box-orient: vertical; */
 }
+
+
+
+
 .dataAbout {
-  box-shadow: 3px 3px 3px 3px rgba(212, 212, 212, 0.938);
+  box-shadow:  0px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
   height: auto;
   border-radius: 5px;
@@ -251,22 +266,30 @@
 .dataAbout div > h5:hover {
   cursor: pointer;
 }
+
 .input {
   display: none;
 }
 .uploadPhoto {
   /* margin-top: 105%; */
   /* margin-left: 5%; */
-  margin-top: 80%;
+  margin-top: 70%;
   margin-left: 5%;
   color: black;
   z-index: 1000;
 }
 .icon {
-  width: 25px;
-  height: 25px;
+  width: 35px;
+  height: 35px;
   color: #ff512f;
   font-weight: bolder;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px  #ff512f;
+
+}
+.icon:hover {
+
+  box-shadow: 0px 5px 5px  #ff512f;
 }
 .textStyle div > h6 {
   font-family: "Mukta", sans-serif;
@@ -284,7 +307,7 @@
 }
 
 .carts {
-  box-shadow: 3px 3px 3px 3px rgba(212, 212, 212, 0.938);
+  box-shadow: 0px 3px 3px  rgba(212, 212, 212, 0.938);
   background-color: white;
   border-radius: 5px;
 }

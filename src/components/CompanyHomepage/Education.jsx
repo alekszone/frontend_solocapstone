@@ -21,7 +21,7 @@ export default function Education(props) {
                 <>
                   {" "}
                   <Row
-                    className={` ${Styles.aboutme2} justify-content-space-around text-left m-0 p-0`}
+                    className={` ${Styles.aboutme2}  justify-content-space-bettwen text-left m-0 p-0 mt-3`}
                   >
                     <Col xs={12} sm={12} md={12} lg={12}>
                       <Row>

@@ -210,7 +210,7 @@ export default class Education extends Component {
     return (
       <>
         <Row className={`${Styles.myPosts}`}>
-          <Col xs={12} sm={12} md={12} lg={12} className='text-center '>
+          <Col xs={12} sm={12} md={12} lg={12} className='text-right '>
             <Button
               style={{
                 fontSize: '15px',
@@ -238,7 +238,7 @@ export default class Education extends Component {
                               display: 'flex',
                               justifyContent: 'space-around',
                               boxShadow:
-                                '3px 3px 3px  rgba(212, 212, 212, 0.938)',
+                                '0px 0px 3px  rgba(212, 212, 212, 0.938)',
                               marginLeft: 'auto',
                               marginRight: 'auto',
                             }}
@@ -291,34 +291,18 @@ export default class Education extends Component {
                                   justifyContent: 'right',
                                 }}
                               >
-                                <Button
-                                  variant='light'
-                                  style={{
-                                    backgroundColor: 'transparent',
-                                    width: '70%',
-                                  }}
-                                  className={`${Styles.btngrad} mt-2`}
-                                  onClick={() =>
-                                    this.deleteExperience(data._id)
-                                  }
-                                >
+                          
                                   <RiDeleteBinLine
-                                    className={`${Styles.icon} `}
+                                    className={`${Styles.icon} mt-3`}  onClick={() =>
+                                    this.deleteExperience(data._id)}
                                   />
-                                </Button>
-                                <Button
-                                  variant='light'
-                                  style={{
-                                    backgroundColor: 'transparent',
-                                    width: '70%',
-                                  }}
-                                  onClick={() => this.editShow(data)}
-                                  className={`${Styles.btngrad} mt-2`}
-                                >
+                              
+                          
                                   <AiOutlineEdit
-                                    className={`${Styles.icon} `}
+                                    className={`${Styles.icon} mt-3`}
+                                    onClick={() => this.editShow(data)}
                                   />
-                                </Button>
+                            
                               </div>
                             </Col>
                           </Row>

@@ -211,7 +211,7 @@ export default class Workexperience extends Component {
     return (
       <>
         <Row className={`${Styles.myPosts}`}>
-          <Col xs={12} sm={12} md={12} lg={12} className='text-center '>
+          <Col xs={12} sm={12} md={12} lg={12} className='text-right '>
             <Button
               style={{
                 fontSize: '15px',
@@ -239,7 +239,7 @@ export default class Workexperience extends Component {
                               display: 'flex',
                               justifyContent: 'space-around',
                               boxShadow:
-                                '3px 3px 3px  rgba(212, 212, 212, 0.938)',
+                                '0px 0px 3px  rgba(212, 212, 212, 0.938)',
 
                               marginLeft: 'auto',
                               marginRight: 'auto',
@@ -259,7 +259,7 @@ export default class Workexperience extends Component {
                                   style={{
                                     width: '90%',
                                     height: '85%',
-                                    // objectFit: "cover",
+                                    objectFit: "cover",
                                     borderRadius: '5px',
                                   }}
                                   className='mt-2  '

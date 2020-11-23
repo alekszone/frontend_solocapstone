@@ -62,6 +62,7 @@ export default function WorkerProfile(props) {
       },
     });
     const data = await result.json();
+    console.log(data,"ca ka mrena")
     if (data) {
       setprofile(data);
       console.log(data[0].education);
@@ -86,9 +87,22 @@ export default function WorkerProfile(props) {
           return (
             <>
               <Row>
-                <Col xs={12} sm={12} md={4} lg={4} className='pl-0'>
-                  <div className={`${Styles.cartblock1} mt-2 ml-0 mb-2 pb-2`}>
-                    {data.image ? (
+               
+                <Col xs={12} sm={12} md={12} lg={12} className='text-left mt-2'>
+                  <Tabs
+                    className='mt-2'
+                    defaultActiveKey='Aboutme'
+                    id='uncontrolled-tab-example'
+                    className={`${Styles.tabnav}`}
+                  >
+                    <Tab
+                      eventKey='Aboutme'
+                      title='About'
+                      className={` mt-2 text-left`}
+                    >
+                      <Row className={`${Styles.aboutme} `}>
+<Col xs={6} sm={6} md={6} lg={6} className={`${Styles.cartblock2} ${Styles.data}`}>
+{data.image ? (
                       <img
                         src={data.image}
                         className='img-responsive mt-2 mb-2'
@@ -115,47 +129,16 @@ export default function WorkerProfile(props) {
                         {data.portfolioLink}{' '}
                       </Link>
                     </h6>
-                  </div>
 
-                  <div
-                    style={{
-                      width: '100%',
-                      display: 'flex',
-                      justifyContent: 'space-around',
-                    }}
-                    className='mb-2'
-                  >
-                    <Button
-                      // style={{ border: 0 ,}}
-                      className={` mr-4 ${Styles.btngrad}`}
-                      onClick={() => showRemove(data)}
-                    >
-                      Remove
-                    </Button>
 
-                    <Button
-                      // style={{ border: 0 }}
-                      className={` ml-5  ${Styles.btngrad}`}
-                      onClick={() => showAccept(data)}
-                    >
-                      Accept
-                    </Button>
-                  </div>
-                </Col>
-                <Col xs={12} sm={12} md={8} lg={8} className='text-left mt-2'>
-                  <Tabs
-                    className='mt-2'
-                    defaultActiveKey='Aboutme'
-                    id='uncontrolled-tab-example'
-                    className={`${Styles.tabnav}`}
-                  >
-                    <Tab
-                      eventKey='Aboutme'
-                      title='About Me'
-                      className={` mt-2 text-left`}
-                    >
-                      <Row className={`${Styles.aboutme} ${Styles.data}`}>
-                        <p
+
+
+
+
+</Col>
+<Col xs={6} sm={6} md={6} lg={6} className={`${Styles.data}`}>
+
+  <p
                           className='m-1 p-1'
                           style={{
                             textAlign: 'justify ',
@@ -164,6 +147,13 @@ export default function WorkerProfile(props) {
                         >
                           {data.aboutMe}
                         </p>
+
+
+
+
+
+</Col>
+                      
                       </Row>
                     </Tab>
                     <Tab
@@ -176,26 +166,26 @@ export default function WorkerProfile(props) {
                       >
                         {data.education && data.education.length > 0 && (
                           <>
-                            <Col xs={4} sm={4} md={4} lg={4}>
+                            <Col xs={5} sm={5} md={5} lg={5} style={{display:"flex",justifyContent:"center"}}>
                               {data.education[0].image ? (
                                 <img
                                   src={data.education[0].image}
-                                  className={`${Styles.images} mt-3 ml-1`}
-                                  style={{ borderRadius: 0 }}
+                                  className={`${Styles.images1} mt-2 ml-1`}
+                                 
                                 />
                               ) : (
                                 <img
                                   src='https://koosrajramanah.com/wp-content/uploads/2016/08/education.png'
-                                  className={`${Styles.images} mt-3  ml-1`}
-                                  style={{ borderRadius: 0 }}
+                                  className={`${Styles.images1} mt-2  ml-1`}
+                                 
                                 />
                               )}
                             </Col>
                             <Col
-                              xs={8}
-                              sm={8}
-                              md={8}
-                              lg={8}
+                              xs={7}
+                              sm={7}
+                              md={7}
+                              lg={7}
                               style={{ height: 'auto' }}
                             >
                               <div
@@ -213,11 +203,11 @@ export default function WorkerProfile(props) {
                                   </i>
                                 </p>
                               </div>
-                              <div className={`${Styles.dataUser1} mt-1`}>
+                              <div className={`${Styles.dataUser1} mt-2`}>
                                 <h5>About</h5>
                                 <p>{data.education[0].about}</p>
                               </div>
-                              <div className={`${Styles.dataUser1} mt-1`}>
+                              <div className={`${Styles.dataUser1} mt-2`}>
                                 <h5>Skill Learned</h5>
                                 <p>{data.education[0].skillsLearned}</p>
                               </div>
@@ -235,6 +225,7 @@ export default function WorkerProfile(props) {
                                       color: ' #48546d',
                                       fontWeight: 'bolder',
                                     }}
+                                    className="mt-4"
                                     onClick={() => handleShow1(data.education)}
                                   >
                                     See All
@@ -256,22 +247,22 @@ export default function WorkerProfile(props) {
                       >
                         {data.workExperience && data.workExperience.length > 0 && (
                           <>
-                            <Col xs={4} sm={4} md={4} lg={4}>
+                            <Col xs={5} sm={5} md={5} lg={5} style={{display:"flex",justifyContent:"center"}}>
                               {data.workExperience[0].image ? (
                                 <img
                                   src={data.workExperience[0].image}
-                                  className={`${Styles.images} mt-2 ml-1`}
+                                  className={`${Styles.images1} mt-2 ml-1`}
                                   style={{ borderRadius: 0 }}
                                 />
                               ) : (
                                 <img
                                   src='https://koosrajramanah.com/wp-content/uploads/2016/08/education.png'
-                                  className={`${Styles.images} mt-2  ml-1`}
+                                  className={`${Styles.images1} mt-2  ml-1`}
                                   style={{ borderRadius: 0 }}
                                 />
                               )}
                             </Col>
-                            <Col xs={8} sm={8} md={8} lg={8}>
+                            <Col xs={7} sm={7} md={7} lg={7}>
                               <div
                                 style={{
                                   display: 'flex',
@@ -289,7 +280,7 @@ export default function WorkerProfile(props) {
                               </div>
 
                               <p>{data.workExperience[0].workPosition}</p>
-                              <div className={`${Styles.dataUser}`}>
+                              <div className={`${Styles.dataUser} mt-4`}>
                                 <h5>Description</h5>
                                 <p>{data.workExperience[0].description}</p>
                               </div>
@@ -306,8 +297,9 @@ export default function WorkerProfile(props) {
                                     style={{
                                       color: ' #48546d',
                                       fontWeight: 'bolder',
+                                      bottom:0
                                     }}
-                                    className='mt-4'
+                                    className='mt-5'
                                     onClick={() =>
                                       handleShow(data.workExperience)
                                     }
@@ -322,25 +314,62 @@ export default function WorkerProfile(props) {
                       </Row>
                     </Tab>
                     <Tab eventKey='skills' title='Skills'>
-                      {data.skills &&
-                        data.skills.map((info) => {
+                      { data.skills.length>0 ? 
+                      <>
+                        {data.skills.map((info) => {
                           return (
                             <>
                               <Button
                                 variant='light'
                                 className={`ml-1 mt-1 ${Styles.aboutme}`}
-                                style={{ height: 'auto' }}
+                                
                               >
                                 {info.skillName ? (
-                                  <p>{info.skillName}</p>
+                                  <p style={{color:" rgb(63, 69, 95)",fontWeight:"bolder"}}>{info.skillName}</p>
                                 ) : (
-                                  <h5>No skills </h5>
+                                  <h5 style={{color:" rgb(63, 69, 95)",fontWeight:"bolder"}}>No skills </h5>
                                 )}
                               </Button>
                             </>
                           );
                         })}
+                     </>      :
+            
+                      
+                            <h5  className="mt-5 text-center"  style={{color:" rgb(63, 69, 95)",fontWeight:"bolder"}}>No skills </h5>
+               
+               }
                     </Tab>
+                    <Tab eventKey='deccison' title='Take Action' >  
+
+                    <h5  className='text-center mt-5' >Do you want accept or remove the applicant? </h5>
+
+              
+               <div
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-around',
+                }}
+                className='mb-2'
+              >
+                <Button
+                  // style={{ border: 0 ,}}
+                  className={` mr-4 mt-5 ${Styles.btngrad}`}
+                  onClick={() => showRemove(data)}
+                >
+                  Remove
+                </Button>
+
+                <Button
+                  // style={{ border: 0 }}
+                  className={` ml-5 mt-5 ${Styles.btngrad}`}
+                  onClick={() => showAccept(data)}
+                >
+                  Accept
+                </Button>
+              </div>  
+                  </Tab>
                   </Tabs>
                 </Col>
               </Row>

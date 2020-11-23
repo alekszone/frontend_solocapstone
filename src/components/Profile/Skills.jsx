@@ -75,7 +75,7 @@ export default function Skills() {
   return (
     <>
       <Row>
-        <Col xs={12} sm={12} md={12} lg={12} className='text-center '>
+        <Col xs={12} sm={12} md={12} lg={12} className='text-right '>
           <Button
             style={{
               fontSize: '15px',

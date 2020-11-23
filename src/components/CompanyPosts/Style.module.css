@@ -4,7 +4,7 @@
 }
 
 .carts {
-  box-shadow: 3px 3px 3px 3px rgba(212, 212, 212, 0.938);
+  box-shadow: 0px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
   border-radius: 5px;
 }
@@ -31,8 +31,8 @@
   text-transform: uppercase;
   transition: 0.5s;
   background-size: auto;
-  color: #ff512f;
-  font-weight: bolder;
+  color: rgb(63, 69, 95) !important;
+  font-weight: bolder !important;
   font-size: 15px;
 
   border: none;
@@ -40,7 +40,7 @@
 
 .btngrad:hover {
   background-position: right center; /* change the direction of the change here */
-  color: white;
+  color: white !important;
   text-decoration: none;
   font-weight: bolder;
   background-image: linear-gradient(
@@ -95,6 +95,12 @@
   height: 25px;
 color: orangered;
   font-weight: bolder;
+  box-shadow: 0px 2px 2px orangered;
+
+  border-radius: 5px;
+}
+.icon:hover {
+  box-shadow: 0px 4px 4px orangered;
 }
 .textStyle div > h5 {
   font-family: "Mukta", sans-serif;

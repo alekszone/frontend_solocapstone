@@ -24,6 +24,8 @@ function Pagination(props) {
                 padding: "1px",
                 marginTop: "0px",
                 border: 0,
+                color: "rgb(63, 69, 95)",
+                fontWeight:"bolder",
               }}
               onClick={() => props.paginate(number)}
             >
