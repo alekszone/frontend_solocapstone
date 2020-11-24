@@ -95,7 +95,7 @@ export default function AllWorkers() {
           <Col
             xs={12}
             sm={12}
-            md={5}
+            md={12}
             lg={12}
             style={{ dispaly: "flex", justifyContent: "center" }}
           >
