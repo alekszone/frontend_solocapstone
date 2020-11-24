@@ -92,10 +92,18 @@ export default function AllWorkers() {
     <>
       <Row className={`${Styles.company}`}>
         {loader ? (
-          <Loader
-            // className={`ml-5 mt-5 `}
-            className={`${Styles.loader}`}
-          />
+          <Col
+            xs={12}
+            sm={12}
+            md={5}
+            lg={12}
+            style={{ dispaly: "flex", justifyContent: "center" }}
+          >
+            <Loader
+              // className={`ml-5 mt-5 `}
+              className={`${Styles.loader}`}
+            />
+          </Col>
         ) : (
           <>
             <Col xs={12} sm={12} md={5} lg={5} className="mt-3">

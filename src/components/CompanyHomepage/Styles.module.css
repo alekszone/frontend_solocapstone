@@ -521,13 +521,6 @@
   height: 570px !important;
 }
 
-.loader {
-  margin-left: auto;
-  margin-right: auto;
-
-  outline: solid 2px red;
-}
-
 @media only screen and (max-width: 640px) {
   .custab {
     height: auto;
