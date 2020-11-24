@@ -312,7 +312,7 @@ export default function WorkerProfile(props) {
                                       fontWeight: "bolder",
                                       bottom: 0,
                                     }}
-                                    className="mt-3"
+                                    className="mt-2"
                                     onClick={() =>
                                       handleShow(data.workExperience)
                                     }
