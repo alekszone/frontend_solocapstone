@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Button, Card,  Image } from "react-bootstrap";
+import { Row, Col, Button, Card, Image } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 import Logo from "./Logo.png";
 import { BsSearch } from "react-icons/bs";
@@ -51,16 +51,128 @@ class Buttons extends Component {
   render() {
     return (
       <>
-        <Row
-          style={{ margin: "0px", padding: "0px" }}
-          className={`${Styles.bgImage}`}
-        >
+        <Row className={`${Styles.bgImage} m-0 p-0`}>
           {" "}
           <div className={`${Styles.title}`}>
             <img src={Logo} style={{ width: "45%" }} />
             <h4 style={{ color: " rgb(236, 108, 34)", fontWeight: "bolder" }}>
               Find your future job in TECH JOBS
             </h4>
+          </div>
+          <div
+            className="mt-4 mb-4"
+            style={{
+              // backgroundColor: "rgb(238, 238, 238)",
+              width: "90%",
+              backgroundColor: "transparent",
+              marginLeft: "auto",
+              marginRight: "auto",
+              borderRadius: "5px",
+              // boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
+            }}
+          >
+            <Row>
+              <Col
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
+                <h4
+                  className="mt-3"
+                  style={{
+                    color: " rgb(236, 108, 34)",
+                    fontWeight: "bolder",
+                    textAlign: "center",
+                  }}
+                >
+                  Welcome To Tech Jobs!
+                </h4>
+              </Col>
+
+              <Col
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <div
+                  className={`mt-4 mb-5 ${Styles.loginsCart}`}
+                  onClick={(e) => {
+                    this.props.sendTo();
+                    this.addToReducer();
+                  }}
+                  style={{
+                    width: "180px",
+                    height: "220px",
+                    display: "flex",
+                    flexDirection: "column",
+
+                    alignItems: "center",
+                    backgroundColor: "rgb(10,120,178)",
+                    borderRadius: "5px",
+                    color: "white",
+                    boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
+                    marginRight: "200px",
+                  }}
+                >
+                  <img
+                    src={User}
+                    style={{
+                      width: "70px",
+                      height: "70px",
+                      borderRadius: "50%",
+                    }}
+                    className="mt-5"
+                  />
+
+                  <h6 className="mt-3">Worker</h6>
+                  <Button className={`${Styles.btngrad} mt-2`}>Log In</Button>
+                </div>
+
+                <div
+                  className="mt-4 mb-5"
+                  onClick={(e) => {
+                    this.props.sendTo();
+                    this.addToReduce();
+                  }}
+                  style={{
+                    width: "180px",
+                    height: "220px",
+                    display: "flex",
+                    flexDirection: "column",
+                    // justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: "rgb(10,120,178)",
+                    borderRadius: "5px",
+                    color: " white",
+                    boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
+                  }}
+                >
+                  <img
+                    src={Company}
+                    style={{
+                      width: "70px",
+                      height: "70px",
+                      borderRadius: "50%",
+                    }}
+                    className="mt-5"
+                  />
+
+                  <h6 className="mt-3">Company</h6>
+                  <Button className={`${Styles.btngrad} mt-2`}>Log In</Button>
+                </div>
+              </Col>
+            </Row>
           </div>
         </Row>
         <Row className="m-0 p-0">
@@ -70,136 +182,8 @@ class Buttons extends Component {
             md={12}
             lg={12}
             style={{
-              //
               width: "100%",
-            }}
-          >
-            <div
-              className="mt-4 mb-4"
-              style={{
-                // backgroundColor: "rgb(238, 238, 238)",
-                width: "90%",
-                backgroundColor: "white",
-                marginLeft: "auto",
-                marginRight: "auto",
-                borderRadius: "5px",
-                boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
-              }}
-            >
-              <Row >
-                <Col
-                  xs={12}
-                  sm={12}
-                  md={12}
-                  lg={12}
-                  style={{ display: "flex",flexDirection:"column", justifyContent: "center" }}
-                >
-                  <h4
-                    className="mt-3"
-                    style={{
-                      color: " rgb(236, 108, 34)",
-                      fontWeight: "bolder",
-                    textAlign:"center"
-                    }}
-                  >
-                  Welcome To Tech Jobs!              
-                 
- 
-                  </h4 >
-
-</Col>
-
-                <Col
-                  xs={12}
-                  sm={12}
-                  md={12}
-                  lg={12}
-                
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                >
-                  <div
-                    className="mt-4 mb-5 mr-5"
-                    onClick={(e) => {
-                      this.props.sendTo();
-                      this.addToReducer();
-                    }}
-                    style={{
-                      
-                      width: "180px",
-                      height: "220px",
-                      display: "flex",
-                      flexDirection: "column",
-
-                      alignItems: "center",
-                      backgroundColor: "rgb(10,120,178)",
-                      borderRadius: "5px",
-                      color: "white",
-                      boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
-                    }}
-                  >
-                    <img
-                      src={User}
-                      style={{
-                        width: "70px",
-                        height: "70px",
-                        borderRadius: "50%",
-                      }}
-                      className="mt-5"
-                    />
-
-                    <h6 className="mt-3">Worker</h6>
-                    <Button className={`${Styles.btngrad} mt-2`}>Log In</Button>
-                  </div>
-
-                  <div
-                    className="mt-4 mb-5"
-                    onClick={(e) => {
-                      this.props.sendTo();
-                      this.addToReduce();
-                    }}
-                    style={{
-                      width: "180px",
-                      height: "220px",
-                      display: "flex",
-                      flexDirection: "column",
-                      // justifyContent: "center",
-                      alignItems: "center",
-                      backgroundColor: "rgb(10,120,178)",
-                      borderRadius: "5px",
-                      color: " white",
-                      boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
-                    }}
-                  >
-                    <img
-                      src={Company}
-                      style={{
-                        width: "70px",
-                        height: "70px",
-                        borderRadius: "50%",
-                      }}
-                      className="mt-5"
-                    />
-
-                    <h6 className="mt-3">Company</h6>
-                    <Button className={`${Styles.btngrad} mt-2`}>Log In</Button>
-                  </div>
-
-
-                </Col>
-                             </Row>
-            </div>
-          </Col>
-          <Col
-            xs={12}
-            sm={12}
-            md={12}
-            lg={12}
-            style={{
-              width: "100%",
-              height:"auto"
+              height: "auto",
             }}
             // className={`  ${Styles.clear}`}
           >
@@ -220,7 +204,11 @@ class Buttons extends Component {
                   sm={12}
                   md={6}
                   lg={6}
-                  style={{ display: "flex", justifyContent: "center", height:"30%" }}
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    height: "30%",
+                  }}
                 >
                   <Image
                     className={` mt-2 mb-2 ${Styles.profileImage}`}
@@ -246,13 +234,16 @@ class Buttons extends Component {
                     >
                       About{" "}
                     </h3>
+
                     <Card.Text
                       className={`mr-2 ml-2 mb-2 mt-4 text-left ${Styles.subTitle} ${Styles.textJustify}`}
-                      style={{color:"white"}}
+                      style={{ color: "white" }}
                     >
-                    
-Here you are going to find the newest jobs by the Technology Companies or find the best workes.<br/>
-           Apply to jobs anytime, anywhere and get notified instantly when your application is reviewed.
+                      Here you are going to find the newest jobs by the
+                      Technology Companies or find the best workes.
+                      <br />
+                      Apply to jobs anytime, anywhere and get notified instantly
+                      when your application is reviewed.
                     </Card.Text>
                   </div>
                 </Col>

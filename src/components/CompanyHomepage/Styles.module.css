@@ -64,7 +64,7 @@
 .data {
   overflow-y: auto;
   overflow-x: hidden;
-  height:300px;
+  height: 300px;
 }
 
 .data::-webkit-scrollbar {
@@ -104,7 +104,6 @@
   color: rgb(63, 69, 95);
 }
 .btngrad {
- 
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
@@ -113,8 +112,6 @@
   font-weight: bolder !important;
   font-size: 15px;
   border: none !important;
-
-
 }
 
 .btngrad:hover {
@@ -149,7 +146,6 @@
 .company {
   padding: 0 !important;
   margin: 0 !important;
-  
 }
 .about {
   font-size: 20px;
@@ -210,12 +206,12 @@
   border-radius: 50%;
   box-shadow: 3px 3px 3px rgb(148, 148, 148);
 }
-.images1{
-  width:70%;
+.images1 {
+  width: 70%;
   height: 60%;
   border-radius: 5px;
-margin-left: auto;
-margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   box-shadow: 0px 3px 3px rgb(148, 148, 148);
 }
 .imagesCard {
@@ -259,7 +255,6 @@ margin-right: auto;
   height: 40px;
   border-bottom: 1px grey;
   color: rgb(63, 69, 95);
-
 }
 
 .custab:hover {
@@ -269,15 +264,12 @@ margin-right: auto;
 }
 
 .cartblock1 {
- 
   width: 100%;
 
-    background:#dd9081 ;
-    /* padding: 30px 20px; */
-    height: 139px;
+  background: #91ddeb;
+  /* padding: 30px 20px; */
+  height: 139px;
 
-
-  
   /* padding: 30px 20px; */
   text-align: center;
 
@@ -286,7 +278,7 @@ margin-right: auto;
 }
 .cartblock1 img {
   width: 90%;
-  height:85%;
+  height: 85%;
   border-radius: 5px;
   padding-top: 0 !important;
   cursor: pointer;
@@ -332,32 +324,30 @@ margin-right: auto;
   color: #48546d;
 }
 .cartblock2 {
-
   width: 100%;
 
   background: #fff;
   /* padding: 30px 20px; */
   text-align: center;
 
-  box-shadow: 3px 0px 2px rgb(202, 202, 202);
+  box-shadow: 0px 0px 2px rgb(202, 202, 202);
   margin: 0 0 28px;
 }
 .cartblock2 img {
-  width: 30%;
-  height:35%;
+  width: 35%;
+  height: 30%;
 
   padding-top: 0 !important;
   cursor: pointer;
 }
 .cartblock:hover {
-
   border: 0;
   -webkit-box-orient: vertical;
   cursor: pointer;
 }
 .cartblock {
   height: 95%;
-   box-shadow: 1px 1px 1px rgba(209, 209, 209, 0.3);
+  box-shadow: 1px 1px 1px rgba(209, 209, 209, 0.3);
   width: 100%;
   background: #fff;
   /* padding: 30px 20px; */
@@ -473,7 +463,6 @@ margin-right: auto;
   color: rgb(63, 69, 95);
 
   height: auto;
-  
 }
 .aboutme div > h5 {
   color: #48546d;
@@ -485,10 +474,10 @@ margin-right: auto;
 .dataUser {
   text-decoration: none;
   overflow: hidden;
-text-align: justify !important;
+  text-align: justify !important;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;
 }
 .dataUser1 {
@@ -531,6 +520,14 @@ text-align: justify !important;
   margin-right: auto;
   height: 570px !important;
 }
+
+.loader {
+  margin-left: auto;
+  margin-right: auto;
+
+  outline: solid 2px red;
+}
+
 @media only screen and (max-width: 640px) {
   .custab {
     height: auto;
@@ -540,9 +537,6 @@ text-align: justify !important;
   .userProfile {
     height: auto !important;
   }
-
-
-
 
   .img {
     margin-left: 35%;
