@@ -35,10 +35,10 @@
 }
 .dropDown {
   /* outline: solid 2px red; */
-  height: 570px;
+  height: 580px;
   overflow-y: auto;
   overflow-x: hidden;
-  box-shadow: 7px 7px 7px rgb(148, 148, 148);
+  box-shadow: 3px 3px 3px rgb(148, 148, 148);
 }
 .dropDown123 {
   /* outline: solid 2px red; */
@@ -342,7 +342,7 @@
 }
 .cartblock:hover {
   border: 0;
-  -webkit-box-orient: vertical;
+
   cursor: pointer;
 }
 .cartblock {
@@ -518,7 +518,8 @@
   background-color: white;
   margin-left: auto;
   margin-right: auto;
-  height: 570px !important;
+
+  height: 580px !important;
 }
 
 @media only screen and (max-width: 640px) {

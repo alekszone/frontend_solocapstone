@@ -54,14 +54,14 @@ export default function AllWorkers() {
     if (allPost) {
       setTimeout(() => {
         setloader(false);
-      }, 2000);
+      }, 1200);
 
       setAllJob(allPost);
     } else {
       console.log("there is no data ");
       setTimeout(() => {
         setloader(false);
-      }, 2000);
+      }, 1200);
     }
   };
 
@@ -97,11 +97,12 @@ export default function AllWorkers() {
             sm={12}
             md={12}
             lg={12}
-            style={{ dispaly: "flex", justifyContent: "center" }}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+            }}
           >
-            <Loader
-            // className={`ml-5 mt-5 `}
-            />
+            <Loader />
           </Col>
         ) : (
           <>
@@ -119,37 +120,35 @@ export default function AllWorkers() {
               lg={7}
               className={` ${Styles.aplication}  mt-3  ${Styles.userProfile}`}
             >
-              <Row>
-                <Col xs={12} sm={12} md={12} lg={12}>
-                  <Carts
-                    currentAplicant={currentAplicant}
-                    setProfile={setProfile}
-                    showButton={showButton}
-                  />{" "}
-                </Col>
-                <Col xs={12} sm={12} md={12} lg={12} className="mt-1 ">
-                  <Pagination
-                    aplicantPerPage={aplicantPerPage}
-                    totalAplicant={aplicant.length}
-                    paginate={paginate}
-                  />
-                </Col>
+              <Col xs={12} sm={12} md={12} lg={12}>
+                <Carts
+                  currentAplicant={currentAplicant}
+                  setProfile={setProfile}
+                  showButton={showButton}
+                />{" "}
+              </Col>
+              <Col xs={12} sm={12} md={12} lg={12} className="mt-1 ">
+                <Pagination
+                  aplicantPerPage={aplicantPerPage}
+                  totalAplicant={aplicant.length}
+                  paginate={paginate}
+                />
+              </Col>
 
-                <Col
-                  xs={12}
-                  sm={12}
-                  md={12}
-                  lg={12}
-                  className={`${Styles.dropDown123}`}
-                >
-                  <WorkerProfile
-                    profile={profile}
-                    id={Id}
-                    allPost={allPost}
-                    allPosts={allPosts}
-                  />
-                </Col>
-              </Row>
+              <Col
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                className={`${Styles.dropDown123}`}
+              >
+                <WorkerProfile
+                  profile={profile}
+                  id={Id}
+                  allPost={allPost}
+                  allPosts={allPosts}
+                />
+              </Col>
             </Col>
           </>
         )}

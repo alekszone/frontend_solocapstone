@@ -48,7 +48,7 @@ export default function Profile() {
       setAbout(data[0].aboutMe);
       setTimeout(() => {
         setLoader(false);
-      }, 2000);
+      }, 1200);
     }
   };
   const editProfile = async () => {

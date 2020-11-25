@@ -48,7 +48,7 @@ function AllAplication(props) {
     console.log(getAllAplication, "show post");
     setTimeout(() => {
       setloader(false);
-    }, 2000);
+    }, 1200);
   };
 
   const deleteAplication = async (id) => {

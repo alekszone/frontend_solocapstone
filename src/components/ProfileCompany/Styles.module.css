@@ -35,7 +35,7 @@
 }
 
 .imgProfile {
-  width: 150px;
+  width: 180px;
   margin-bottom: 0 !important;
   margin-top: 15%;
   height: 140px;
@@ -89,7 +89,7 @@
   color: rgb(63, 69, 95) !important;
   font-weight: bolder !important;
   font-size: 15px;
-background-color: transparent !important;
+  background-color: transparent !important;
   border: none !important;
 }
 
@@ -107,7 +107,6 @@ background-color: transparent !important;
   cursor: pointer;
 }
 .btngrad:focus {
- 
   border: none !important;
   color: white !important;
   font-weight: bolder;
@@ -141,14 +140,12 @@ background-color: transparent !important;
   -webkit-box-orient: vertical; */
 }
 
-
-
 .titleAbout {
   font-family: "Josefin Sans", sans-serif;
   font-family: "Raleway", sans-serif;
 }
 .dataAbout {
-  box-shadow:  0px 3px 3px rgba(212, 212, 212, 0.938);
+  box-shadow: 0px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
   height: auto;
   border-radius: 5px;
@@ -184,7 +181,7 @@ background-color: transparent !important;
 .uploadPhoto {
   /* position: absolute; */
   /* margin: 90% 10% 0 0; */
-  margin-top: 80%;
+  margin-top: 70%;
   margin-left: 5%;
   color: black;
   z-index: 1000;
@@ -196,10 +193,10 @@ background-color: transparent !important;
   border-radius: 5px;
   color: #ff512f;
   font-weight: bolder;
-  box-shadow: 0px 1px 1px   #ff512f ;
+  box-shadow: 0px 1px 1px #ff512f;
 }
 .icon:hover {
- box-shadow: 0px 3px 3px   #ff512f ;
+  box-shadow: 0px 3px 3px #ff512f;
 }
 
 @media only screen and (max-width: 768px) {

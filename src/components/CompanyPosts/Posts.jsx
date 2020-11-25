@@ -49,7 +49,7 @@ export default function Posts() {
       setnewPost(data);
       setTimeout(() => {
         setLoader(false);
-      }, 1000);
+      }, 1200);
     }
   };
 

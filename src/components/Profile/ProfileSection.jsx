@@ -53,7 +53,7 @@ export default function Profile() {
       setPortfolioLink(data.portolioLink);
       setTimeout(() => {
         setloader(false);
-      }, 2000);
+      }, 1200);
     }
   };
   const data = {
@@ -195,7 +195,15 @@ export default function Profile() {
                           aria-required="true"
                           className={`${Style.uploadPhoto}`}
                         >
-                          <AiOutlineEdit className={`${Style.icon}`} />
+                          <AiOutlineEdit
+                            className={`${Style.icon}`}
+                            style={{
+                              marginLeft: "auto",
+                              fontSize: "35px",
+                              color: "orangered",
+                              backgroundColor: "white",
+                            }}
+                          />
                         </label>
                         <input
                           className={`${Style.input}`}

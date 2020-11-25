@@ -68,7 +68,7 @@ class Inside extends Component {
     if (result.ok) {
       setTimeout(() => {
         this.setState({ loader: false });
-      }, 2000);
+      }, 1200);
       const data = await result.json();
       this.setState({ myProfile: data });
       console.log(data);
@@ -348,20 +348,34 @@ class Inside extends Component {
                   >
                     <div className="text-left mt-2 ml-3">
                       <div>
-                        <h5 className={`${Styles.jobPosition}`}>
-                          {this.state.filter.jobPosition}
-                        </h5>
+                        {this.state.filter && this.state.filter.jobPosition ? (
+                          <h5 className={`${Styles.jobPosition}`}>
+                            {this.state.filter.jobPosition}
+                          </h5>
+                        ) : (
+                          <h5 className={`${Styles.jobPosition}`}>
+                            No Position
+                          </h5>
+                        )}
                       </div>
 
                       <div>
-                        <p className={`${Styles.type}`}>
-                          {this.state.filter.location}
-                        </p>
+                        {this.state.filter && this.state.filter.location ? (
+                          <p className={`${Styles.type}`}>
+                            {this.state.filter.location}
+                          </p>
+                        ) : (
+                          <p className={`${Styles.type}`}>No Location</p>
+                        )}
                       </div>
                       <div>
-                        <p className={`${Styles.salary}`}>
-                          ${this.state.filter.salary}
-                        </p>
+                        {this.state.filter && this.state.filter.salary ? (
+                          <p className={`${Styles.salary}`}>
+                            ${this.state.filter.salary}
+                          </p>
+                        ) : (
+                          <p className={`${Styles.salary}`}>No Salary</p>
+                        )}
                       </div>
                     </div>
 
