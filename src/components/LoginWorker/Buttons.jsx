@@ -122,7 +122,6 @@ class Buttons extends Component {
                     borderRadius: "5px",
                     color: "white",
                     boxShadow: "0px 5px 5px rgba(180, 179, 179, 0.938)",
-                    marginRight: "200px",
                   }}
                 >
                   <img
@@ -279,7 +278,7 @@ class Buttons extends Component {
                 style={{ display: "flex", justifyContent: "center" }}
               >
                 <h4
-                  className="mt-3"
+                  className="mt-5"
                   style={{ color: " rgb(236, 108, 34)", fontWeight: "bolder" }}
                 >
                   How Tech Jobs Work
@@ -291,7 +290,7 @@ class Buttons extends Component {
                 sm={6}
                 md={3}
                 lg={3}
-                className="mt-3 mb-3"
+                className="mt-5 mb-5"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -316,7 +315,7 @@ class Buttons extends Component {
                 sm={6}
                 md={3}
                 lg={3}
-                className="mt-3 mb-3"
+                className="mt-5 mb-5"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -341,7 +340,7 @@ class Buttons extends Component {
                 sm={6}
                 md={3}
                 lg={3}
-                className="mt-3 mb-3"
+                className="mt-5 mb-5"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -367,7 +366,7 @@ class Buttons extends Component {
                 sm={6}
                 md={3}
                 lg={3}
-                className="mt-3 mb-3"
+                className="mt-5 mb-5"
                 style={{ display: "flex", justifyContent: "center" }}
               >
                 <div

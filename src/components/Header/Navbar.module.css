@@ -1,6 +1,5 @@
 .title {
   text-align: center;
-  
 }
 .img {
   width: 120px;
@@ -25,12 +24,12 @@
   padding: 0 !important; */
 }
 
-.logo{
+.logo {
   /* width: 50px !important; */
-   height: 30px !important;
-   /* background-color:white; */
-color:white !important;
-
+  height: 30px !important;
+  background-color: white;
+  color: white !important;
+  box-shadow: 0px 3px 3px white;
+  border-radius: 5px;
+  margin-top: 0px !important;
 }
-
-

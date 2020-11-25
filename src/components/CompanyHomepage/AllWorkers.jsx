@@ -100,8 +100,7 @@ export default function AllWorkers() {
             style={{ dispaly: "flex", justifyContent: "center" }}
           >
             <Loader
-              // className={`ml-5 mt-5 `}
-              className={`${Styles.loader}`}
+            // className={`ml-5 mt-5 `}
             />
           </Col>
         ) : (
