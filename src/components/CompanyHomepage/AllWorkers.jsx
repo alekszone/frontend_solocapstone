@@ -121,12 +121,14 @@ export default function AllWorkers() {
               className={` ${Styles.aplication}  mt-3  ${Styles.userProfile}`}
             >
               <Col xs={12} sm={12} md={12} lg={12}>
-                <Carts
-                  currentAplicant={currentAplicant}
-                  setProfile={setProfile}
-                  showButton={showButton}
-                />{" "}
-              </Col>
+                <Row>
+                  <Carts
+                    currentAplicant={currentAplicant}
+                    setProfile={setProfile}
+                    showButton={showButton}
+                  />{" "}
+                </Row>{" "}
+              </Col>{" "}
               <Col xs={12} sm={12} md={12} lg={12} className="mt-1 ">
                 <Pagination
                   aplicantPerPage={aplicantPerPage}
@@ -134,7 +136,6 @@ export default function AllWorkers() {
                   paginate={paginate}
                 />
               </Col>
-
               <Col
                 xs={12}
                 sm={12}
