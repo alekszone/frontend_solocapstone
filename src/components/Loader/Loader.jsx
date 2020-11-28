@@ -11,11 +11,6 @@ const Loader = (props) => (
     foregroundColor="blue"
     {...props}
   >
-    {/* <circle cx="51" cy="45" r="30" /> */}
-    {/* <circle cx="340" cy="286" r="18" /> */}
-    {/* <circle cx="384" cy="286" r="18" /> */}
-    {/* <circle cx="50" cy="50" r="30" /> */}
-
     <rect x="0" y="90" rx="0" ry="0" width="140" height="25" />
 
     <rect x="160" y="90" rx="0" ry="0" width="140" height="25" />

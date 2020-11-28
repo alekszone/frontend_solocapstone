@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { InputGroup, FormControl, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { AiOutlineEdit } from "react-icons/ai";
 import Style from "./Styles.module.css";
-import { makeStyles } from "@material-ui/core/styles";
+
 import TextField from "@material-ui/core/TextField";
 
 export default function About(props) {
@@ -111,7 +111,6 @@ export default function About(props) {
                       <p className={`${Style.aboutMe}`}>No Description</p>
                     )}
                   </div>
-                  {/* // <div style={{ marginRight: 'auto' }}> */}
 
                   <div className="mt-2">
                     <Button

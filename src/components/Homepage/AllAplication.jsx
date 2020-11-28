@@ -90,9 +90,6 @@ function AllAplication(props) {
                 backgroundColor: "white",
                 boxShadow: "0px 2px 2px rgba(212, 212, 212, 0.938)",
                 borderRadius: "5px",
-                // display:"flex",
-                // flexDirection:"column",
-                // justifyContent:"center"
               }}
               className="mt-3"
             >

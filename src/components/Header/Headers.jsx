@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import Logo from "./Logo.png";
 import Styles from "./Navbar.module.css";
-
 import { withRouter, Link } from "react-router-dom";
-
 function Headers(props) {
   const url = process.env.REACT_APP_URL;
 

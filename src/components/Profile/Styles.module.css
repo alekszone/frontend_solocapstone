@@ -97,7 +97,7 @@
   margin-left: auto !important;
   margin-right: auto !important;
   margin-top: 20px !important;
-  box-shadow:  0px 5px 5px rgba(206, 206, 206, 0.938);
+  box-shadow: 0px 5px 5px rgba(206, 206, 206, 0.938);
   background-image: url("https://res.cloudinary.com/dle6fzc1o/image/upload/v1605622564/backgroundimage/Untitled_design_2_okmnmp.png");
   background-size: cover;
 }
@@ -228,15 +228,10 @@
 
   text-align: justify;
   font-family: "Raleway", sans-serif;
-  /* -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical; */
 }
 
-
-
-
 .dataAbout {
-  box-shadow:  0px 3px 3px rgba(212, 212, 212, 0.938);
+  box-shadow: 0px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
   height: auto;
   border-radius: 5px;
@@ -247,7 +242,6 @@
   margin-left: 15px;
   margin-top: 15px;
   margin-right: 15px;
-  /* box-shadow: 3px 3px 3px 3px rgba(212, 212, 212, 0.938); */
 }
 
 .dataAbout div > h6 {
@@ -284,12 +278,10 @@
   color: #ff512f;
   font-weight: bolder;
   border-radius: 5px;
-  box-shadow: 0px 1px 1px  #ff512f;
-
+  box-shadow: 0px 1px 1px #ff512f;
 }
 .icon:hover {
-
-  box-shadow: 0px 5px 5px  #ff512f;
+  box-shadow: 0px 5px 5px #ff512f;
 }
 .textStyle div > h6 {
   font-family: "Mukta", sans-serif;
@@ -307,7 +299,7 @@
 }
 
 .carts {
-  box-shadow: 0px 3px 3px  rgba(212, 212, 212, 0.938);
+  box-shadow: 0px 3px 3px rgba(212, 212, 212, 0.938);
   background-color: white;
   border-radius: 5px;
 }

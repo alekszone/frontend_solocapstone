@@ -349,13 +349,8 @@
 .cartblock {
   height: 95%;
   box-shadow: 1px 1px 1px rgba(209, 209, 209, 0.3);
-  /* width: 90% !important; */
   background: #fff;
-  /* padding: 30px 20px; */
-
   text-align: center;
-  /* border: 2px solid #d5d5d5; */
-  /* margin: 0 0 28px; */
 }
 .cartblock img {
   width: 80px;

@@ -141,12 +141,11 @@
 
 .cardsDiv {
   width: 600px !important;
-  /* text-align: left; */
 }
 
 .btngrad {
   text-align: center;
-  /* text-transform: uppercase; */
+
   transition: 0.5s;
   background-size: auto;
   color: rgb(63, 69, 95) !important;
@@ -170,9 +169,6 @@
   cursor: pointer;
 }
 .btngrad:focus {
-  /* background-position: right center; /* change the direction of the change here */
-  /* color: #fff;
-    text-decoration: none; */
   border: none !important;
   color: white !important;
   font-weight: bolder;
